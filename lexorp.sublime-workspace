@@ -1,0 +1,422 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"Tipo",
+				"TipoArticulos"
+			],
+			[
+				"Tipos",
+				"tiposarticulos"
+			],
+			[
+				"tipo",
+				"tipoarticulos"
+			],
+			[
+				"ti",
+				"tipoarticulos"
+			],
+			[
+				"TI",
+				"TiposArticulos"
+			],
+			[
+				"fu",
+				"function"
+			],
+			[
+				"userna",
+				"username"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "app/views/tipoarticulos/home.blade.php",
+			"settings":
+			{
+				"buffer_size": 1676,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/controllers/TiposArticulosController.php",
+			"settings":
+			{
+				"buffer_size": 1627,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/controllers/RolesController.php",
+			"settings":
+			{
+				"buffer_size": 1989,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/tipoarticulos/create.blade.php",
+			"settings":
+			{
+				"buffer_size": 525,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/tipoarticulos/edit.blade.php",
+			"settings":
+			{
+				"buffer_size": 625,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/role/edit.blade.php",
+			"settings":
+			{
+				"buffer_size": 515,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 265.0,
+		"selected_items":
+		[
+		],
+		"width": 512.0
+	},
+	"console":
+	{
+		"height": 433.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/xampp/htdocs/proxel/app/views/role/create.blade.php",
+		"/C/xampp/htdocs/proxel/app/views/role/edit.blade.php",
+		"/C/xampp/htdocs/proxel/app/views/tipoarticulos/create.blade.php",
+		"/C/xampp/htdocs/proxel/app/views/tipoarticulos/edit.blade.php",
+		"/C/xampp/htdocs/proxel/app/views/users/edit.blade.php",
+		"/C/xampp/htdocs/proxel/app/views/users/home.blade.php",
+		"/C/xampp/htdocs/proxel/app/views/users/create.blade.php",
+		"/C/xampp/htdocs/proxel/app/views/users/createusuario.blade.php",
+		"/C/xampp/htdocs/proxel/app/views/role/role.blade.php",
+		"/C/xampp/htdocs/proxel/app/views/layouts/layout_base.blade.php",
+		"/C/xampp/htdocs/proxel/app/views/tipoarticulos/home.blade.php",
+		"/C/xampp/htdocs/proxel/app/controllers/TiposArticulosController.php",
+		"/C/xampp/htdocs/proxel/app/routes.php",
+		"/C/xampp/htdocs/proxel/app/views/users/users.blade.php",
+		"/C/xampp/htdocs/proxel/app/database/seeds/PermissionsSeeder.php",
+		"/C/xampp/htdocs/proxel/app/models/TiposArticulos.php",
+		"/C/xampp/htdocs/proxel/app/models/User.php",
+		"/C/xampp/htdocs/proxel/app/database/seeds/UserSeeder.php",
+		"/C/xampp/htdocs/proxel/app/database/seeds/DatabaseSeeder.php",
+		"/C/xampp/htdocs/proxel/app/database/migrations/2014_10_12_145910_Users.php",
+		"/C/xampp/htdocs/proxel/app/database/seeds/TiposArticulosSeeder.php",
+		"/C/xampp/htdocs/proxel/app/database/migrations/2015_01_31_220232_TiposArticulos.php",
+		"/C/xampp/htdocs/proxel/app/models/Role.php",
+		"/C/xampp/htdocs/proxel/app/config/database.php",
+		"/C/xampp/htdocs/futbol/app/src/Thor/Models/Lamparas.php",
+		"/C/xampp/htdocs/futbol/app/database/migrations/2015_01_31_232642_create_thor_vuelos_table.php",
+		"/C/xampp/htdocs/futbol/app/database/migrations/2015_01_31_232150_create_thor_vuelos_table.php",
+		"/C/xampp/htdocs/futbol/app/routes.php",
+		"/C/xampp/htdocs/futbol/app/database/migrations/2015_01_31_225507_create_thor_languages_table.php",
+		"/C/xampp/htdocs/futbol/app/config/database.php",
+		"/C/xampp/htdocs/futbol/app/config/packages/thor/platform/models.php",
+		"/C/xampp/htdocs/futbol/app/config/packages/thor/platform/generators.php",
+		"/C/xampp/htdocs/futbol/app/database/seeds/DatabaseSeeder.php",
+		"/C/xampp/htdocs/proxel/app/database/seeds/RolesSeeder.php",
+		"/C/xampp/htdocs/proxel/app/controllers/UserController.php",
+		"/C/xampp/htdocs/proxel/app/database/migrations/2015_01_31_215821_Libros.php",
+		"/C/xampp/htdocs/proxel/app/database/migrations/2014_10_12_150706_entrust_setup_tables.php",
+		"/C/xampp/htdocs/proxel/app/filters.php",
+		"/C/xampp/htdocs/proxel/composer.json",
+		"/D/talk/tags.php",
+		"/C/xampp/htdocs/proxel/app/views/hello.php",
+		"/C/xampp/htdocs/proxel/server.php"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"container",
+			"username",
+			"salir",
+			"user"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 4,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "app/views/tipoarticulos/home.blade.php",
+					"settings":
+					{
+						"buffer_size": 1676,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								402,
+								402
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/controllers/TiposArticulosController.php",
+					"settings":
+					{
+						"buffer_size": 1627,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1203,
+								1203
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/controllers/RolesController.php",
+					"settings":
+					{
+						"buffer_size": 1989,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1632,
+								1771
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 810.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/views/tipoarticulos/create.blade.php",
+					"settings":
+					{
+						"buffer_size": 525,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								364,
+								364
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/views/tipoarticulos/edit.blade.php",
+					"settings":
+					{
+						"buffer_size": 625,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								76,
+								76
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "app/views/role/edit.blade.php",
+					"settings":
+					{
+						"buffer_size": 515,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								66,
+								66
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 337.0,
+	"status_bar_visible": true
+}

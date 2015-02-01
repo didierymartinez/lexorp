@@ -1,0 +1,161 @@
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu>.dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -6px;
+    margin-left: -1px;
+    -webkit-border-radius: 0 6px 6px 6px;
+    -moz-border-radius: 0 6px 6px;
+    border-radius: 0 6px 6px 6px;
+}
+
+.dropdown-submenu:hover>.dropdown-menu {
+    display: block;
+}
+
+.dropdown-submenu>a:after {
+    display: block;
+    content: " ";
+    float: right;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 5px 0 5px 5px;
+    border-left-color: #ccc;
+    margin-top: 5px;
+    margin-right: -10px;
+}
+
+.dropdown-submenu.pull-left>a:after {
+    display: block;
+    content: " ";
+    float: left;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+    border-right: 7px solid #ccc;
+    margin-top: 5px;
+    margin-left: -15px;
+}
+
+.dropdown-submenu:hover>a:after {
+    border-left-color: #fff;
+}
+
+.dropdown-submenu.pull-left {
+    float: none;
+}
+
+.dropdown-submenu.pull-left>.dropdown-menu {
+    left: -100%;
+    margin-left: -5%;
+    right: 100%;
+    -webkit-border-radius: 6px 0 6px 6px;
+    -moz-border-radius: 6px 0 6px 6px;
+    border-radius: 6px 0 6px 6px;
+}
+
+
+}.block-menu.affix {
+    position: static;
+}
+@media (min-width:768px) {
+    .block-menu {
+    padding-left: 15px;
+    margin-top: -40px;
+}
+}.bs-docs-sidenav {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.block-menu ul>li>a {
+    display: block;
+    padding: 4px 20px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #222;
+}
+
+.block-menu ul{
+    list-style: none;
+}
+
+.block-menu ul>li>a:hover, .block-menu ul>li>a:focus {
+    padding-left: 19px;
+    color: #999;
+    text-decoration: none;
+    background-color: transparent;
+    border-left: 1px solid #999;
+}
+.block-menu ul>.active>a, .block-menu ul>.active:hover>a, .block-menu ul>.active:focus>a {
+    padding-left: 18px;
+    font-weight: 700;
+    color: #222;
+    background-color: transparent;
+    border-left: 2px solid #222;
+}
+.block-menu .nav .nav {
+    display: none;
+    padding-bottom: 10px;
+}
+.block-menu .nav .nav>li>a {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 30px;
+    font-size: 12px;
+    font-weight: 400;
+}
+.block-menu .nav .nav>li>a:hover, .block-menu .nav .nav>li>a:focus {
+    padding-left: 29px;
+}
+.block-menu .nav .nav>.active>a, .block-menu .nav .nav>.active:hover>a, .block-menu .nav .nav>.active:focus>a {
+    padding-left: 28px;
+    font-weight: 500;
+}
+.back-to-top, .bs-docs-theme-toggle {
+    display: none;
+    padding: 4px 10px;
+    margin-top: 10px;
+    margin-left: 10px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #999;
+}
+.back-to-top:hover, .bs-docs-theme-toggle:hover {
+    color: #666;
+    text-decoration: none;
+}
+.bs-docs-theme-toggle {
+    margin-top: 0;
+}
+@media (min-width:768px) {
+    .back-to-top, .bs-docs-theme-toggle {
+    display: block;
+}
+}@media (min-width:992px) {
+    .block-menu .nav>.active>ul {
+    display: block;
+}
+.block-menu.affix, .block-menu.affix-bottom {
+    width: 213px;
+}
+.block-menu.affix {
+    position: fixed;
+    top: 20px;
+}
+.block-menu.affix-bottom {
+    position: absolute;
+}
+.block-menu.affix-bottom .bs-docs-sidenav, .block-menu.affix .bs-docs-sidenav {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+}@media (min-width:1200px) {
+    .block-menu.affix-bottom, .block-menu.affix {
+    width: 263px;
+}
