@@ -11,13 +11,13 @@
 @show
 <style type="text/css">
   body {
-  margin-left:10%;
+  margin-left:14%;
   }
 
   .sidebar-nav {
   position:fixed;
   z-index:10;
-  width:10%;
+  width:14%;
   left:0px;
   bottom:0;
   top:52px; 
@@ -138,7 +138,7 @@
 <ul class="list-unstyled">
   <li class="nav-header active"> <a href="#" data-toggle="collapse" data-target="#prestamoMenu" class="collapsed"><i class="glyphicon glyphicon-retweet"></i> Prestamos <span class="caret"></span></a>
     <ul class="list-unstyled collapse" id="prestamoMenu" style="height: 0px;">
-      <li><a href="{{URL::to('users')}}">Crear</a></li>
+      <li><a href="{{URL::to('prestamos')}}">Crear</a></li>
       <li><a href="{{URL::to('roles')}}">Actualizar</a></li>
       <li><a href="{{URL::to('roles')}}">Inactivar</a></li>
       <li data-toggle="collapse" data-target="#prestamoInfo"><a href="#glyphicons">Informes<span class="caret"></span></a>

@@ -22,6 +22,7 @@ Route::get('logout', 'AuthController@logout');
 Route::resource('/home','HomeController');
 Route::resource('/users','UserController');
 Route::resource('/roles','RolesController');
+Route::resource('/prestamos','PrestamosController');
 Route::resource('/tiposarticulos','TiposArticulosController');
 
 
