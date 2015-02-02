@@ -20,7 +20,7 @@ class PrestamosController extends \BaseController {
 	 */
 	public function create()
 	{
-		$usuario = User::where('identificacion','=',Input::get('identificacion'))->get();
+		$usuario = User::where('identificacion','=',Input::get('identificacion'))->get()->first();
 		return View::make('prestamos.create')->with('usuario',$usuario);	
 	}
 

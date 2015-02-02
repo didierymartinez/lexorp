@@ -17,12 +17,10 @@
 				<input type="text" class="form-control" name="identificacion" placeholder="Identificación" required autofocus>
 	      <br>
 	      <button class="btn btn-default btn-block" type="submit">
-	      <span class="glyphicon glyphicon-search" aria-hidden="true"></span> 
-	          Buscar</button>
+	      	<span class="glyphicon glyphicon-search" aria-hidden="true"></span> 
+		      Buscar
+		    </button>
 	      {{ Form::close() }}
-
-
-
 	    </div>
 		</div>
 	</div>
