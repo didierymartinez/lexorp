@@ -13,7 +13,7 @@
                 <form class="form-signin" action="{{ url('/login') }}" method="POST">
                 <input type="text" class="form-control" name="identificacion" placeholder="Identificación" required autofocus>
                 <input type="password" class="form-control" name="password" placeholder="Password" required>
-                <div class="container">
+                <div class="col-sm-12 col-md-12">
                     <div class="row">
                     @if(Session::has('message'))
                     <p class="alert alert-danger">{{ Session::get('message') }}</p>
