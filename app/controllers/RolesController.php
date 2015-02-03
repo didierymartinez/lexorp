@@ -19,7 +19,7 @@ class RolesController extends \BaseController {
 	 */
 	public function index()
 	{
-		Return View::make('role.role', array('roles' => Role::all(), 'permisos' => Permission::all()));
+		Return View::make('role.role', array('roles' => Role::where('sys', '!=', 1)->get(), 'permisos' => Permission::all()));
 	}
 
 

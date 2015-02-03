@@ -5,13 +5,16 @@
     {
         DB::table('roles')->delete();
         $Sistema = Role::create(array(
-                'name' => 'Sistema' 
+                'name' => 'Sistema',
+                'sys' => true
         ));
         $Administrador = Role::create(array(
-                'name' => 'Administrador' 
+                'name' => 'Administrador',
+                'sys' => true 
         ));
         $Usuario = Role::create(array(
-                'name' => 'Usuario' 
+                'name' => 'Usuario',
+                'sys' => true
         ));
         
         $permisos = Permission::all();

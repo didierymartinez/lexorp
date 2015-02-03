@@ -4,17 +4,8 @@
     crear roles
 @stop
 
-@section('head')
-    @parent
-    	<style>
-            .role{
-                margin-top: 60px;
-            }
-        </style>	
-@stop
 
 @section('content')
-    <div class="role">
         {{ Form::open(array('method' => 'POST', 'route' => array('roles.store'), 'class' => 'form-horizontal col-md-6')) }}
         
         <div class="form-group">
@@ -26,6 +17,4 @@
             </button>
  
         {{ Form::close() }}
-    </div>
-
 @stop

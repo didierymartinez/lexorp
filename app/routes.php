@@ -22,14 +22,16 @@ Route::get('logout', 'AuthController@logout');
 Route::resource('/home','HomeController');
 Route::resource('/users','UserController');
 Route::resource('/roles','RolesController');
+
 Route::resource('/prestamos','PrestamosController');
+Route::post('prestamos/crearprestamo',array('as' => 'prestamos.crearprestamo', 'uses' => 'PrestamosController@crearprestamo'));
+
 Route::resource('/tiposarticulos','TiposArticulosController');
 
 
 
 Route::get('createusuario', array('as' => 'users.createusuario', 'uses' => 'UserController@createusuario'));
 Route::get('users.storeUsuario', array('as' => 'users.storeUsuario', 'uses' => 'UserController@createusuario'));
-
 Route::post('users.storeUsuario','UserController@storeUsuario');
 
 Route::get('/permisos','PermisosController@index');

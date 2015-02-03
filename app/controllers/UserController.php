@@ -161,7 +161,7 @@ class UserController extends \BaseController {
 	{
 		User::destroy($id);
 		 $message = array(
-			    "type" => "alert-info",
+			    "type" => "alert-danger",
 			    "title" => "Eliminado:",
 			    "message" => "Se quitó usuario de la Aplicación"
 			);

@@ -20,8 +20,23 @@ class PrestamosController extends \BaseController {
 	 */
 	public function create()
 	{
-		$usuario = User::where('identificacion','=',Input::get('identificacion'))->get()->first();
-		return View::make('prestamos.create')->with('usuario',$usuario);	
+
+	}
+
+	public function crearPrestamo()
+	{
+		$identificacion = Input::get('identificacion');
+		$usuario = User::where('identificacion', '=', $identificacion)->get()->first();
+		if($usuario){
+			return View::make('prestamos.create')->with('usuario',$usuario);	
+		}else{
+			$message = array(
+			    "type" => "alert-danger",
+			    "title" => "Error:",
+			    "message" => "Identificación ". $identificacion ." no existe "
+			);
+        	return Redirect::route('prestamos.index')->with('message',$message);
+		}
 	}
 
 

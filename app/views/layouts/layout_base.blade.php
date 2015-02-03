@@ -31,6 +31,13 @@
 
 
 </style>
+<script type="text/javascript">
+  
+  $(document).on('submit', '.deleteform', function(){
+      return confirm('Desea Eliminar Registro?');
+  });
+
+</script>
 </head>
 <body>
 <!-- navBar-->    

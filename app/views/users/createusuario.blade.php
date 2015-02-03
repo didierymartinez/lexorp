@@ -22,29 +22,33 @@
 	<div class="form-group">
 	<div class="col-sm-2">
 		{{Form::label('identificacion', 'Identificación');}}
-		{{Form::text('identificacion', '',array('class' => 'form-control'));}}
+		{{Form::number('identificacion', '',array('class' => 'form-control', 'required' => 'required'));}}
 	</div>
 	</div> 
 
 	<div class="form-group">
 	<div class="col-sm-6">
 	{{Form::label('first_name', 'Nombres');}}
-	{{Form::text('first_name', '',array('class' => 'form-control'));}}
+	{{Form::text('first_name', '',array('class' => 'form-control', 'required' => 'required'));}}
 	</div>
 
 	<div class="col-sm-6">
 	{{Form::label('last_name', 'Apellidos');}}
-	{{Form::text('last_name', '',array('class' => 'form-control'));}}
+	{{Form::text('last_name', '',array('class' => 'form-control', 'required' => 'required'));}}
 	</div>
 	</div>
 
 	<div class="form-group">
+	<div class="col-sm-6">
 	{{Form::label('email', 'Email');}}
-	{{ Form::email('email', null, array('class' => 'form-control')); }}
+	{{ Form::email('email', null, array('class' => 'form-control', 'required' => 'required')); }}
+	
 	</div>
-	<div class="form-group">
+
+	<div class="col-sm-6">
 	{{Form::label('password', 'Password');}}
-	{{ Form::password('password', array('class' => 'form-control')) }}
+	{{ Form::password('password', array('class' => 'form-control', 'required' => 'required')) }}
+	</div>
 	</div>
 	
 </fieldset>

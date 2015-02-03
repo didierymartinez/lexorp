@@ -18,15 +18,15 @@
         <br>
         <table class="table table-hover">
             <thead>
-                <tr><th>Identificación</th><th>Rol</th><th>Email</th><th>Nombre</th><th>Apellido</th></tr>
+                <tr><th>Identificación</th><th>Nombre</th><th>Apellido</th><th>Rol</th><th>Email</th></tr>
             </thead>
             @if(isset($users))
                 <tbody>
                 @foreach($users as $user)
-                    <tr><td>{{ $user->identificacion }}</td>
+                    <tr><td>{{ $user->identificacion }}</td>                        
+                        <td>{{ $user->first_name }}</td><td>{{ $user->last_name  }}</td>
                         <td>{{ $user->rol->name }}</td>
                         <td>{{ $user->email }}</td>
-                        <td>{{ $user->first_name }}</td><td>{{ $user->last_name  }}</td>
                         @if($user->sys != true)
                             <td>                                            
                               <div class="btn-group" role="group">
@@ -44,7 +44,7 @@
                                   </li>
                                   <li>
                                         @if(Entrust::can('eliminar_usuarios'))
-                                            {{ Form::open(array('method'=> 'DELETE', 'route' => array('users.destroy', $user->id))) }}
+                                            {{ Form::open(array('method'=> 'DELETE', 'class'=>'deleteform', 'route' => array('users.destroy', $user->id))) }}
                                             {{ Form::submit('Eliminar', array('class'=> 'btn btn-link')) }}
                                         {{ Form::close() }}
                                   </li>

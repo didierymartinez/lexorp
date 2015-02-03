@@ -13,8 +13,8 @@
 		<div class="col-sm-6 col-md-4 col-md-offset-4">
 	    <div class="account-wall">
         <h4 class="text-center login-title">Buscar Usuario</h4>
-				{{ Form::open(array('method' => 'get', 'route' => array('prestamos.create'))) }}
-				<input type="text" class="form-control" name="identificacion" placeholder="Identificación" required autofocus>
+				{{ Form::open(array('method' => 'post', 'route' => array('prestamos.crearprestamo'))) }}
+				<input type="number" class="form-control" name="identificacion" placeholder="Identificación" required autofocus>
 	      <br>
 	      <button class="btn btn-default btn-block" type="submit">
 	      	<span class="glyphicon glyphicon-search" aria-hidden="true"></span> 
