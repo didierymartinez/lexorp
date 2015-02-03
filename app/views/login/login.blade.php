@@ -13,6 +13,13 @@
                 <form class="form-signin" action="{{ url('/login') }}" method="POST">
                 <input type="text" class="form-control" name="identificacion" placeholder="Identificación" required autofocus>
                 <input type="password" class="form-control" name="password" placeholder="Password" required>
+                <div class="container">
+                    <div class="row">
+                    @if(Session::has('message'))
+                    <p class="alert alert-danger">{{ Session::get('message') }}</p>
+                    @endif
+                    </div>
+                </div>
                 <button class="btn btn-default btn-block" type="submit">
                 <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> 
                     Ingresar</button>
@@ -22,11 +29,7 @@
                 </label>
                 </form>
                 <br>                                
-                <div class="container">
-                    @if(Session::has('message'))
-                    <p class="alert alert-danger">{{ Session::get('message') }}</p>
-                    @endif
-                </div>
+                
             </div>
 
 
