@@ -97,7 +97,10 @@ class UserController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		return 'show'.$id;
+		if(Request::ajax()){
+	        $users = User::where('identificacion','=',Input::get('identificacion'))->get()->first();
+	        return Response::json(array('user' => $users ));
+    	}		
 	}
 
 

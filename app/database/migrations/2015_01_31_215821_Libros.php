@@ -15,28 +15,18 @@ class Libros extends Migration {
 		Schema::create('autores',function($table){
 			$table->increments('id')->unsigned();
 			$table->string('nombres');
-			$table->string('apellidos');			
+			$table->string('apellidos');	
+			$table->timestamps();		
 		});
-
-		// Schema::create('Autores',function($table){
-		// 	$table->increments('id');
-		// 	$table->string('nombres');
-		// 	$table->string('apellidos');			
-		// });
-
-		// Schema::create('Autores',function($table){
-		// 	$table->increments('id');
-		// 	$table->string('nombres');
-		// 	$table->string('apellidos');			
-		// });
 
 		Schema::create('libros',function($table){
 			$table->increments('id')->unsigned();
 			$table->string('nombre');
 			$table->integer('autor_id')->unsigned();
 			$table->foreign('autor_id')->references('id')->on('autores');
-			$table->integer('editorial');
-			$table->integer('ubicacion');
+			$table->integer('editorial_id');
+			$table->integer('ubicacion_id');
+			$table->timestamps();
 		});
 	}
 

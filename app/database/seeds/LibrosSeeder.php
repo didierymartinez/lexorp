@@ -1,25 +1,25 @@
 <?php
-	class RolesSeeder extends Seeder {
+	class LibrosSeeder extends Seeder {
  
     public function run()
     {
-        DB::table('Articulos')->delete();
-        $Sistema = Role::create(array(
-                'name' => 'Sistema' 
-        ));
-        $Administrador = Role::create(array(
-                'name' => 'Administrador' 
-        ));
-        $Usuario = Role::create(array(
-                'name' => 'Usuario' 
-        ));
+       
+        DB::table('libros')->delete();
+        DB::table('autores')->delete();
         
-        $permisos = Permission::all();
-        
-        foreach($permisos as $permiso){
-           $Sistema->attachPermission($permiso); 
-           $Administrador->attachPermission($permiso); 
-        }
+        $autor1 = Autor::create(array(
+            'nombres' => 'Garcia',
+            'apellidos' => 'Marquez'
+        ));
+
+
+        $Libro1 = Libro::create(array(
+                'nombre' => 'Cien años de soledad',
+                'autor_id' => $autor1->id,
+                'editorial_id' => '1',
+                'ubicacion_id' => '1',
+        ));
+                  
     }
  
 }

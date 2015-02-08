@@ -26,6 +26,10 @@ Route::resource('/roles','RolesController');
 Route::resource('/prestamos','PrestamosController');
 Route::post('prestamos/crearprestamo',array('as' => 'prestamos.crearprestamo', 'uses' => 'PrestamosController@crearprestamo'));
 
+Route::resource('/libros','LibrosController');
+//Route::get('/libros/get/{id}',array('as' => 'libros.get', 'uses' => 'LibrosController@get'));
+
+
 Route::resource('/tiposarticulos','TiposArticulosController');
 
 
