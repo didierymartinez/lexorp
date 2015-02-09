@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"use",
+				"uses"
+			],
+			[
+				"s",
+				"script	Tag"
+			],
+			[
 				"fu",
 				"function"
 			],
@@ -16,10 +24,50 @@
 	"buffers":
 	[
 		{
+			"file": "public/js/prestamos.js",
+			"settings":
+			{
+				"buffer_size": 563,
+				"line_ending": "Windows"
+			}
+		},
+		{
 			"file": "app/views/prestamos/create.blade.php",
 			"settings":
 			{
-				"buffer_size": 765,
+				"buffer_size": 4262,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/controllers/LibrosController.php",
+			"settings":
+			{
+				"buffer_size": 1118,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/controllers/UserController.php",
+			"settings":
+			{
+				"buffer_size": 4585,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/routes.php",
+			"settings":
+			{
+				"buffer_size": 1553,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/views/layouts/layout_base.blade.php",
+			"settings":
+			{
+				"buffer_size": 6450,
 				"line_ending": "Windows"
 			}
 		}
@@ -27,9 +75,45 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 104.0,
+		"height": 219.0,
 		"selected_items":
 		[
+			[
+				"laravel",
+				"Laravel Artisan Command"
+			],
+			[
+				"genera",
+				"Laravel Generate: View"
+			],
+			[
+				"lara",
+				"Laravel Generate: View"
+			],
+			[
+				"generate",
+				"Laravel Generate: View"
+			],
+			[
+				"comi",
+				"Git: Commit"
+			],
+			[
+				"QU",
+				"Git: Quick Commit"
+			],
+			[
+				"ADD",
+				"Git: Add..."
+			],
+			[
+				"GITADD",
+				"Git: Add..."
+			],
+			[
+				"GIT",
+				"Git: Push"
+			],
 			[
 				"push",
 				"Git: Push"
@@ -67,7 +151,7 @@
 				"Git: Commit"
 			]
 		],
-		"width": 512.0
+		"width": 400.0
 	},
 	"console":
 	{
@@ -84,15 +168,35 @@
 	},
 	"file_history":
 	[
-		"/C/xampp/htdocs/lexorp/app/views/prestamos/home.blade.php",
-		"/C/xampp/htdocs/lexorp/app/models/User.php",
+		"/C/xampp/htdocs/lexorp/app/views/users/perfil.blade.php",
+		"/C/xampp/htdocs/lexorp/app/database/migrations/2015_01_31_215821_Libros.php",
+		"/C/xampp/htdocs/lexorp/app/routes.php",
+		"/C/xampp/htdocs/lexorp/app/controllers/UserController.php",
+		"/C/xampp/htdocs/lexorp/app/database/seeds/LibrosSeeder.php",
+		"/C/xampp/htdocs/lexorp/app/models/Libro.php",
+		"/C/xampp/htdocs/lexorp/app/database/seeds/TiposArticulosSeeder.php",
+		"/C/xampp/htdocs/lexorp/app/database/seeds/DatabaseSeeder.php",
+		"/C/xampp/htdocs/lexorp/app/models/Autor.php",
+		"/C/xampp/htdocs/lexorp/app/models/Libros.php",
+		"/C/xampp/htdocs/lexorp/app/views/layouts/layout_base.blade.php",
+		"/C/xampp/htdocs/lexorp/app/views/role/create.blade.php",
+		"/C/xampp/htdocs/lexorp/app/controllers/RolesController.php",
+		"/C/xampp/htdocs/lexorp/app/views/users/createusuario.blade.php",
 		"/C/xampp/htdocs/lexorp/app/controllers/PrestamosController.php",
+		"/C/xampp/htdocs/lexorp/app/views/prestamos/home.blade.php",
+		"/C/xampp/htdocs/lexorp/app/views/login/login.blade.php",
+		"/C/xampp/htdocs/lexorp/app/views/prestamos/create.blade.php",
+		"/C/xampp/htdocs/lexorp/app/views/users/create.blade.php",
+		"/C/xampp/htdocs/lexorp/app/database/migrations/2014_10_12_145910_Users.php",
+		"/C/xampp/htdocs/lexorp/app/views/users/users.blade.php",
+		"/C/xampp/htdocs/loginBasico/app/views/users/login.blade.php",
+		"/C/xampp/htdocs/loginBasico/app/views/users/register.blade.php",
+		"/C/xampp/htdocs/lexorp/app/database/seeds/RolesSeeder.php",
+		"/C/xampp/htdocs/lexorp/app/database/migrations/2014_10_12_150706_entrust_setup_tables.php",
+		"/C/xampp/htdocs/lexorp/app/models/User.php",
 		"/C/Users/dyma5_000/AppData/Roaming/Sublime Text 2/Packages/User/Package Control.sublime-settings",
 		"/C/Users/dyma5_000/AppData/Roaming/Sublime Text 2/Packages/Git/Git.sublime-settings",
 		"/C/Users/dyma5_000/AppData/Roaming/Sublime Text 2/Packages/User/Git.sublime-settings",
-		"/C/xampp/htdocs/lexorp/app/routes.php",
-		"/C/xampp/htdocs/lexorp/app/views/prestamos/create.blade.php",
-		"/C/xampp/htdocs/lexorp/app/controllers/UserController.php",
 		"/C/xampp/htdocs/lexorp/app/views/users/home.blade.php",
 		"/C/xampp/htdocs/proxel0.1/app/views/prestamos/create.blade.php",
 		"/C/xampp/htdocs/proxel0.1/app/views/layouts/layout_base.blade.php",
@@ -149,29 +253,164 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "app/views/prestamos/create.blade.php",
+					"file": "public/js/prestamos.js",
 					"settings":
 					{
-						"buffer_size": 765,
+						"buffer_size": 563,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								182,
-								182
+								28,
+								28
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/views/prestamos/create.blade.php",
+					"settings":
+					{
+						"buffer_size": 4262,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								668,
+								668
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 2
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/controllers/LibrosController.php",
+					"settings":
+					{
+						"buffer_size": 1118,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								585,
+								601
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 151.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/controllers/UserController.php",
+					"settings":
+					{
+						"buffer_size": 4585,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2530,
+								2530
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 990.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/routes.php",
+					"settings":
+					{
+						"buffer_size": 1553,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								921,
+								921
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "app/views/layouts/layout_base.blade.php",
+					"settings":
+					{
+						"buffer_size": 6450,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6392,
+								6392
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,

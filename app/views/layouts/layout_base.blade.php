@@ -172,6 +172,8 @@
   <strong>{{ Session::get('message')["title"]  }}</strong> {{ Session::get('message')["message"]  }}
   </div>
   @endif
+
+
   @yield('content')
 </div>
 <!--/main-->

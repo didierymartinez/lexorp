@@ -7,4 +7,10 @@ class Libro extends Eloquent {
 	 * @var string
 	 */
 	protected $table = 'Libros';
+
+
+	public function autor()
+    {
+        return $this->hasOne('Autor', 'id', 'autor_id');
+    }
 }
