@@ -47,7 +47,18 @@ class PrestamosController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
+		if(Request::ajax()){
+			$articulosPrestamo = Input::get('librosprestamo');
+
+       //foreach($articulosPrestamo as $libros){
+          //foreach ($libros as $libro){
+               // $ids[] = $libros;
+        	//}
+        //}   
+        			
+
+	        return $articulosPrestamo;
+    	}	
 	}
 
 
@@ -59,7 +70,7 @@ class PrestamosController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		//
+
 	}
 
 

@@ -24,18 +24,10 @@
 	"buffers":
 	[
 		{
-			"file": "public/js/prestamos.js",
-			"settings":
-			{
-				"buffer_size": 563,
-				"line_ending": "Windows"
-			}
-		},
-		{
 			"file": "app/views/prestamos/create.blade.php",
 			"settings":
 			{
-				"buffer_size": 4262,
+				"buffer_size": 4290,
 				"line_ending": "Windows"
 			}
 		},
@@ -43,15 +35,7 @@
 			"file": "app/controllers/LibrosController.php",
 			"settings":
 			{
-				"buffer_size": 1118,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/controllers/UserController.php",
-			"settings":
-			{
-				"buffer_size": 4585,
+				"buffer_size": 1194,
 				"line_ending": "Unix"
 			}
 		},
@@ -64,11 +48,46 @@
 			}
 		},
 		{
-			"file": "app/views/layouts/layout_base.blade.php",
+			"file": "public/js/prestamos.js",
 			"settings":
 			{
-				"buffer_size": 6450,
+				"buffer_size": 2549,
 				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/models/Libro.php",
+			"settings":
+			{
+				"buffer_size": 237,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/models/Autor.php",
+			"settings":
+			{
+				"buffer_size": 142,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/controllers/PrestamosController.php",
+			"settings":
+			{
+				"buffer_size": 1804,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "<?php\n\nclass PermisosController extends \\BaseController {\n\n	/**\n	 * Display a listing of the resource.\n	 *\n	 * @return Response\n	 */\n    protected $permisos;\n    \n    public function  __construct() {\n		$permisos = Permission::all();\n		$this->permisos = $permisos;\n	}\n    \n	public function index()\n	{\n		return Response::json($this->getPermisos(Input::get('id')));\n        \n	}\n    \n    private function getPermisos($id_rol){\n        $permisos = array();\n\n        $permisos['permisosAsignados'] = $this->getPermisosAsignados($id_rol);\n        return $permisos;\n        \n    }\n    \n    private function getPermisosAsignados($id_rol){\n        $permisosDeRol = RolesPermission::where('role_id', '=', $id_rol)->get();\n        $asignados = array();\n        foreach($permisosDeRol as $p){\n\n          foreach ($this->permisos as $key => $value){\n            if($value->id == $p->permission_id){\n                $asignados[] = $value;\n        	 }\n          }   \n        }\n        \n        return $asignados;\n	}\n    \n    public function asignar(){\n		$rol = Role::find(Input::get('role_id'));\n        $rol->attachPermission(Input::get('permission_id'));\n        return Response::json('ok');\n	}\n    \n    public function desasignar(){\n		$rol = Role::find(Input::get('role_id'));\n        $rolPermisos = RolesPermission::where('role_id', '=', Input::get('role_id'))\n            ->where('permission_id', '=', Input::get('permission_id'))->get()->first();\n        $desasignar = RolesPermission::destroy($rolPermisos->id);\n        return Response::json('ok');\n	}\n\n}\n",
+			"file": "app/controllers/PermisosController.php",
+			"file_size": 1532,
+			"file_write_time": 130623717602284841,
+			"settings":
+			{
+				"buffer_size": 1546,
+				"line_ending": "Unix"
 			}
 		}
 	],
@@ -168,17 +187,19 @@
 	},
 	"file_history":
 	[
+		"/C/xampp/htdocs/lexorp/app/models/Prestamo.php",
+		"/C/xampp/htdocs/lexorp/app/views/layouts/layout_base.blade.php",
+		"/C/xampp/htdocs/lexorp/app/controllers/UserController.php",
+		"/C/xampp/htdocs/lexorp/public/js/prestamos.js",
 		"/C/xampp/htdocs/lexorp/app/views/users/perfil.blade.php",
 		"/C/xampp/htdocs/lexorp/app/database/migrations/2015_01_31_215821_Libros.php",
 		"/C/xampp/htdocs/lexorp/app/routes.php",
-		"/C/xampp/htdocs/lexorp/app/controllers/UserController.php",
 		"/C/xampp/htdocs/lexorp/app/database/seeds/LibrosSeeder.php",
 		"/C/xampp/htdocs/lexorp/app/models/Libro.php",
 		"/C/xampp/htdocs/lexorp/app/database/seeds/TiposArticulosSeeder.php",
 		"/C/xampp/htdocs/lexorp/app/database/seeds/DatabaseSeeder.php",
 		"/C/xampp/htdocs/lexorp/app/models/Autor.php",
 		"/C/xampp/htdocs/lexorp/app/models/Libros.php",
-		"/C/xampp/htdocs/lexorp/app/views/layouts/layout_base.blade.php",
 		"/C/xampp/htdocs/lexorp/app/views/role/create.blade.php",
 		"/C/xampp/htdocs/lexorp/app/controllers/RolesController.php",
 		"/C/xampp/htdocs/lexorp/app/views/users/createusuario.blade.php",
@@ -236,6 +257,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"prestamo",
+			"yaexiste",
+			"mail"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -243,6 +267,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"CantidadPrestamo"
 		],
 		"reverse": false,
 		"show_context": true,
@@ -253,51 +278,51 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 6,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "public/js/prestamos.js",
+					"file": "app/views/prestamos/create.blade.php",
 					"settings":
 					{
-						"buffer_size": 563,
+						"buffer_size": 4290,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								28,
-								28
+								3917,
+								3931
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"syntax": "Packages/PHP/PHP.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1215.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "app/views/prestamos/create.blade.php",
+					"file": "app/controllers/LibrosController.php",
 					"settings":
 					{
-						"buffer_size": 4262,
+						"buffer_size": 1194,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								668,
-								668
+								534,
+								745
 							]
 						],
 						"settings":
@@ -306,66 +331,13 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 286.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "app/controllers/LibrosController.php",
-					"settings":
-					{
-						"buffer_size": 1118,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								585,
-								601
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 151.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "app/controllers/UserController.php",
-					"settings":
-					{
-						"buffer_size": 4585,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2530,
-								2530
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 990.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
 					"file": "app/routes.php",
 					"settings":
 					{
@@ -391,29 +363,136 @@
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "app/views/layouts/layout_base.blade.php",
+					"buffer": 3,
+					"file": "public/js/prestamos.js",
 					"settings":
 					{
-						"buffer_size": 6450,
+						"buffer_size": 2549,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								6392,
-								6392
+								201,
+								201
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/models/Libro.php",
+					"settings":
+					{
+						"buffer_size": 237,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								141,
+								141
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "app/models/Autor.php",
+					"settings":
+					{
+						"buffer_size": 142,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								140,
+								140
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "app/controllers/PrestamosController.php",
+					"settings":
+					{
+						"buffer_size": 1804,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								986,
+								986
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 180.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "app/controllers/PermisosController.php",
+					"settings":
+					{
+						"buffer_size": 1546,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								106,
+								106
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 90.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

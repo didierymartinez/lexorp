@@ -36,7 +36,7 @@
                  alt="{{$usuario->first_name}}" title="{{$usuario->first_name}}" class="img-circle">
         </div>
             <div >
-                <h3>{{$usuario->first_name  }}<br> {{$usuario->last_name}} </h3>
+                <h3>{{$usuario->first_name  }}<br>{{$usuario->last_name}} </h3>
                 <span class="help-block">{{$usuario->identificacion}}</span>
             </div>            
         </div>
@@ -85,28 +85,37 @@
     </div>
 </div>           
 
-<br>
-<div class="col-sm-6 col-md-2 ">
-    <input type="text" class="form-control" name="codigo" id="codigo" required autofocus>
-    <button id="adicionarlibro" class="btn btn-default btn-block" type="submit">
-        <span class="glyphicon glyphicon-search" aria-hidden="true"></span> Buscar Libro
-    </button>
-    <br>
+<br><br>
+
+<div class="row">
+  <div class="col-lg-2">
+    <div class="input-group">
+      <input type="text" class="form-control"  name="codigo" id="codigo" required autofocus placeholder="Buscar Libro...">
+      <span class="input-group-btn">
+        <button id="adicionarlibro" class="btn btn-default" type="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+      </span>
+    </div>
+  </div>
+
+<div class="col-lg-8">
+<div id="alertas"></div>   
 </div>
 
 
-
-
-{{ Form::open(array('method' => 'post', 'route' => array('prestamos.store'))) }}
-<div class="col-sm-6 col-md-2 ">
-    <button class="btn btn-default btn-block" type="submit">
+<div class="col-lg-2">
+    <button id="pretamoGuardar" class="btn btn-primary" type="submit">
         <span class="glyphicon glyphicon-book" aria-hidden="true"></span> Realizar Prestamo
-    </button>
+        <span id="totalLibros" class="badge">0</span>
+    </button> 
 </div>
-{{ Form::close() }}
+
+<br>
+<br>
+<br>
+
 
 <table id="librosprestamo" class="table table-condensed">
-<th>#</th><th>ISBN</th><th>Titulo</th><th>Autor</th><th>Quitar</th>
+<th>ISBN</th><th>Titulo</th><th>Autor</th><th>Quitar</th>
 </table>
 
 
