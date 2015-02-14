@@ -2,7 +2,9 @@
 class UserSeeder extends Seeder {
   public function run()
   {
-    DB::table('users')->delete();
+    DB::table('users')->delete();  
+    DB::statement('ALTER TABLE users AUTO_INCREMENT = 1;');
+
     $userSis = User::create(array(
       'id' => 1,
       'identificacion' => 'Sistema',

@@ -6,5 +6,5 @@ class TipoArticulos extends Eloquent {
 	 *
 	 * @var string
 	 */
-	protected $table = 'TiposArticulos';
+	protected $table = 'tipos_articulos';
 }

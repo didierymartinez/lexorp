@@ -6,5 +6,5 @@ class Autor extends Eloquent {
 	 *
 	 * @var string
 	 */
-	protected $table = 'Autores';
+	protected $table = 'autores';
 }

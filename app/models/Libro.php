@@ -6,7 +6,7 @@ class Libro extends Eloquent {
 	 *
 	 * @var string
 	 */
-	protected $table = 'Libros';
+	protected $table = 'libros';
 
 
 	public function autor()

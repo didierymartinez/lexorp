@@ -12,7 +12,7 @@ class Prestamos extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('tiposprestamos', function($table){
+		Schema::create('tipos_prestamos', function($table){
 			$table->increments('id')->unsigned();
 			$table->string('Tipo')->unique();
 	        $table->timestamps();
@@ -24,7 +24,7 @@ class Prestamos extends Migration {
 			$table->integer('tipoprestamo_id')->unsigned();
 			$table->integer('articulo_id')->unsigned();
 			$table->integer('usuario_id')->unsigned();
-	        $table->foreign('tipoprestamo_id')->references('id')->on('tiposprestamos');
+	        $table->foreign('tipoprestamo_id')->references('id')->on('tipos_prestamos');
 	        $table->foreign('articulo_id')->references('id')->on('articulos');
 	        $table->foreign('usuario_id')->references('id')->on('users');
 			$table->timestamps();
@@ -45,6 +45,6 @@ class Prestamos extends Migration {
         });
 
 		Schema::drop('prestamos');
-		Schema::drop('tiposprestamos');
+		Schema::drop('tipos_prestamos');
 	}
 }

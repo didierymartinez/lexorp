@@ -14,7 +14,7 @@ class DatabaseSeeder extends Seeder {
         $this->call('PermisionsSeeder');
         $this->call('RolesSeeder');
 		$this->call('UserSeeder');
-		$this->call('TiposArticulosSeeder');
+		$this->call('ArticulosSeeder');
 		$this->call('LibrosSeeder');		
         $this->command->info('Datos insertados!');
 	}
