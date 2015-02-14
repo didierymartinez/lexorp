@@ -8,14 +8,14 @@ $(document).ready(function() {
         type: 'post',
         url: '../prestamos',
         dataType: 'json',
-        data: {librosprestamo:JSON.stringify(articulosPrestamo)},
+        data: {"articulosprestamo":JSON.stringify(articulosPrestamo),"usuario":$('#idusuario').val()},
         success: function (data) {
           console.log('ready');
         }
     });
   });
 
-  $('#adicionarlibro').on( 'click', function () {         
+  $('#adicionararticulo').on( 'click', function () {         
     $.ajax({
         type: 'get',
         url: '../libros/get',
@@ -28,7 +28,7 @@ $(document).ready(function() {
 
             if (CantidadPrestamo.length == 0){
                 articulosPrestamo.push(data.libro);
-                $('#librosprestamo tr').last().after(
+                $('#articulosprestamo tr').last().after(
                   '<tr id="row_'+ data.libro.id +'">'+
                     '<td>'+ data.libro.id +'</td>'+
                     '<td>'+ data.libro.nombre +'</td>'+

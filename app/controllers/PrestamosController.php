@@ -48,16 +48,20 @@ class PrestamosController extends \BaseController {
 	public function store()
 	{
 		if(Request::ajax()){
-			$articulosPrestamo = Input::get('librosprestamo');
+			$articulosPrestamo = Input::get('articulosprestamo');
 
-       //foreach($articulosPrestamo as $libros){
-          //foreach ($libros as $libro){
+			$usuario = Input::get('usuario');
+
+			$object = json_decode($articulosPrestamo, true);
+
+       		foreach($articulosPrestamo as $libros){
+          	//foreach ($libros as $libro){
                // $ids[] = $libros;
         	//}
-        //}   
+        	}   
         			
 
-	        return $articulosPrestamo;
+	        return $object[2]['nombre']. count($object) .$usuario;
     	}	
 	}
 

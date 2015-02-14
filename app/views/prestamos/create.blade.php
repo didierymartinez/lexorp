@@ -38,6 +38,7 @@
             <div >
                 <h3>{{$usuario->first_name  }}<br>{{$usuario->last_name}} </h3>
                 <span class="help-block">{{$usuario->identificacion}}</span>
+                <input type="hidden" value="{{$usuario->id}}" id="idusuario">
             </div>            
         </div>
         <div class="user-info-block">
@@ -92,7 +93,7 @@
     <div class="input-group">
       <input type="text" class="form-control"  name="codigo" id="codigo" required autofocus placeholder="Buscar Libro...">
       <span class="input-group-btn">
-        <button id="adicionarlibro" class="btn btn-default" type="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+        <button id="adicionararticulo" class="btn btn-default" type="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
       </span>
     </div>
   </div>
@@ -114,7 +115,7 @@
 <br>
 
 
-<table id="librosprestamo" class="table table-condensed">
+<table id="articulosprestamo" class="table table-condensed">
 <th>ISBN</th><th>Titulo</th><th>Autor</th><th>Quitar</th>
 </table>
 
