@@ -9,6 +9,12 @@ class Libro extends Eloquent {
 	protected $table = 'libros';
 
 
+	public function articulos()
+    {
+        return $this->morphMany('Articulo', 'articulo');
+    }
+
+
 	public function autor()
     {
         return $this->hasOne('Autor', 'id', 'autor_id');

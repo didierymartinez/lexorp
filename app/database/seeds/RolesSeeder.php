@@ -4,6 +4,8 @@
     public function run()
     {
         DB::table('roles')->delete();
+        DB::statement('ALTER TABLE roles AUTO_INCREMENT = 1;');
+
         $Sistema = Role::create(array(
                 'name' => 'Sistema',
                 'sys' => true

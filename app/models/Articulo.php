@@ -9,8 +9,8 @@ class Articulo extends Eloquent {
 	protected $table = 'articulos';
 
 
-	public function libro()
+	public function articulo()
     {
-        return $this->hasOne('Libro', 'id', 'articulo_id');
+        return $this->morphTo();
     }
 }

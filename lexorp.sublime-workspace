@@ -35,7 +35,7 @@
 			"file": "app/database/seeds/LibrosSeeder.php",
 			"settings":
 			{
-				"buffer_size": 1642,
+				"buffer_size": 2801,
 				"line_ending": "Windows"
 			}
 		}
@@ -103,7 +103,7 @@
 	],
 	"find":
 	{
-		"height": 34.0
+		"height": 23.0
 	},
 	"find_in_files":
 	{
@@ -206,15 +206,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1642,
+						"buffer_size": 2801,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1219,
-								1219
+								0,
+								0
 							]
 						],
 						"settings":
@@ -271,7 +271,7 @@
 	"project": "Proxel.sublime-project",
 	"replace":
 	{
-		"height": 62.0
+		"height": 42.0
 	},
 	"save_all_on_build": true,
 	"select_file":

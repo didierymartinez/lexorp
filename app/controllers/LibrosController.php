@@ -44,8 +44,9 @@ class LibrosController extends \BaseController {
 	public function show($id)
 	{
 		if(Request::ajax()){
-	        $Libro = Libro::find(Input::get('id'));
-	        $Autor = Libro::find(Input::get('id'))->autor;
+
+	        $Libro = Articulo::find(Input::get('id'))->articulo;
+	        $Autor = $Libro->autor;
 	        return Response::json(array( 'libro' => $Libro ,'autor' => $Autor));
     	}	
 	}

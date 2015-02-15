@@ -16,6 +16,11 @@ Route::get('/', function()
 	return View::make('login.login');
 });
 
+Route::get('test',function(){
+	return Articulo::find(1)->articulo;
+	//return Libro::find(1)->articulos;
+});
+
 Route::post('login', 'AuthController@login');
 Route::get('logout', 'AuthController@logout');
 
