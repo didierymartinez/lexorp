@@ -17,7 +17,8 @@ Route::get('/', function()
 });
 
 Route::get('test',function(){
-	return Articulo::find(1)->articulo;
+	$Articulo = Articulo::find(1)->articulo;
+	return get_class($Articulo);
 	//return Libro::find(1)->articulos;
 });
 
@@ -32,6 +33,7 @@ Route::resource('/prestamos','PrestamosController');
 Route::post('prestamos/crearprestamo',array('as' => 'prestamos.crearprestamo', 'uses' => 'PrestamosController@crearprestamo'));
 
 Route::resource('/libros','LibrosController');
+Route::resource('/articulos','ArticulosController');
 //Route::get('/libros/get/{id}',array('as' => 'libros.get', 'uses' => 'LibrosController@get'));
 
 

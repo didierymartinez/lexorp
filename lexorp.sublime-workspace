@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"fun",
+				"function"
+			],
+			[
+				"id",
+				"idTipoArticulo"
+			],
+			[
+				"use",
+				"uses"
+			],
+			[
+				"s",
+				"script	Tag"
+			],
+			[
 				"fu",
 				"function"
 			],
@@ -16,26 +32,69 @@
 	"buffers":
 	[
 		{
-			"file": "app/controllers/PrestamosController.php",
-			"settings":
-			{
-				"buffer_size": 1926,
-				"line_ending": "Windows"
-			}
-		},
-		{
 			"file": "app/views/prestamos/create.blade.php",
 			"settings":
 			{
-				"buffer_size": 4374,
+				"buffer_size": 4372,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "app/database/seeds/LibrosSeeder.php",
+			"file": "public/js/prestamos.js",
 			"settings":
 			{
-				"buffer_size": 2801,
+				"buffer_size": 2602,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/controllers/ArticulosController.php",
+			"settings":
+			{
+				"buffer_size": 1223,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/routes.php",
+			"settings":
+			{
+				"buffer_size": 1750,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/database/migrations/2015_02_16_010630_Inventario.php",
+			"settings":
+			{
+				"buffer_size": 3250,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "<?php\n\nuse Illuminate\\Database\\Schema\\Blueprint;\nuse Illuminate\\Database\\Migrations\\Migration;\n\nclass Prestamos extends Migration {\n\n	/**\n	 * Run the migrations.\n	 *\n	 * @return void\n	 */\n	public function up()\n	{\n\n	}\n\n	/**\n	 * Reverse the migrations.\n	 *\n	 * @return void\n	 */\n	public function down()\n	{\n\n	}\n}",
+			"file": "app/database/migrations/2015_02_01_181111_Prestamos.php",
+			"file_size": 335,
+			"file_write_time": 130685311331965918,
+			"settings":
+			{
+				"buffer_size": 309,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/database/seeds/DatabaseSeeder.php",
+			"settings":
+			{
+				"buffer_size": 420,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/database/seeds/InventarioSeeder.php",
+			"settings":
+			{
+				"buffer_size": 982,
 				"line_ending": "Windows"
 			}
 		}
@@ -43,18 +102,91 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 392.0,
+		"height": 104.0,
 		"selected_items":
 		[
+			[
+				"artisan",
+				"Laravel Artisan Command"
+			],
+			[
+				"laravel",
+				"Laravel Artisan Command"
+			],
+			[
+				"genera",
+				"Laravel Generate: View"
+			],
+			[
+				"lara",
+				"Laravel Generate: View"
+			],
+			[
+				"generate",
+				"Laravel Generate: View"
+			],
+			[
+				"comi",
+				"Git: Commit"
+			],
+			[
+				"QU",
+				"Git: Quick Commit"
+			],
+			[
+				"ADD",
+				"Git: Add..."
+			],
+			[
+				"GITADD",
+				"Git: Add..."
+			],
+			[
+				"GIT",
+				"Git: Push"
+			],
+			[
+				"push",
+				"Git: Push"
+			],
+			[
+				"qui",
+				"Git: Quick Commit"
+			],
+			[
+				"git qu",
+				"Git: Quick Commit"
+			],
+			[
+				"git co",
+				"Git: Commit"
+			],
+			[
+				"git add",
+				"Git: Add..."
+			],
+			[
+				"git pu",
+				"Git: Push"
+			],
+			[
+				"git ",
+				"Git: Commit"
+			],
+			[
+				"git",
+				"Git: Status"
+			],
+			[
+				"git:co",
+				"Git: Commit"
+			]
 		],
 		"width": 400.0
 	},
 	"console":
 	{
-		"height": 433.0,
-		"history":
-		[
-		]
+		"height": 433.0
 	},
 	"distraction_free":
 	{
@@ -67,18 +199,49 @@
 	},
 	"file_history":
 	[
-		"/C/xampp/htdocs/lexorp/app/models/Prestamo.php",
-		"/C/xampp/htdocs/lexorp/public/js/prestamos.js",
+		"/C/xampp/htdocs/lexorp/app/database/seeds/ArticulosSeeder - copia.php",
 		"/C/xampp/htdocs/lexorp/app/routes.php",
 		"/C/xampp/htdocs/lexorp/app/database/migrations/2015_01_31_220253_Articulos.php",
 		"/C/xampp/htdocs/lexorp/app/models/Articulo.php",
-		"/C/xampp/htdocs/lexorp/app/controllers/UserController.php",
+		"/C/xampp/htdocs/lexorp/app/models/TipoArticulos.php",
+		"/C/xampp/htdocs/lexorp/app/database/seeds/LibrosSeeder.php",
+		"/C/xampp/htdocs/lexorp/app/database/seeds/ArticulosSeeder.php",
+		"/C/xampp/htdocs/lexorp/app/database/seeds/UserSeeder.php",
+		"/C/xampp/htdocs/lexorp/app/models/Libro.php",
+		"/C/xampp/htdocs/lexorp/app/database/seeds/DatabaseSeeder.php",
+		"/C/xampp/htdocs/lexorp/app/database/migrations/2015_02_01_181111_Prestamos.php",
+		"/C/xampp/htdocs/lexorp/app/controllers/PermisosController.php",
 		"/C/xampp/htdocs/lexorp/app/controllers/PrestamosController.php",
-		"/C/xampp/htdocs/lexorp/app/views/users/home.blade.php",
-		"/C/xampp/htdocs/lexorp/app/views/prestamos/home.blade.php",
-		"/C/xampp/htdocs/lexorp/app/models/User.php",
-		"/C/xampp/htdocs/lexorp/app/models/Role.php",
+		"/C/xampp/htdocs/lexorp/app/models/Autor.php",
+		"/C/xampp/htdocs/lexorp/public/js/prestamos.js",
+		"/C/xampp/htdocs/lexorp/app/controllers/LibrosController.php",
 		"/C/xampp/htdocs/lexorp/app/views/prestamos/create.blade.php",
+		"/C/xampp/htdocs/lexorp/app/database/migrations/2015_02_14_024319_inventario.php",
+		"/C/xampp/htdocs/lexorp/app/database/migrations/2015_02_14_023940_create_inventario.php",
+		"/C/xampp/htdocs/lexorp/app/models/Prestamo.php",
+		"/C/xampp/htdocs/lexorp/app/views/layouts/layout_base.blade.php",
+		"/C/xampp/htdocs/lexorp/app/controllers/UserController.php",
+		"/C/xampp/htdocs/lexorp/app/views/users/perfil.blade.php",
+		"/C/xampp/htdocs/lexorp/app/database/migrations/2015_01_31_215821_Libros.php",
+		"/C/xampp/htdocs/lexorp/app/database/seeds/TiposArticulosSeeder.php",
+		"/C/xampp/htdocs/lexorp/app/models/Libros.php",
+		"/C/xampp/htdocs/lexorp/app/views/role/create.blade.php",
+		"/C/xampp/htdocs/lexorp/app/controllers/RolesController.php",
+		"/C/xampp/htdocs/lexorp/app/views/users/createusuario.blade.php",
+		"/C/xampp/htdocs/lexorp/app/views/prestamos/home.blade.php",
+		"/C/xampp/htdocs/lexorp/app/views/login/login.blade.php",
+		"/C/xampp/htdocs/lexorp/app/views/users/create.blade.php",
+		"/C/xampp/htdocs/lexorp/app/database/migrations/2014_10_12_145910_Users.php",
+		"/C/xampp/htdocs/lexorp/app/views/users/users.blade.php",
+		"/C/xampp/htdocs/loginBasico/app/views/users/login.blade.php",
+		"/C/xampp/htdocs/loginBasico/app/views/users/register.blade.php",
+		"/C/xampp/htdocs/lexorp/app/database/seeds/RolesSeeder.php",
+		"/C/xampp/htdocs/lexorp/app/database/migrations/2014_10_12_150706_entrust_setup_tables.php",
+		"/C/xampp/htdocs/lexorp/app/models/User.php",
+		"/C/Users/dyma5_000/AppData/Roaming/Sublime Text 2/Packages/User/Package Control.sublime-settings",
+		"/C/Users/dyma5_000/AppData/Roaming/Sublime Text 2/Packages/Git/Git.sublime-settings",
+		"/C/Users/dyma5_000/AppData/Roaming/Sublime Text 2/Packages/User/Git.sublime-settings",
+		"/C/xampp/htdocs/lexorp/app/views/users/home.blade.php",
 		"/C/xampp/htdocs/proxel0.1/app/views/prestamos/create.blade.php",
 		"/C/xampp/htdocs/proxel0.1/app/views/layouts/layout_base.blade.php",
 		"/C/xampp/htdocs/proxel0.1/app/database/migrations/2014_10_12_150706_entrust_setup_tables.php",
@@ -103,7 +266,7 @@
 	],
 	"find":
 	{
-		"height": 23.0
+		"height": 34.0
 	},
 	"find_in_files":
 	{
@@ -117,8 +280,14 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"adicionarlibro",
-			"librosprestamo"
+			"pretamoGuardar",
+			"libro",
+			"totalLibros",
+			"libro",
+			"tiposarticulos",
+			"prestamo",
+			"yaexiste",
+			"mail"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -126,8 +295,10 @@
 		"regex": false,
 		"replace_history":
 		[
-			"adicionararticulo",
-			"articulosprestamo"
+			"Libro",
+			"totalArticulos",
+			"tipos_articulos",
+			"CantidadPrestamo"
 		],
 		"reverse": false,
 		"show_context": true,
@@ -138,53 +309,23 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 4,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "app/controllers/PrestamosController.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1926,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1354,
-								1354
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 540.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
 					"file": "app/views/prestamos/create.blade.php",
-					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4374,
+						"buffer_size": 4372,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1801,
-								1810
+								3996,
+								3996
 							]
 						],
 						"settings":
@@ -194,19 +335,72 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 450.0,
+						"translation.y": 1166.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "public/js/prestamos.js",
+					"settings":
+					{
+						"buffer_size": 2602,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								917,
+								917
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "app/database/seeds/LibrosSeeder.php",
-					"semi_transient": false,
+					"file": "app/controllers/ArticulosController.php",
 					"settings":
 					{
-						"buffer_size": 2801,
+						"buffer_size": 1223,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								774,
+								774
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 273.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/routes.php",
+					"settings":
+					{
+						"buffer_size": 1750,
 						"regions":
 						{
 						},
@@ -219,6 +413,113 @@
 						],
 						"settings":
 						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/database/migrations/2015_02_16_010630_Inventario.php",
+					"settings":
+					{
+						"buffer_size": 3250,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1584,
+								1584
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 570.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "app/database/migrations/2015_02_01_181111_Prestamos.php",
+					"settings":
+					{
+						"buffer_size": 309,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								304,
+								304
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "app/database/seeds/DatabaseSeeder.php",
+					"settings":
+					{
+						"buffer_size": 420,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								357,
+								357
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "app/database/seeds/InventarioSeeder.php",
+					"settings":
+					{
+						"buffer_size": 982,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								783,
+								783
+							]
+						],
+						"settings":
+						{
 							"syntax": "Packages/PHP/PHP.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
@@ -227,7 +528,6 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -235,11 +535,11 @@
 	],
 	"incremental_find":
 	{
-		"height": 23.0
+		"height": 0.0
 	},
 	"input":
 	{
-		"height": 0.0
+		"height": 31.0
 	},
 	"layout":
 	{
@@ -268,10 +568,13 @@
 	{
 		"height": 0.0
 	},
-	"project": "Proxel.sublime-project",
+	"output.git":
+	{
+		"height": 163.0
+	},
 	"replace":
 	{
-		"height": 42.0
+		"height": 62.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -290,24 +593,10 @@
 		],
 		"width": 0.0
 	},
-	"select_symbol":
-	{
-		"height": 0.0,
-		"selected_items":
-		[
-		],
-		"width": 0.0
-	},
-	"settings":
-	{
-	},
 	"show_minimap": true,
-	"show_open_files": true,
+	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
 	"side_bar_width": 337.0,
-	"status_bar_visible": true,
-	"template_settings":
-	{
-	}
+	"status_bar_visible": true
 }

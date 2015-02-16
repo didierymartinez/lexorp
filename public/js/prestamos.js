@@ -3,7 +3,7 @@ $(document).ready(function() {
 
 
 
-  $('#pretamoGuardar').on( 'click', function () {  
+  $('#prestamoGuardar').on( 'click', function () {  
     $.ajax({
         type: 'post',
         url: '../prestamos',
@@ -18,22 +18,22 @@ $(document).ready(function() {
   $('#adicionararticulo').on( 'click', function () {         
     $.ajax({
         type: 'get',
-        url: '../libros/get',
+        url: '../articulos/get',
         data: {id: $("#codigo").val()},
         success: function (data) {
             
             CantidadPrestamo = jQuery.grep(articulosPrestamo, function(value) {
-                return value.id == data.libro.id;
+                return value.id == data.Libro.id;
             });
 
             if (CantidadPrestamo.length == 0){
-                articulosPrestamo.push(data.libro);
+                articulosPrestamo.push(data.Libro);
                 $('#articulosprestamo tr').last().after(
-                  '<tr id="row_'+ data.libro.id +'">'+
-                    '<td>'+ data.libro.id +'</td>'+
-                    '<td>'+ data.libro.nombre +'</td>'+
+                  '<tr id="row_'+ data.Libro.id +'">'+
+                    '<td>'+ data.Libro.id +'</td>'+
+                    '<td>'+ data.Libro.nombre +'</td>'+
                     '<td>'+ data.autor.nombres + ' ' +data.autor.apellidos +'</td>'+
-                    '<td><a class="elimPrestamo" id="'+ data.libro.id +'"><span class="glyphicon glyphicon-trash"></span></a></td>'+
+                    '<td><a class="elimPrestamo" id="'+ data.Libro.id +'"><span class="glyphicon glyphicon-trash"></span></a></td>'+
                     '</tr>');
             }else{
                 $('.container .alert').alert('close');
@@ -44,7 +44,7 @@ $(document).ready(function() {
                     'data-dismiss="alert" aria-hidden="true">' + 
                     '&times;' + 
                     '</button>' + 
-                    'Ya se agregó el libro: ' + data.libro.nombre + 
+                    'Ya se agregó el Libro: ' + data.Libro.nombre + 
                     '</div>'
                 );
 
@@ -60,11 +60,11 @@ $(document).ready(function() {
                 articulosPrestamo = jQuery.grep(articulosPrestamo, function(value) {
                             return value.id != thisId;
                         });
-                $("#totalLibros").text(articulosPrestamo.length);
+                $("#totalArticulos").text(articulosPrestamo.length);
             });
 
             $("#codigo").val("")
-            $("#totalLibros").text(articulosPrestamo.length)
+            $("#totalArticulos").text(articulosPrestamo.length)
             
         },
 

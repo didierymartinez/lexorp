@@ -1,7 +1,7 @@
 @extends('layouts.layout_base')
  
 @section('title')
-    Crear Usuarios
+    Crear Prestamo
 @stop
 
 @section('head')
@@ -91,7 +91,7 @@
 <div class="row">
   <div class="col-lg-2">
     <div class="input-group">
-      <input type="text" class="form-control"  name="codigo" id="codigo" required autofocus placeholder="Buscar Libro...">
+      <input type="text" class="form-control"  name="codigo" id="codigo" required autofocus placeholder="Buscar...">
       <span class="input-group-btn">
         <button id="adicionararticulo" class="btn btn-default" type="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
       </span>
@@ -104,9 +104,9 @@
 
 
 <div class="col-lg-2">
-    <button id="pretamoGuardar" class="btn btn-primary" type="submit">
+    <button id="prestamoGuardar" class="btn btn-primary" type="submit">
         <span class="glyphicon glyphicon-book" aria-hidden="true"></span> Realizar Prestamo
-        <span id="totalLibros" class="badge">0</span>
+        <span id="totalArticulos" class="badge">0</span>
     </button> 
 </div>
 
