@@ -18,4 +18,9 @@ class Articulo extends Eloquent {
     {
     	return $this->hasMany('Item');
     }
+
+    public function movimientos()
+    {
+        return $this->hasManyThrough('Movimiento', 'Item','articulo_id','movimiento_id' );
+    }
 }

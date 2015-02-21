@@ -20,8 +20,11 @@ Route::get('test',function(){
 	//$Articulo = Articulo::find(1)->articulo;
 	//return get_class($Articulo);
 
-	$Movimiento = Movimiento::find(1)->movimiento;
-	return $Movimiento;
+	$Articulo = Articulo::find(1);
+	return $Articulo->movimientos;
+
+	//$Movimiento = Movimiento::find(1)->movimiento;
+	//return $Movimiento;
 
 	//return Libro::find(1)->articulos;
 });
