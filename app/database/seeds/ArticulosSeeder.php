@@ -5,6 +5,7 @@
     {
         DB::table('libros')->delete();
         DB::table('autores')->delete();
+        DB::table('inventario')->delete();
         DB::table('articulos')->delete();
 
         DB::table('tipos_articulos')->delete();

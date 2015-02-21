@@ -19,4 +19,15 @@ class Libro extends Eloquent {
     {
         return $this->hasOne('Autor', 'id', 'autor_id');
     }
+
+
+    protected static function boot() {
+        parent::boot();
+
+        static::created(function($Libro) { 
+	        
+	        $Libro->articulos()->save(new Articulo());
+
+        });
+    }
 }

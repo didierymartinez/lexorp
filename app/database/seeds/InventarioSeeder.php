@@ -26,7 +26,22 @@
             array('Tipo' => 'Devolucion'),
             array('Tipo' => 'Reserva'),
             array('Tipo' => 'Traslado')
-        ));            
+        ));   
+
+
+         $item1 = Item::create(array(
+                'placa' => '006172',
+                'articulo_id' => '1',
+                'estado_id' => '1'
+        ));
+
+        $entrada = Entrada::create(array(
+            'inventario_id' => $item1->id
+        )); 
+
+        $entrada->movimientos()->save(new Movimiento()); 
+
+               
     }
  
 }

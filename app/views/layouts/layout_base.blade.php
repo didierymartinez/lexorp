@@ -5,42 +5,13 @@
 <title>@yield('title')</title>
 @section('head')
 {{ HTML::style('bootstrap/css/bootstrap.css') }}
-{{ HTML::script('js/jquery.min.js') }}
-{{ HTML::script('bootstrap/js/bootstrap.min.js') }}
 {{ HTML::style('css/main.css')}}
+{{ HTML::script('js/jquery.min.js') }}
+{{ HTML::script('js/main.js') }}
+{{ HTML::script('bootstrap/js/bootstrap.min.js') }}
 @show
-<style type="text/css">
-  body {
-  margin-left:14%;
-  }
 
-  .sidebar-nav {
-  position:fixed;
-  z-index:10;
-  width:14%;
-  left:0px;
-  bottom:0;
-  top:52px; 
-  overflow:auto;
-  background-color: #e8e8e8;
-}
-
-.container{
-  margin-top: 60px;
-}
-
-
-</style>
-<script type="text/javascript">
-  
-  $(document).on('submit', '.deleteform', function(){
-      return confirm('Desea Eliminar Registro?');
-  });
-
-</script>
-</head>
 <body>
-<!-- navBar-->    
 <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
   <div class="navbar-header">
     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
@@ -78,93 +49,69 @@
     </ul>    
     <span class="navbar-text pull-right"> {{ Auth::user()->first_name; }}</span> 
   </div>
-</div><!-- /navBar-->
-
-<!-- leftMenu-->
-<div class="sidebar-nav">
-<br>
-
-<br>
-<br>
-
-
-
-
-
-
-<div class="block-menu" role="complementary">
-   
-<ul class="list-unstyled">
-  <li class="nav-header active"> <a href="#" data-toggle="collapse" data-target="#userMenu" class="collapsed"><i class="glyphicon glyphicon-user"></i> Usuarios <span class="caret"></span></a>
-    <ul class="list-unstyled collapse" id="userMenu" style="height: 0px;">
-      <li><a href="{{URL::to('createusuario')}}">Crear</a></li>
-      <li><a href="{{URL::to('roles')}}">Actualizar</a></li>
-      <li><a href="{{URL::to('roles')}}">Inactivar</a></li>
-      <li data-toggle="collapse" data-target="#userInfo"><a href="#glyphicons">Informes<span class="caret"></span></a>
-        <ul class="nav-list collapse" id="userInfo">
-          <li><a href="{{URL::to('users')}}">Prestamos</a></li>
-          <li><a href="{{URL::to('users')}}">Inactivos</a></li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-</ul>
-
-<ul class="list-unstyled">
-  <li class="nav-header active"> <a href="#" data-toggle="collapse" data-target="#bookMenu" class="collapsed"><i class="glyphicon glyphicon-th-list"></i> Libros <span class="caret"></span></a>
-    <ul class="list-unstyled collapse" id="bookMenu" style="height: 0px;">
-      <li><a href="{{URL::to('users')}}">Crear</a></li>
-      <li><a href="{{URL::to('roles')}}">Actualizar</a></li>
-      <li><a href="{{URL::to('roles')}}">Inactivar</a></li>
-      <li data-toggle="collapse" data-target="#booksInfo"><a href="#glyphicons">Informes<span class="caret"></span></a>
-        <ul class="nav-list collapse" id="booksInfo">
-          <li><a href="{{URL::to('users')}}">Prestamos</a></li>
-          <li><a href="{{URL::to('users')}}">Inactivos</a></li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-</ul>
-
-<ul class="list-unstyled">
-  <li class="nav-header active"> <a href="#" data-toggle="collapse" data-target="#tagsMenu" class="collapsed"><i class="glyphicon glyphicon-tags"></i> Tags <span class="caret"></span></a>
-    <ul class="list-unstyled collapse" id="tagsMenu" style="height: 0px;">
-      <li><a href="{{URL::to('users')}}">Crear</a></li>
-      <li><a href="{{URL::to('roles')}}">Actualizar</a></li>
-      <li><a href="{{URL::to('roles')}}">Inactivar</a></li>
-      <li data-toggle="collapse" data-target="#tagsInfo"><a href="#glyphicons">Informes<span class="caret"></span></a>
-        <ul class="nav-list collapse" id="tagsInfo">
-          <li><a href="{{URL::to('users')}}">Prestamos</a></li>
-          <li><a href="{{URL::to('users')}}">Inactivos</a></li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-</ul>
-
-<ul class="list-unstyled">
-  <li class="nav-header active"> <a href="#" data-toggle="collapse" data-target="#prestamoMenu" class="collapsed"><i class="glyphicon glyphicon-retweet"></i> Prestamos <span class="caret"></span></a>
-    <ul class="list-unstyled collapse" id="prestamoMenu" style="height: 0px;">
-      <li><a href="{{URL::to('prestamos')}}">Crear</a></li>
-      <li><a href="{{URL::to('roles')}}">Actualizar</a></li>
-      <li><a href="{{URL::to('roles')}}">Inactivar</a></li>
-      <li data-toggle="collapse" data-target="#prestamoInfo"><a href="#glyphicons">Informes<span class="caret"></span></a>
-        <ul class="nav-list collapse" id="prestamoInfo">
-          <li><a href="{{URL::to('users')}}">Prestamos</a></li>
-          <li><a href="{{URL::to('users')}}">Inactivos</a></li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-</ul>
-
-
-  </div>
-
 </div>
-<!-- leftMenu-->
 
-<!-- main-->
+<nav class="navbar navbar-default sidebar" role="navigation">
+    <div class="container-fluid">
+    
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-sidebar-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>      
+    </div>
+    
+    <div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Usuarios <span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a>
+          <ul class="dropdown-menu forAnimate" role="menu">
+            <li><a href="{{URL::to('createusuario')}}">Crear</a></li>
+            <li><a href="#">Modificar</a></li>
+            <li><a href="#">Reportar</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Informes</a></li>
+          </ul>
+        </li>          
+        <li ><a href="#">Libros<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-th-list"></span></a></li>        
+        <li ><a href="#">Tags<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-tags"></span></a></li>
+        
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Prestamos <span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-retweet"></span></a>
+          <ul class="dropdown-menu forAnimate" role="menu">
+            <li><a href="{{URL::to('prestamos')}}">Crear</a></li>
+            <li><a href="#">Modificar</a></li>
+            <li><a href="#">Reportar</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Informes</a></li>
+          </ul>
+        </li>
+
+        <li ><a href="#">Inventario<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-barcode"></span></a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Configuración <span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-cog"></span></a>
+          <ul class="dropdown-menu forAnimate" role="menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="main">
 <div class="container">
   @if(Session::has('message'))
   <div class="alert {{ Session::get('message')['type']  }} alert-dismissible" role="alert">
@@ -176,7 +123,9 @@
 
   @yield('content')
 </div>
-<!--/main-->
+
+</div>
+
 
 </body>
 </html>

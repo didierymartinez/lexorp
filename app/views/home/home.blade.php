@@ -1,252 +1,320 @@
-@extends('layouts.layout_base')
- 
-@section('title')
-    Home
-@stop
-
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>@yield('title')</title>
 @section('head')
-    @parent
-    	<style>
-            body{
-                margin-top: 60px;
-            }
-        </style>	
-@stop
+{{ HTML::style('bootstrap/css/bootstrap.css') }}
+{{ HTML::script('js/jquery.min.js') }}
+{{ HTML::script('bootstrap/js/bootstrap.min.js') }}
+{{ HTML::style('css/main.css')}}
+@show
+<style type="text/css">
+body,html{
+    height: 100%;
+  }
 
+  /* remove outer padding */
+  .main .row{
+    padding: 0px;
+    margin: 0px;
+  }
 
-@section('content')
+  /*Remove rounded coners*/
 
-<div>
-      	
-      <!-- column 2 -->	
-      <ul class="list-inline pull-right">
-         <li><a href="#"><i class="glyphicon glyphicon-cog"></i></a></li>
-         <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-comment"></i><span class="count">3</span></a><ul class="dropdown-menu" role="menu"><li><a href="#">1. Is there a way..</a></li><li><a href="#">2. Hello, admin. I would..</a></li><li><a href="#"><strong>All messages</strong></a></li></ul></li>
-         <li><a href="#"><i class="glyphicon glyphicon-user"></i></a></li>
-         <li><a title="Add Widget" data-toggle="modal" href="#addWidgetModal"><span class="glyphicon glyphicon-plus-sign"></span> Add Widget</a></li>
-      </ul>
-      <a href="#"><strong><i class="glyphicon glyphicon-dashboard"></i> My Dashboard</strong></a>  
-      
-      	<hr>
-      
-		<div class="row">
-           
-            
-          
-            <!-- center left-->	
-         	<div class="col-md-6">
-			  <div class="well">Inbox Messages <span class="badge pull-right">3</span></div>
-              
-              <hr>
-              
-              <div class="btn-group btn-group-justified">
-                <a href="#" class="btn btn-primary col-sm-3">
-                  <i class="glyphicon glyphicon-plus"></i><br>
-                  Service
-                </a>
-                <a href="#" class="btn btn-primary col-sm-3">
-                  <i class="glyphicon glyphicon-cloud"></i><br>
-                  Cloud
-                </a>
-                <a href="#" class="btn btn-primary col-sm-3">
-                  <i class="glyphicon glyphicon-cog"></i><br>
-                  Tools
-                </a>
-                <a href="#" class="btn btn-primary col-sm-3">
-                  <i class="glyphicon glyphicon-question-sign"></i><br>
-                  Help
-                </a>
-              </div>
-              
-              <hr>
-              
-              <div class="panel panel-default">
-                  <div class="panel-heading"><h4>Reports</h4></div>
-                  <div class="panel-body">
-                    
-                    <small>Success</small>
-                    <div class="progress">
-                      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100" style="width: 72%">
-                        <span class="sr-only">72% Complete</span>
-                      </div>
-                    </div>
-                    <small>Info</small>
-                    <div class="progress">
-                      <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
-                        <span class="sr-only">20% Complete</span>
-                      </div>
-                    </div>
-                    <small>Warning</small>
-                    <div class="progress">
-                      <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-                        <span class="sr-only">60% Complete (warning)</span>
-                      </div>
-                    </div>
-                    <small>Danger</small>
-                    <div class="progress">
-                      <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-                        <span class="sr-only">80% Complete</span>
-                      </div>
-                    </div>
+  nav.sidebar.navbar {
+    border-radius: 0px;
+  }
 
-                  </div><!--/panel-body-->
-              </div><!--/panel-->
-	
-			  <hr>              
+  nav.sidebar, .main{
+    -webkit-transition: margin 200ms ease-out;
+      -moz-transition: margin 200ms ease-out;
+      -o-transition: margin 200ms ease-out;
+      transition: margin 200ms ease-out;
+  }
 
-			  <!--tabs-->
-              <div class="container">
-                <div class="col-md-4">
-                <ul class="nav nav-tabs" id="myTab">
-                  <li class="active"><a href="#profile" data-toggle="tab">Profile</a></li>
-                  <li><a href="#messages" data-toggle="tab">Messages</a></li>
-                  <li><a href="#settings" data-toggle="tab">Settings</a></li>
-                </ul>
-                
-                <div class="tab-content">
-                  <div class="tab-pane active" id="profile">
-                    <h4><i class="glyphicon glyphicon-user"></i></h4>
-                    Lorem profile dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
-                    <p>Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis 
-                      dolor, in sagittis nisi.</p>
-                  </div>
-                  <div class="tab-pane" id="messages">
-                    <h4><i class="glyphicon glyphicon-comment"></i></h4>
-                    Message ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
-                    <p>Quisque mauris augu.</p>
-                  </div>
-                  <div class="tab-pane" id="settings">
-                    <h4><i class="glyphicon glyphicon-cog"></i></h4>
-                    Lorem settings dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
-                    <p>Quisque mauris augue, molestie.</p>
-                  </div>
-                </div>
-              	</div>
-              </div>  
-               
-              <!--/tabs-->
-              
-              <hr>
-              
-              <div class="panel panel-default">
-                  <div class="panel-heading"><h4>New Requests</h4></div>
-                  <div class="panel-body">
-                    <div class="list-group">
-                    <a href="#" class="list-group-item active">Hosting virtual mailbox serv..</a>
-                    <a href="#" class="list-group-item">Dedicated server doesn't..</a>
-                    <a href="#" class="list-group-item">RHEL 6 install on new..</a>
-                    </div>
-                  </div>
-              </div>
-   
-          	</div><!--/col-->
-        	<div class="col-md-6">
-				<div class="panel panel-default">
-                  <div class="panel-heading"><h4>Notices</h4></div>
-                  <div class="panel-body">
-                    
-                  <div class="alert alert-info in" style="display: none;">
-                    <button type="button" class="close" data-dismiss="alert">×</button>
-                    This is a dismissable alert.. just sayin'.
-                  </div>
+  /* Add gap to nav and right windows.*/
+  .main{
+    padding: 10px 10px 0 10px;
+  }
 
-                  This is a dashboard-style layout that uses Bootstrap 3. You can use this template as a starting point to create something more unique.
-                  <br><br>
-                  Visit the Bootstrap Playground at <a href="http://bootply.com">Bootply</a> to tweak this layout or discover more useful code snippets.
-                  </div>
-              	</div>
-              
-                <table class="table table-striped">
-                      <thead>
-                        <tr><th>Visits</th><th>ROI</th><th>Source</th></tr>
-                      </thead>
-                      <tbody>
-                        <tr><td>45</td><td>2.45%</td><td>Direct</td></tr>
-                        <tr><td>289</td><td>56.2%</td><td>Referral</td></tr>
-                        <tr><td>98</td><td>25%</td><td>Type</td></tr>
-                        <tr><td>..</td><td>..</td><td>..</td></tr>
-                        <tr><td>..</td><td>..</td><td>..</td></tr>
-                      </tbody>
-               	</table>
-              
-              	<div class="panel panel-default">
-                	<div class="panel-heading">
-                      	<div class="panel-title">
-                  		<i class="glyphicon glyphicon-wrench pull-right"></i>
-                      	<h4>Post Request</h4>
-                      	</div>
-                	</div>
-                	<div class="panel-body">
+  /* .....NavBar: Icon only with coloring/layout.....*/
 
-                      <form class="form form-vertical">
-                       
-                        <div class="control-group">
-                          <label>Name</label>
-                          <div class="controls">
-                           <input type="text" class="form-control" placeholder="Enter Name">
-                          </div>
-                        </div>      
-                        
-                        <div class="control-group">
-                          <label>Message</label>
-                          <div class="controls">
-                          	<textarea class="form-control"></textarea>
-                          </div>
-                        </div> 
-                             
-                        <div class="control-group">
-                          <label>Category</label>
-                          <div class="controls">
-                             <select class="form-control"><option>options</option></select>
-                          </div>
-                        </div>    
-                        
-                        <div class="control-group">
-                          	<label></label>
-                        	<div class="controls">
-                        	<button type="submit" class="btn btn-primary">
-                              Post
-                            </button>
-                        	</div>
-                        </div>   
-                        
-                      </form>
-                
-                
-                  </div><!--/panel content-->
-                </div><!--/panel-->
-              
-              	<div class="panel panel-default">
-                  <div class="panel-heading"><div class="panel-title"><h4>Engagement</h4></div></div>
-                  <div class="panel-body">	
-                   	<div class="col-xs-4 text-center"><img src="http://placehold.it/80/BBBBBB/FFF" class="img-circle img-responsive"></div>
-                    <div class="col-xs-4 text-center"><img src="http://placehold.it/80/EFEFEF/555" class="img-circle img-responsive"></div>
-                    <div class="col-xs-4 text-center"><img src="http://placehold.it/80/EEEEEE/222" class="img-circle img-responsive"></div>
-                  </div>
-               </div><!--/panel-->
-              
-			</div><!--/col-span-6-->
-     
-      </div><!--/row-->
-      
-      <hr>
-      
-      <a href="#"><strong><i class="glyphicon glyphicon-comment"></i> Discussions</strong></a>  
-      
-      <hr>
-      
-      <div class="row">
-        <div class="col-md-12">
-          <ul class="list-group">
-            <li class="list-group-item"><a href="#"><i class="glyphicon glyphicon-flash"></i> <small>(3 mins ago)</small> The 3rd page reports don't contain any links. Does anyone know why..</a></li>
-            <li class="list-group-item"><a href="#"><i class="glyphicon glyphicon-flash"></i> <small>(1 hour ago)</small> Hi all, I've just post a report that show the relationship betwe..</a></li>
-            <li class="list-group-item"><a href="#"><i class="glyphicon glyphicon-heart"></i> <small>(2 hrs ago)</small> Paul. That document you posted yesterday doesn't seem to contain the over..</a></li>
-            <li class="list-group-item"><a href="#"><i class="glyphicon glyphicon-heart-empty"></i> <small>(4 hrs ago)</small> The map service on c243 is down today. I will be fixing the..</a></li>
-            <li class="list-group-item"><a href="#"><i class="glyphicon glyphicon-heart"></i> <small>(yesterday)</small> I posted a new document that shows how to install the services layer..</a></li>
-            <li class="list-group-item"><a href="#"><i class="glyphicon glyphicon-flash"></i> <small>(yesterday)</small> ..</a></li>
+  /*small/medium side display*/
+  @media (min-width: 768px) {
+
+    /*Allow main to be next to Nav*/
+    .main{
+      position: absolute;
+      width: calc(100% - 40px); /*keeps 100% minus nav size*/
+      margin-left: 40px;
+      float: right;
+    }
+
+    /*lets nav bar to be showed on mouseover*/
+    nav.sidebar:hover + .main{
+      margin-left: 200px;
+    }
+
+    /*Center Brand*/
+    nav.sidebar.navbar.sidebar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
+      margin-left: 0px;
+    }
+    /*Center Brand*/
+    nav.sidebar .navbar-brand, nav.sidebar .navbar-header{
+      text-align: center;
+      width: 100%;
+      margin-left: 0px;
+    }
+
+    /*Center Icons*/
+    nav.sidebar a{
+      padding-right: 13px;
+    }
+
+    /*adds border top to first nav box */
+    nav.sidebar .navbar-nav > li:first-child{
+      border-top: 1px #e5e5e5 solid;
+    }
+
+    /*adds border to bottom nav boxes*/
+    nav.sidebar .navbar-nav > li{
+      border-bottom: 1px #e5e5e5 solid;
+    }
+
+    /* Colors/style dropdown box*/
+    nav.sidebar .navbar-nav .open .dropdown-menu {
+      position: static;
+      float: none;
+      width: auto;
+      margin-top: 0;
+      background-color: transparent;
+      border: 0;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+    }
+
+    /*allows nav box to use 100% width*/
+    nav.sidebar .navbar-collapse, nav.sidebar .container-fluid{
+      padding: 0 0px 0 0px;
+    }
+
+    /*colors dropdown box text */
+    .navbar-inverse .navbar-nav .open .dropdown-menu>li>a {
+      color: #777;
+    }
+
+    /*gives sidebar width/height*/
+    nav.sidebar{
+      width: 200px;
+      height: 100%;
+      margin-left: -160px;
+      float: left;
+      margin-bottom: 0px;
+    }
+
+    /*give sidebar 100% width;*/
+    nav.sidebar li {
+      width: 100%;
+    }
+
+    /* Move nav to full on mouse over*/
+    nav.sidebar:hover{
+      margin-left: 0px;
+    }
+    /*for hiden things when navbar hidden*/
+    .forAnimate{
+      opacity: 0;
+    }
+  }
+
+  /* .....NavBar: Fully showing nav bar..... */
+
+  @media (min-width: 1330px) {
+
+    /*Allow main to be next to Nav*/
+    .main{
+      width: calc(100% - 200px); /*keeps 100% minus nav size*/
+      margin-left: 200px;
+    }
+
+    /*Show all nav*/
+    nav.sidebar{
+      margin-left: 0px;
+      float: left;
+    }
+    /*Show hidden items on nav*/
+    nav.sidebar .forAnimate{
+      opacity: 1;
+    }
+  }
+
+  nav.sidebar .navbar-nav .open .dropdown-menu>li>a:hover, nav.sidebar .navbar-nav .open .dropdown-menu>li>a:focus {
+    color: #CCC;
+    background-color: transparent;
+  }
+
+  nav:hover .forAnimate{
+    opacity: 1;
+  }
+  section{
+    padding-left: 15px;
+  }
+.container{
+  margin-top: 60px;
+}
+
+</style>
+<script type="text/javascript">
+  
+  $(document).on('submit', '.deleteform', function(){
+      return confirm('Desea Eliminar Registro?');
+  });
+
+    function htmlbodyHeightUpdate(){
+    
+    var height3 = $( window ).height()
+    var height1 = $('.nav').height()+50
+
+    height2 = $('.main').height()
+    if(height2 > height3){
+      $('html').height(Math.max(height1,height3,height2)+10);
+      $('body').height(Math.max(height1,height3,height2)+10);
+    }
+    else
+    {
+      $('html').height(Math.max(height1,height3,height2));
+      $('body').height(Math.max(height1,height3,height2));
+    }
+    
+  }
+  $(document).ready(function () {
+    htmlbodyHeightUpdate()
+    $( window ).resize(function() {
+      htmlbodyHeightUpdate()
+    });
+    $( window ).scroll(function() {
+      height2 = $('.main').height()
+        htmlbodyHeightUpdate()
+    });
+  });
+</script>
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="{{URL::to('/home')}}"><span class="glyphicon glyphicon-home"></span>  </a>     
+  </div>      
+
+  <div class="collapse navbar-collapse">
+    <ul class="nav navbar-nav navbar-right">
+      @if (Auth::user()->sys)                    
+      <li class="dropdown {{ (Request::is('admin/user*|admin/role*') ? ' active' : '') }}">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="{{{ URL::to('admin/user') }}}">
+          <span class="glyphicon glyphicon-wrench"></span> Sistema<span class="caret"></span>
+        </a>
+      <ul class="dropdown-menu">
+        <li class="dropdown-submenu pull-left">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Usuarios Sistema</a>
+          <ul class="dropdown-menu">
+              @if(Entrust::can('ver_usuarios'))
+              <li><a href="{{URL::to('users')}}">Usuarios</a></li>
+              @endif
+              @if(Entrust::can('ver_roles'))
+              <li><a href="{{URL::to('roles')}}">Roles</a></li>
+              @endif
           </ul>
-        </div>
-      </div>
-  	</div>
+        </li>
+      </ul>
+      </li>
+      @endif            
+      <li class="pull-right"><a href="{{URL::to('logout')}}"><span class="glyphicon glyphicon-log-out"></span> Salir</a></li>           
+    </ul>    
+    <span class="navbar-text pull-right"> {{ Auth::user()->first_name; }}</span> 
+  </div>
+</div>
 
-@stop
+<nav class="navbar navbar-default sidebar" role="navigation">
+    <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-sidebar-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>      
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Usuarios <span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a>
+          <ul class="dropdown-menu forAnimate" role="menu">
+            <li><a href="{{URL::to('createusuario')}}">Crear</a></li>
+            <li><a href="#">Modificar</a></li>
+            <li><a href="#">Reportar</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Informes</a></li>
+          </ul>
+        </li>          
+        <li ><a href="#">Libros<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-th-list"></span></a></li>        
+        <li ><a href="#">Tags<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-tags"></span></a></li>
+        
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Prestamos <span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-retweet"></span></a>
+          <ul class="dropdown-menu forAnimate" role="menu">
+            <li><a href="{{URL::to('prestamos')}}">Crear</a></li>
+            <li><a href="#">Modificar</a></li>
+            <li><a href="#">Reportar</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Informes</a></li>
+          </ul>
+        </li>
+
+        <li ><a href="#">Inventario<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-barcode"></span></a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Configuración <span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-cog"></span></a>
+          <ul class="dropdown-menu forAnimate" role="menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="main">
+<div class="container">
+  @if(Session::has('message'))
+  <div class="alert {{ Session::get('message')['type']  }} alert-dismissible" role="alert">
+  <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+  <strong>{{ Session::get('message')["title"]  }}</strong> {{ Session::get('message')["message"]  }}
+  </div>
+  @endif
+
+
+  @yield('content')
+</div>
+
+</div>
+
+</body>
+</html>

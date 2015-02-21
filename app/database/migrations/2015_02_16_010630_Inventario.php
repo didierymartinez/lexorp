@@ -15,12 +15,12 @@ class Inventario extends Migration {
 
 		Schema::create('tipos_estado_inventario',function($table){
 			$table->increments('id')->unsigned();
-			$table->string('Tipo');
+			$table->string('Tipo')->unique();
 		});	
 
 		Schema::create('tipos_movimientos',function($table){
 			$table->increments('id')->unsigned();
-			$table->string('Tipo');
+			$table->string('Tipo')->unique();
 		});	
 
 
@@ -37,12 +37,14 @@ class Inventario extends Migration {
 			$table->timestamps();
 		});	
 
+
+
+
 		Schema::create('movimientos',function($table){
 			$table->increments('id')->unsigned();
-			$table->integer('inventario_id')->unsigned();
-			$table->foreign('inventario_id')->references('id')->on('inventario');
-			$table->integer('tipo_movimiento_id')->unsigned();
-			$table->foreign('tipo_movimiento_id')->references('id')->on('tipos_movimientos');
+			$table->integer('movimiento_id')->unsigned();
+			$table->string('movimiento_type');
+			$table->foreign('movimiento_type')->references('Tipo')->on('tipos_movimientos');
 			$table->timestamps();
 		});	
 
@@ -55,14 +57,14 @@ class Inventario extends Migration {
 	        $table->foreign('usuario_id')->references('id')->on('users');
 			$table->timestamps();
 		});
-/*
+
 		Schema::create('entradas',function($table){
 			$table->increments('id')->unsigned();
 			$table->integer('inventario_id')->unsigned();
 			$table->foreign('inventario_id')->references('id')->on('inventario');
 			$table->timestamps();
 		});	
-
+/*
 		Schema::create('salidas',function($table){
 			$table->increments('id')->unsigned();
 			$table->integer('inventario_id')->unsigned();

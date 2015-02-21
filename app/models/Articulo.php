@@ -13,4 +13,9 @@ class Articulo extends Eloquent {
     {
         return $this->morphTo();
     }
+
+    public function Items()
+    {
+    	return $this->hasMany('Item');
+    }
 }

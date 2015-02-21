@@ -1,161 +1,153 @@
-.dropdown-submenu {
-    position: relative;
-}
+body,html{
+    height: 100%;
+  }
 
-.dropdown-submenu>.dropdown-menu {
-    top: 0;
-    left: 100%;
-    margin-top: -6px;
-    margin-left: -1px;
-    -webkit-border-radius: 0 6px 6px 6px;
-    -moz-border-radius: 0 6px 6px;
-    border-radius: 0 6px 6px 6px;
-}
+  /* remove outer padding */
+  .main .row{
+    padding: 0px;
+    margin: 0px;
+  }
 
-.dropdown-submenu:hover>.dropdown-menu {
-    display: block;
-}
+  /*Remove rounded coners*/
 
-.dropdown-submenu>a:after {
-    display: block;
-    content: " ";
-    float: right;
-    width: 0;
-    height: 0;
-    border-color: transparent;
-    border-style: solid;
-    border-width: 5px 0 5px 5px;
-    border-left-color: #ccc;
-    margin-top: 5px;
-    margin-right: -10px;
-}
+  nav.sidebar.navbar {
+    border-radius: 0px;
+  }
 
-.dropdown-submenu.pull-left>a:after {
-    display: block;
-    content: " ";
-    float: left;
-    width: 0;
-    height: 0;
-    border-color: transparent;
-    border-style: solid;
-    border-right: 7px solid #ccc;
-    margin-top: 5px;
-    margin-left: -15px;
-}
+  nav.sidebar, .main{
+    -webkit-transition: margin 200ms ease-out;
+      -moz-transition: margin 200ms ease-out;
+      -o-transition: margin 200ms ease-out;
+      transition: margin 200ms ease-out;
+  }
 
-.dropdown-submenu:hover>a:after {
-    border-left-color: #fff;
-}
+  /* Add gap to nav and right windows.*/
+  .main{
+    padding: 10px 10px 0 10px;
+  }
 
-.dropdown-submenu.pull-left {
-    float: none;
-}
+  /* .....NavBar: Icon only with coloring/layout.....*/
 
-.dropdown-submenu.pull-left>.dropdown-menu {
-    left: -100%;
-    margin-left: -5%;
-    right: 100%;
-    -webkit-border-radius: 6px 0 6px 6px;
-    -moz-border-radius: 6px 0 6px 6px;
-    border-radius: 6px 0 6px 6px;
-}
+  /*small/medium side display*/
+  @media (min-width: 768px) {
 
+    /*Allow main to be next to Nav*/
+    .main{
+      position: absolute;
+      width: calc(100% - 40px); /*keeps 100% minus nav size*/
+      margin-left: 40px;
+      float: right;
+    }
 
-}.block-menu.affix {
-    position: static;
-}
-@media (min-width:768px) {
-    .block-menu {
+    /*lets nav bar to be showed on mouseover*/
+    nav.sidebar:hover + .main{
+      margin-left: 200px;
+    }
+
+    /*Center Brand*/
+    nav.sidebar.navbar.sidebar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
+      margin-left: 0px;
+    }
+    /*Center Brand*/
+    nav.sidebar .navbar-brand, nav.sidebar .navbar-header{
+      text-align: center;
+      width: 100%;
+      margin-left: 0px;
+    }
+
+    /*Center Icons*/
+    nav.sidebar a{
+      padding-right: 13px;
+    }
+
+    /*adds border top to first nav box */
+    nav.sidebar .navbar-nav > li:first-child{
+      border-top: 1px #e5e5e5 solid;
+    }
+
+    /*adds border to bottom nav boxes*/
+    nav.sidebar .navbar-nav > li{
+      border-bottom: 1px #e5e5e5 solid;
+    }
+
+    /* Colors/style dropdown box*/
+    nav.sidebar .navbar-nav .open .dropdown-menu {
+      position: static;
+      float: none;
+      width: auto;
+      margin-top: 0;
+      background-color: transparent;
+      border: 0;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+    }
+
+    /*allows nav box to use 100% width*/
+    nav.sidebar .navbar-collapse, nav.sidebar .container-fluid{
+      padding: 0 0px 0 0px;
+    }
+
+    /*colors dropdown box text */
+    .navbar-inverse .navbar-nav .open .dropdown-menu>li>a {
+      color: #777;
+    }
+
+    /*gives sidebar width/height*/
+    nav.sidebar{
+      width: 200px;
+      height: 100%;
+      margin-left: -160px;
+      float: left;
+      margin-bottom: 0px;
+    }
+
+    /*give sidebar 100% width;*/
+    nav.sidebar li {
+      width: 100%;
+    }
+
+    /* Move nav to full on mouse over*/
+    nav.sidebar:hover{
+      margin-left: 0px;
+    }
+    /*for hiden things when navbar hidden*/
+    .forAnimate{
+      opacity: 0;
+    }
+  }
+
+  /* .....NavBar: Fully showing nav bar..... */
+
+  @media (min-width: 1330px) {
+
+    /*Allow main to be next to Nav*/
+    .main{
+      width: calc(100% - 200px); /*keeps 100% minus nav size*/
+      margin-left: 200px;
+    }
+
+    /*Show all nav*/
+    nav.sidebar{
+      margin-left: 0px;
+      float: left;
+    }
+    /*Show hidden items on nav*/
+    nav.sidebar .forAnimate{
+      opacity: 1;
+    }
+  }
+
+  nav.sidebar .navbar-nav .open .dropdown-menu>li>a:hover, nav.sidebar .navbar-nav .open .dropdown-menu>li>a:focus {
+    color: #CCC;
+    background-color: transparent;
+  }
+
+  nav:hover .forAnimate{
+    opacity: 1;
+  }
+  section{
     padding-left: 15px;
-    margin-top: -40px;
-}
-}.bs-docs-sidenav {
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-.block-menu ul>li>a {
-    display: block;
-    padding: 4px 20px;
-    font-size: 15px;
-    font-weight: 500;
-    color: #222;
-}
-
-.block-menu ul{
-    list-style: none;
-}
-
-.block-menu ul>li>a:hover, .block-menu ul>li>a:focus {
-    padding-left: 19px;
-    color: #999;
-    text-decoration: none;
-    background-color: transparent;
-    border-left: 1px solid #999;
-}
-.block-menu ul>.active>a, .block-menu ul>.active:hover>a, .block-menu ul>.active:focus>a {
-    padding-left: 18px;
-    font-weight: 700;
-    color: #222;
-    background-color: transparent;
-    border-left: 2px solid #222;
-}
-.block-menu .nav .nav {
-    display: none;
-    padding-bottom: 10px;
-}
-.block-menu .nav .nav>li>a {
-    padding-top: 1px;
-    padding-bottom: 1px;
-    padding-left: 30px;
-    font-size: 12px;
-    font-weight: 400;
-}
-.block-menu .nav .nav>li>a:hover, .block-menu .nav .nav>li>a:focus {
-    padding-left: 29px;
-}
-.block-menu .nav .nav>.active>a, .block-menu .nav .nav>.active:hover>a, .block-menu .nav .nav>.active:focus>a {
-    padding-left: 28px;
-    font-weight: 500;
-}
-.back-to-top, .bs-docs-theme-toggle {
-    display: none;
-    padding: 4px 10px;
-    margin-top: 10px;
-    margin-left: 10px;
-    font-size: 12px;
-    font-weight: 500;
-    color: #999;
-}
-.back-to-top:hover, .bs-docs-theme-toggle:hover {
-    color: #666;
-    text-decoration: none;
-}
-.bs-docs-theme-toggle {
-    margin-top: 0;
-}
-@media (min-width:768px) {
-    .back-to-top, .bs-docs-theme-toggle {
-    display: block;
-}
-}@media (min-width:992px) {
-    .block-menu .nav>.active>ul {
-    display: block;
-}
-.block-menu.affix, .block-menu.affix-bottom {
-    width: 213px;
-}
-.block-menu.affix {
-    position: fixed;
-    top: 20px;
-}
-.block-menu.affix-bottom {
-    position: absolute;
-}
-.block-menu.affix-bottom .bs-docs-sidenav, .block-menu.affix .bs-docs-sidenav {
-    margin-top: 0;
-    margin-bottom: 0;
-}
-}@media (min-width:1200px) {
-    .block-menu.affix-bottom, .block-menu.affix {
-    width: 263px;
+  }
+.container{
+  margin-top: 60px;
 }

@@ -23,10 +23,6 @@
                 <button class="btn btn-default btn-block" type="submit">
                 <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> 
                     Ingresar</button>
-                <label class="checkbox pull-left">
-                    <input type="checkbox" value="remember-me">
-                    Recordar
-                </label>
                 </form>
                 <br>                                
                 
