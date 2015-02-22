@@ -8,8 +8,8 @@ class Item extends Eloquent {
 	 */
 	protected $table = 'Inventario';
 
-	public function articulo()
-	{
-		return belongsTo('Articulo');
-	}
+	public function Articulo()
+    {
+        return $this->belongsTo('Articulo');
+    }
 }

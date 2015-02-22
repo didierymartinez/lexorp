@@ -46,10 +46,8 @@ class ArticulosController extends \BaseController {
 		if(Request::ajax()){
 
 	        $Articulo = Articulo::find(Input::get('id'))->articulo;
-
-	        $Autor = $Articulo->autor;
 	        
-	        return Response::json(array( get_class($Articulo) => $Articulo ,'autor' => $Autor));
+	        return Response::json(array( get_class($Articulo) => $Articulo));
     	}			
 	}
 

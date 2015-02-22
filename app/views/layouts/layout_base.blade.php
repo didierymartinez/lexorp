@@ -66,45 +66,36 @@
     <div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="active"><a href="#">Home<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
+        
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Usuarios <span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a>
           <ul class="dropdown-menu forAnimate" role="menu">
             <li><a href="{{URL::to('createusuario')}}">Crear</a></li>
-            <li><a href="#">Modificar</a></li>
-            <li><a href="#">Reportar</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Informes</a></li>
-          </ul>
-        </li>          
-        <li ><a href="#">Libros<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-th-list"></span></a></li>        
-        <li ><a href="#">Tags<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-tags"></span></a></li>
-        
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Prestamos <span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-retweet"></span></a>
-          <ul class="dropdown-menu forAnimate" role="menu">
-            <li><a href="{{URL::to('prestamos')}}">Crear</a></li>
-            <li><a href="#">Modificar</a></li>
-            <li><a href="#">Reportar</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Informes</a></li>
           </ul>
         </li>
 
-        <li ><a href="#">Inventario<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-barcode"></span></a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Biblioteca <span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-book"></span></a>
+          <ul class="dropdown-menu forAnimate" role="menu">
+            <li><a href="{{URL::to('createusuario')}}"><span style="font-size:16px;" class="glyphicon glyphicon-book"></span> Libros</a></li>
+            <li><a href="{{URL::to('createusuario')}}"><span style="font-size:16px;" class="glyphicon glyphicon-barcode"></span> Inventario</a></li>
+          </ul>
+        </li>
+         
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Prestamos <span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-retweet"></span></a>
+          <ul class="dropdown-menu forAnimate" role="menu">
+            <li><a href="{{URL::to('prestamos')}}">Crear</a></li>                        
+          </ul>
+        </li>
+        
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Configuración <span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-cog"></span></a>
           <ul class="dropdown-menu forAnimate" role="menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
+            <li><a href="#">Roles</a></li>
+            <li><a href="./users/get">Usuarios Sistema</a></li>
             <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
+            <li><a href="#">Aplicación</a></li>            
           </ul>
         </li>
       </ul>

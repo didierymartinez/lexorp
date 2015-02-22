@@ -1,8 +1,6 @@
 $(document).ready(function() {
   articulosPrestamo = [];
 
-
-
   $('#prestamoGuardar').on( 'click', function () {  
     $.ajax({
         type: 'post',
@@ -15,12 +13,15 @@ $(document).ready(function() {
     });
   });
 
+
   $('#adicionararticulo').on( 'click', function () {         
     $.ajax({
-        type: 'get',
-        url: '../articulos/get',
+        type: 'post',
+        url: '../prestamos/buscarArticulo',
         data: {id: $("#codigo").val()},
         success: function (data) {
+
+            debugger;
             
             CantidadPrestamo = jQuery.grep(articulosPrestamo, function(value) {
                 return value.id == data.Libro.id;

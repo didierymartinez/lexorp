@@ -19,11 +19,7 @@ class UserController extends \BaseController {
 	 */
 	public function index()
 	{
-		$users = User::where('sys','!=','1')->get();			
-        foreach($users as $user){
-            $user['rol'] = $user->roles()->first();
-        }
-        return View::make('users.users', array('users' => $users));
+		return View::make('users.home');
 	}
 
 
@@ -100,6 +96,12 @@ class UserController extends \BaseController {
 		if(Request::ajax()){
 	        $users = User::where('identificacion','=',Input::get('identificacion'))->get()->first();
 	        return Response::json(array('user' => $users ));
+    	}else{
+			$users = User::where('sys','!=','1')->get();			
+	        foreach($users as $user){
+	            $user['rol'] = $user->roles()->first();
+	        }
+	        return View::make('users.users', array('users' => $users));    		
     	}		
 	}
 
