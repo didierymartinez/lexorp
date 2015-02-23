@@ -9,7 +9,13 @@ class LibrosController extends \BaseController {
 	 */
 	public function index()
 	{
-		return View::make('libros.home');
+		$Autores = Autor::orderBy('nombres')->get();
+		$Autores = $Autores->lists('NombreCompleto', 'id');
+		$editoriales = Editorial::orderBy('nombre')->get();			
+		$editoriales = $editoriales->lists('nombre', 'id');	
+		array_unshift($editoriales, '' );
+		return View::make('libros.libros',array('Autores' => $Autores, 'Editoriales' => $editoriales, 'libros' => Libro::all()));
+
 	}
 
 
@@ -20,7 +26,12 @@ class LibrosController extends \BaseController {
 	 */
 	public function create()
 	{
-		//
+		$Autores = Autor::orderBy('nombres')->get();
+		$Autores = $Autores->lists('NombreCompleto', 'id');
+		$editoriales = Editorial::orderBy('nombre')->get();			
+		$editoriales = $editoriales->lists('nombre', 'id');	
+		array_unshift($editoriales, '' );
+		return View::make('libros.create',array('Autores' => $Autores, 'Editoriales' => $editoriales));
 	}
 
 
@@ -47,6 +58,7 @@ class LibrosController extends \BaseController {
 
 	        $Libro = Articulo::find(Input::get('id'))->articulo;
 	        $Autor = $Libro->autor;
+
 	        return Response::json(array( 'libro' => $Libro ,'autor' => $Autor));
     	}	
 	}

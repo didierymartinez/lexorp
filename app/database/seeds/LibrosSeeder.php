@@ -14,6 +14,28 @@
             'apellidos' => 'Piketty'
         ));
 
+
+       DB::table('autores')->insert(array(
+            array('nombres' => 'Spiegel','apellidos' => 'Murray R'),
+            array('nombres' => 'Carl Barnett','apellidos' => 'Allendoerfer'),
+            array('nombres' => 'Fabio','apellidos' => 'Hernández Díaz'),
+            array('nombres' => 'Harald','apellidos' => 'Isenstein'),
+            array('nombres' => 'Inés','apellidos' => 'Beyer'),
+            array('nombres' => 'Roy','apellidos' => 'Richards'),
+            array('nombres' => 'Lucia','apellidos' => 'Milande'),
+            array('nombres' => 'Jean','apellidos' => 'Cocteau'
+            )
+        ));
+
+        DB::table('editoriales')->insert(array(
+            array('nombre' => 'ABC DIDACTICA'),
+            array('nombre' => 'ACTIVIDAD GLOBAL'),
+            array('nombre' => 'THORS LTDA'),
+            array('nombre' => 'CATORSE S.C.S'),
+            array('nombre' => 'DISTRIPESS LTDA '),
+            array('nombre' => 'EDITORIAL OVEJA NEGRA')
+        ));
+
         $Libro1 = Libro::create(array(
                 'nombre' => 'Cien años de soledad',
                 'autor_id' => $autor1->id,

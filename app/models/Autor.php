@@ -7,4 +7,9 @@ class Autor extends Eloquent {
 	 * @var string
 	 */
 	protected $table = 'autores';
+
+	public function getNombreCompletoAttribute()
+	{
+	    return $this->attributes['nombres'] .' '. $this->attributes['apellidos'];
+	}
 }

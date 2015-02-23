@@ -19,6 +19,12 @@ class Libros extends Migration {
 			$table->timestamps();		
 		});
 
+		Schema::create('editoriales',function($table){
+			$table->increments('id')->unsigned();
+			$table->string('nombre');
+			$table->timestamps();		
+		});
+
 		Schema::create('libros',function($table){
 			$table->increments('id')->unsigned();
 			$table->string('nombre');

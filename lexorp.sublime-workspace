@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"font",
+				"font-size"
+			],
+			[
+				"nom",
+				"nombre"
+			],
+			[
+				"h",
+				"h3	Tag"
+			],
+			[
 				"fun",
 				"function"
 			],
@@ -32,70 +44,75 @@
 	"buffers":
 	[
 		{
-			"file": "app/views/prestamos/create.blade.php",
+			"file": "app/controllers/LibrosController.php",
 			"settings":
 			{
-				"buffer_size": 4372,
+				"buffer_size": 1897,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "public/js/prestamos.js",
+			"file": "app/views/libros/create.blade.php",
 			"settings":
 			{
-				"buffer_size": 2602,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "app/controllers/ArticulosController.php",
-			"settings":
-			{
-				"buffer_size": 1223,
+				"buffer_size": 6226,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/routes.php",
+			"file": "public/js/libros/crear.js",
 			"settings":
 			{
-				"buffer_size": 1750,
+				"buffer_size": 725,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "app/database/migrations/2015_02_16_010630_Inventario.php",
+			"file": "app/database/migrations/2015_01_31_215821_Libros.php",
 			"settings":
 			{
-				"buffer_size": 3250,
+				"buffer_size": 1162,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/database/seeds/LibrosSeeder.php",
+			"settings":
+			{
+				"buffer_size": 2529,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "public/css/main.css",
+			"settings":
+			{
+				"buffer_size": 4263,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "public/js/main.js",
+			"settings":
+			{
+				"buffer_size": 829,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/views/libros/libros.blade.php",
+			"settings":
+			{
+				"buffer_size": 8974,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "<?php\n\nuse Illuminate\\Database\\Schema\\Blueprint;\nuse Illuminate\\Database\\Migrations\\Migration;\n\nclass Prestamos extends Migration {\n\n	/**\n	 * Run the migrations.\n	 *\n	 * @return void\n	 */\n	public function up()\n	{\n\n	}\n\n	/**\n	 * Reverse the migrations.\n	 *\n	 * @return void\n	 */\n	public function down()\n	{\n\n	}\n}",
-			"file": "app/database/migrations/2015_02_01_181111_Prestamos.php",
-			"file_size": 335,
-			"file_write_time": 130685311331965918,
+			"file": "public/css/wizard.css",
 			"settings":
 			{
-				"buffer_size": 309,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "app/database/seeds/DatabaseSeeder.php",
-			"settings":
-			{
-				"buffer_size": 420,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "app/database/seeds/InventarioSeeder.php",
-			"settings":
-			{
-				"buffer_size": 982,
-				"line_ending": "Windows"
+				"buffer_size": 2655,
+				"line_ending": "Unix"
 			}
 		}
 	],
@@ -199,28 +216,48 @@
 	},
 	"file_history":
 	[
-		"/C/xampp/htdocs/lexorp/app/database/seeds/ArticulosSeeder - copia.php",
+		"/C/xampp/htdocs/lexorp/public/js/utilidades.js",
+		"/C/xampp/htdocs/lexorp/app/views/layouts/layout_base.blade.php",
+		"/C/Users/dyma5_000/Desktop/bootstrap-application-wizard-master/demo/demo.html",
+		"/C/xampp/htdocs/lexorp/public/js/jquery.multi-select.js",
+		"/C/xampp/htdocs/lexorp/public/chosen/chosen.proto.js",
+		"/C/xampp/htdocs/lexorp/app/models/Editorial.php",
+		"/C/xampp/htdocs/lexorp/public/chosen/chosen.css",
+		"/C/xampp/htdocs/lexorp/public/chosen/chosen.jquery.js",
+		"/C/xampp/htdocs/lexorp/public/chosen/chosen.jquery.min.js",
+		"/C/xampp/htdocs/lexorp/app/models/Autor.php",
 		"/C/xampp/htdocs/lexorp/app/routes.php",
-		"/C/xampp/htdocs/lexorp/app/database/migrations/2015_01_31_220253_Articulos.php",
+		"/C/xampp/htdocs/lexorp/public/js/wizard.js",
+		"/C/xampp/htdocs/lexorp/app/views/libros/libros.blade.php",
+		"/G/Descargas2015/Neiva/Neiva.htm",
+		"/C/xampp/htdocs/lexorp/app/controllers/UserController.php",
+		"/C/xampp/htdocs/lexorp/app/views/users/home.blade.php",
+		"/C/xampp/htdocs/lexorp/app/controllers/LibrosController.php",
 		"/C/xampp/htdocs/lexorp/app/models/Articulo.php",
+		"/C/xampp/htdocs/lexorp/app/controllers/PrestamosController.php",
+		"/C/xampp/htdocs/lexorp/app/models/Item.php",
+		"/C/xampp/htdocs/lexorp/app/controllers/ArticulosController.php",
+		"/C/xampp/htdocs/lexorp/public/js/prestamos.js",
+		"/C/xampp/htdocs/lexorp/app/views/libros/home.blade.php",
+		"/C/xampp/htdocs/lexorp/app/views/home/home.blade.php",
+		"/C/xampp/htdocs/lexorp/app/models/Movimiento.php",
+		"/C/xampp/htdocs/lexorp/app/database/migrations/2015_02_16_010630_Inventario.php",
+		"/C/xampp/htdocs/lexorp/app/views/layouts/layout_base_BKP.blade.php",
+		"/C/xampp/htdocs/lexorp/app/database/seeds/InventarioSeeder.php",
+		"/C/xampp/htdocs/lexorp/app/database/seeds/DatabaseSeeder.php",
+		"/C/xampp/htdocs/lexorp/app/database/migrations/2015_02_01_181111_Prestamos.php",
+		"/C/xampp/htdocs/lexorp/app/views/prestamos/create.blade.php",
+		"/C/xampp/htdocs/lexorp/app/database/seeds/ArticulosSeeder - copia.php",
+		"/C/xampp/htdocs/lexorp/app/database/migrations/2015_01_31_220253_Articulos.php",
 		"/C/xampp/htdocs/lexorp/app/models/TipoArticulos.php",
 		"/C/xampp/htdocs/lexorp/app/database/seeds/LibrosSeeder.php",
 		"/C/xampp/htdocs/lexorp/app/database/seeds/ArticulosSeeder.php",
 		"/C/xampp/htdocs/lexorp/app/database/seeds/UserSeeder.php",
 		"/C/xampp/htdocs/lexorp/app/models/Libro.php",
-		"/C/xampp/htdocs/lexorp/app/database/seeds/DatabaseSeeder.php",
-		"/C/xampp/htdocs/lexorp/app/database/migrations/2015_02_01_181111_Prestamos.php",
 		"/C/xampp/htdocs/lexorp/app/controllers/PermisosController.php",
-		"/C/xampp/htdocs/lexorp/app/controllers/PrestamosController.php",
-		"/C/xampp/htdocs/lexorp/app/models/Autor.php",
-		"/C/xampp/htdocs/lexorp/public/js/prestamos.js",
-		"/C/xampp/htdocs/lexorp/app/controllers/LibrosController.php",
-		"/C/xampp/htdocs/lexorp/app/views/prestamos/create.blade.php",
 		"/C/xampp/htdocs/lexorp/app/database/migrations/2015_02_14_024319_inventario.php",
 		"/C/xampp/htdocs/lexorp/app/database/migrations/2015_02_14_023940_create_inventario.php",
 		"/C/xampp/htdocs/lexorp/app/models/Prestamo.php",
-		"/C/xampp/htdocs/lexorp/app/views/layouts/layout_base.blade.php",
-		"/C/xampp/htdocs/lexorp/app/controllers/UserController.php",
 		"/C/xampp/htdocs/lexorp/app/views/users/perfil.blade.php",
 		"/C/xampp/htdocs/lexorp/app/database/migrations/2015_01_31_215821_Libros.php",
 		"/C/xampp/htdocs/lexorp/app/database/seeds/TiposArticulosSeeder.php",
@@ -241,7 +278,6 @@
 		"/C/Users/dyma5_000/AppData/Roaming/Sublime Text 2/Packages/User/Package Control.sublime-settings",
 		"/C/Users/dyma5_000/AppData/Roaming/Sublime Text 2/Packages/Git/Git.sublime-settings",
 		"/C/Users/dyma5_000/AppData/Roaming/Sublime Text 2/Packages/User/Git.sublime-settings",
-		"/C/xampp/htdocs/lexorp/app/views/users/home.blade.php",
 		"/C/xampp/htdocs/proxel0.1/app/views/prestamos/create.blade.php",
 		"/C/xampp/htdocs/proxel0.1/app/views/layouts/layout_base.blade.php",
 		"/C/xampp/htdocs/proxel0.1/app/database/migrations/2014_10_12_150706_entrust_setup_tables.php",
@@ -280,6 +316,29 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"Helvetica Neue",
+			"font",
+			"ui",
+			"font-family",
+			"icon-chevron-up",
+			".icon-chevron-up",
+			"next",
+			"selec",
+			"match",
+			"mach",
+			"chzn-select",
+			"services",
+			"validateServerLabel",
+			"open-wizard",
+			"54px",
+			"reakpoint",
+			"breakpoint",
+			"rid-float-breakpoint",
+			"min-width",
+			"768",
+			"hide",
+			"htmlbodyHeightUpdate",
+			"inverse",
 			"pretamoGuardar",
 			"libro",
 			"totalLibros",
@@ -295,6 +354,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"35px",
 			"Libro",
 			"totalArticulos",
 			"tipos_articulos",
@@ -309,79 +369,23 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 5,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "app/views/prestamos/create.blade.php",
+					"file": "app/controllers/LibrosController.php",
 					"settings":
 					{
-						"buffer_size": 4372,
+						"buffer_size": 1897,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3996,
-								3996
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1166.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "public/js/prestamos.js",
-					"settings":
-					{
-						"buffer_size": 2602,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								917,
-								917
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "app/controllers/ArticulosController.php",
-					"settings":
-					{
-						"buffer_size": 1223,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								774,
-								774
+								532,
+								532
 							]
 						],
 						"settings":
@@ -390,30 +394,86 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 273.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "app/routes.php",
+					"buffer": 1,
+					"file": "app/views/libros/create.blade.php",
 					"settings":
 					{
-						"buffer_size": 1750,
+						"buffer_size": 6226,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								6219,
+								6094
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1710.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "public/js/libros/crear.js",
+					"settings":
+					{
+						"buffer_size": 725,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								219,
+								229
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/database/migrations/2015_01_31_215821_Libros.php",
+					"settings":
+					{
+						"buffer_size": 1162,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								391,
+								391
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -423,51 +483,53 @@
 				},
 				{
 					"buffer": 4,
-					"file": "app/database/migrations/2015_02_16_010630_Inventario.php",
+					"file": "app/database/seeds/LibrosSeeder.php",
 					"settings":
 					{
-						"buffer_size": 3250,
+						"buffer_size": 2529,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1584,
-								1584
+								865,
+								865
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 570.0,
+						"translation.y": 450.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 5,
-					"file": "app/database/migrations/2015_02_01_181111_Prestamos.php",
+					"file": "public/css/main.css",
 					"settings":
 					{
-						"buffer_size": 309,
+						"buffer_size": 4263,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								304,
-								304
+								82,
+								82
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -477,24 +539,25 @@
 				},
 				{
 					"buffer": 6,
-					"file": "app/database/seeds/DatabaseSeeder.php",
+					"file": "public/js/main.js",
 					"settings":
 					{
-						"buffer_size": 420,
+						"buffer_size": 829,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								357,
-								357
+								325,
+								325
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -504,18 +567,18 @@
 				},
 				{
 					"buffer": 7,
-					"file": "app/database/seeds/InventarioSeeder.php",
+					"file": "app/views/libros/libros.blade.php",
 					"settings":
 					{
-						"buffer_size": 982,
+						"buffer_size": 8974,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								783,
-								783
+								1310,
+								1310
 							]
 						],
 						"settings":
@@ -523,6 +586,33 @@
 							"syntax": "Packages/PHP/PHP.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 90.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "public/css/wizard.css",
+					"settings":
+					{
+						"buffer_size": 2655,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								280,
+								327
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -597,6 +687,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 337.0,
+	"side_bar_width": 331.0,
 	"status_bar_visible": true
 }
