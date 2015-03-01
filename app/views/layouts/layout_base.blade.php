@@ -6,9 +6,11 @@
 @section('head')
 {{ HTML::style('bootstrap/css/bootstrap.css') }}
 {{ HTML::style('css/main.css')}}
+{{ HTML::style('css/table.css')}}
 {{ HTML::script('js/jquery.min.js') }}
 {{ HTML::script('js/main.js') }}
 {{ HTML::script('bootstrap/js/bootstrap.min.js') }}
+{{ HTML::script('js/tabla/table.js') }}
 @show
 
 <body>

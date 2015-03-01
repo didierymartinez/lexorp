@@ -16,7 +16,7 @@
             {{ Form::close() }}
         @endif
         <br>
-        <table class="table table-hover">
+        <table data-toggle="table" class="table table-hover">
             <thead>
                 <tr><th>Identificación</th><th>Nombre</th><th>Apellido</th><th>Rol</th><th>Email</th></tr>
             </thead>
