@@ -1022,6 +1022,27 @@
             return this;
         },
 
+        serializeObject : function(){
+            var inputs = [],
+            formObj = {};
+
+            $.each(this.form.serializeArray(), function(index, value) {                        
+                if(formObj.hasOwnProperty(value.name)){                    
+                    if (!$.isArray(formObj[value.name])){ 
+                        formObj[value.name] = [formObj[value.name]]                    
+                    }
+                    
+                    formObj[value.name].push(value.value);                       
+                    
+                }else{
+                    formObj[value.name] = value.value;
+                }
+            });
+
+            inputs.push(formObj);
+            return inputs;
+        },
+
         serializeArray: function() {
             var form = this.form.serializeArray();
             this.form.find('input[disabled][data-serialize="1"]').each(function() {

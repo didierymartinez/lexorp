@@ -42,7 +42,18 @@ class LibrosController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
+		$datoslibroNuevo = json_decode(Input::get('libroNuevo'), true)[0];
+		//$libroNuevo = Libro::create($libroNuevo);
+
+		$libroNuevo = new Libro;
+		$libroNuevo->fill($datoslibroNuevo);
+		$libroNuevo->save();
+        
+        
+		
+		
+		return $libroNuevo;
+
 	}
 
 

@@ -20,8 +20,24 @@ Route::get('test',function(){
 	//$Articulo = Articulo::find(1)->articulo;
 	//return get_class($Articulo);
 
-	$Articulo = Articulo::find(1);
-	return $Articulo->movimientos;
+	//$Articulo = Articulo::find(1);
+	//return $Articulo->movimientos;
+
+
+
+		$libroNuevo = new Libro;
+		$libroNuevo->fill(array(
+                'titulo' => 'Cien años de soledad',
+                'subtitulo' => 'Cien años de soledad',
+                'titulooriginal' => 'Cien años de soledad',
+                'anoedicion' => '1900',
+                'edicion' => '1',
+                'isbn' => '1',
+                'coleccion' => 'pruen'
+        ));
+		//$libroNuevo->save();
+		//[{"titulo":"bsdf","subtitulo":"adfa","titulooriginal":"adf","anoedicion":"1900","edicion":"adf","isbn":"3234","coleccion":"234","infoadicional":""}]
+      return   $libroNuevo;
 
 	//$Movimiento = Movimiento::find(1)->movimiento;
 	//return $Movimiento;

@@ -29,7 +29,7 @@
                     Título Principal
                     <div class="form-group">
                         <div class="col-sm-6">
-                            <input type="text" class="form-control" id="titulo" name="titulo" data-validate="Requerido">
+                            <input type="text" class="form-control" id="titulo" name="titulo" data-validate="Requerido", autofocus>
                         </div>
                     </div>
                 </div>
@@ -51,7 +51,7 @@
                     <div class="form-group">
                         <div class="col-sm-8">
                             <div class="input-group">
-                                <input type="text" class="form-control" id="subtitulo" name="subtitulo" />                                
+                                <input type="text" class="form-control" id="titulooriginal" name="titulooriginal" />                                
                             </div>
                         </div>
                     </div>
@@ -66,12 +66,12 @@
                         Puede seleccionar uno o varios Autores.
                     </p>
 
-                    {{ Form::select('autores', $Autores, null, array(
+                    {{ Form::select('autor_id', $Autores, null, array(
                             'class' => 'chzn-select form-control', 
                             'data-validate' => 'Requerido',
                             'data-placeholder' => 'Lista de Autores', 
                             'style' => 'width:350px;', 
-                            'multiple', 'required' => 'required')) 
+                            'required' => 'required')) 
                     }}                 
                 </div>
             </div>
@@ -80,13 +80,13 @@
                 <h3>Editorial</h3>
 
                 <div class="wizard-input-section">
-                    {{ Form::select('autores', $Editoriales, null, array(
+                    <!-- {{ Form::select('editorial', $Editoriales, null, array(
                             'class' => 'chzn-select form-control', 
                             'data-validate' => 'Requerido',
                             'data-placeholder' => 'Editoariales', 
                             'style' => 'width:350px;', 
                             'required' => 'required')) 
-                    }} 
+                    }}  -->
                 </div>
                 <div class="wizard-input-section">
                     <div class="form-group">
@@ -94,17 +94,17 @@
                         <div class="col-sm-9">
                             <input type="text" class="form-control" id="anoedicion" name="anoedicion">
                         </div>
-                        <label for="description" class="col-sm-3 control-label">Edición</label>
+                        <label for="edicion" class="col-sm-3 control-label">Edición</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" id="description" name="description">
+                            <input type="text" class="form-control" id="edicion" name="edicion">
                         </div>
-                        <label for="amount" class="col-sm-3 control-label">ISBN</label>
+                        <label for="isbn" class="col-sm-3 control-label">ISBN</label>
                         <div class="col-sm-9">
-                            <input type="number" class="form-control" id="amount" name="amount">
+                            <input type="number" class="form-control" id="isbn" name="isbn">
                         </div>
-                        <label for="amount" class="col-sm-3 control-label">Colección</label>
+                        <label for="coleccion" class="col-sm-3 control-label">Colección</label>
                         <div class="col-sm-9">
-                            <input type="number" class="form-control" id="amount" name="amount">
+                            <input type="number" class="form-control" id="coleccion" name="coleccion">
                         </div>
                     </div>
                    
@@ -124,7 +124,7 @@
                     <p>Información Adicional</p>
 
                     <div class="form-group">
-                        <input type="text" class="create-server-agent-key form-control" placeholder="(opcional)" data-validate="">
+                        <input type="text" class="form-control" placeholder="(opcional)" id="infoadicional" name="infoadicional">
                     </div>
                 </div>
 

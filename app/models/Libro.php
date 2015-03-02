@@ -9,6 +9,9 @@ class Libro extends Eloquent {
 	protected $table = 'libros';
 
 
+    protected $fillable = array('titulo', 'subtitulo', 'titulooriginal', 'anoedicion', 'isbn', 'coleccion', 'autor_id');
+
+
 	public function articulos()
     {
         return $this->morphMany('Articulo', 'articulo');

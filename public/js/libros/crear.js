@@ -13,7 +13,44 @@ $(document).ready(function(){
 						wizard.show();
 	});	
 
+	wizard.on('closed', function() {
+		wizard.reset();
+	});
+
+	wizard.on("submit", function(wizard) {
+		var libroNuevo = this.serializeObject();
+
+	    $.ajax({
+	        type: 'post',
+	        url: '../libros',
+	        dataType: 'json',
+	        data: {"libroNuevo":JSON.stringify(libroNuevo)},
+	        success: function (data) {
+	          		setTimeout(function() {
+						wizard.trigger("success");
+						wizard.hideButtons();
+						wizard._submitting = false;
+						wizard.showSubmitCard("success");
+						wizard.updateProgressBar(0);
+					}, 20);
+	        }
+	    });
+
+			
+
+	});
+
+	wizard.el.find(".wizard-success .im-done").click(function() {
+	wizard.hide();
+	setTimeout(function() {
+		wizard.reset();	
+	}, 250);
 	
+	});
+
+	wizard.el.find(".wizard-success .create-another-server").click(function() {
+		wizard.reset();
+	});
 
 	$(".chzn-select").chosen({allow_single_deselect: true});
 

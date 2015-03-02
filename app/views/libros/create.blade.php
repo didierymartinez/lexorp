@@ -93,15 +93,15 @@
                         </div>
                         <label for="description" class="col-sm-3 control-label">Edición</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" id="description" name="description">
+                            <input type="text" class="form-control" id="descripcion" name="descripcion">
                         </div>
                         <label for="amount" class="col-sm-3 control-label">ISBN</label>
                         <div class="col-sm-9">
-                            <input type="number" class="form-control" id="amount" name="amount">
+                            <input type="number" class="form-control" id="isbn" name="isbn">
                         </div>
-                        <label for="amount" class="col-sm-3 control-label">Coleeción</label>
+                        <label for="amount" class="col-sm-3 control-label">Colección</label>
                         <div class="col-sm-9">
-                            <input type="number" class="form-control" id="amount" name="amount">
+                            <input type="number" class="form-control" id="coleccion" name="coleccion">
                         </div>
                     </div>
                    

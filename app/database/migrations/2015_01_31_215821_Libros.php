@@ -27,11 +27,21 @@ class Libros extends Migration {
 
 		Schema::create('libros',function($table){
 			$table->increments('id')->unsigned();
-			$table->string('nombre');
-			$table->integer('autor_id')->unsigned();
-			$table->foreign('autor_id')->references('id')->on('autores');
-			$table->integer('editorial_id');
-			$table->integer('ubicacion_id');
+			$table->string('titulo');
+			$table->string('subtitulo');
+			$table->string('titulooriginal');
+			$table->integer('anoedicion');
+			$table->string('edicion');
+			$table->string('isbn');
+			$table->string('coleccion');
+			
+			
+
+			
+			//$table->integer('autor_id')->unsigned();
+			//$table->foreign('autor_id')->references('id')->on('autores');
+			//$table->integer('editorial_id');
+			//$table->integer('ubicacion_id');
 			$table->timestamps();
 		});
 	}
