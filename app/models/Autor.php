@@ -8,6 +8,12 @@ class Autor extends Eloquent {
 	 */
 	protected $table = 'autores';
 
+		public function autores()
+    {
+        return $this->belongsToMany('Libro');
+    }
+
+
 	public function getNombreCompletoAttribute()
 	{
 	    return $this->attributes['nombres'] .' '. $this->attributes['apellidos'];

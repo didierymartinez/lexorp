@@ -97,7 +97,7 @@ class PrestamosController extends \BaseController {
 	}
 
 
-	public function crearPrestamo()
+	public function crearPrestamo() 
 	{
 		$identificacion = Input::get('identificacion');
 		$usuario = User::where('identificacion', '=', $identificacion)->get()->first();
@@ -131,7 +131,7 @@ class PrestamosController extends \BaseController {
 
 		        if($Articulo->articulo_type == 'Libro'){	        
 		        	$respuesta[$Articulo->articulo_type] = $Articulo->articulo;	
-		         	$respuesta['autor'] = $Articulo->articulo->autor;
+		         	$Articulo->articulo->autor;
 		        }
 
 		        return Response::json($respuesta);

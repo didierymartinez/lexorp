@@ -57,7 +57,7 @@ return array(
 			'host'      => 'localhost',
 			'database'  => 'bibliotecaproxel',
 			'username'  => 'root',
-			'password'  => '',
+			'password'  => 'Anfeso2000',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',

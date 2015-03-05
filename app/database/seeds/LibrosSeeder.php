@@ -39,15 +39,6 @@
         //[{"titulo":"asdf","subtitulo":"asdf","titulooriginal":"adsf","anoedicion":"1900","edicion":"adsf","isbn":"","coleccion":"","infoadicional":""}]
 
 
-        $Libro1 = Libro::create(array(
-                'titulo' => 'Cien años de soledad',
-                'subtitulo' => 'Cien años de soledad',
-                'titulooriginal' => 'Cien años de soledad',
-                'anoedicion' => '1900',
-                'edicion' => '1',
-                'isbn' => '1',
-                'coleccion' => 'pruen'
-        ));
         
         // $Libro1 = Libro::create(array(
         //         'nombre' => 'Cien años de soledad',

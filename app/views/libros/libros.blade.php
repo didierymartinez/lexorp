@@ -8,6 +8,8 @@
 @parent
 {{ HTML::style('css/wizard.css')}}
 {{ HTML::style('chosen/chosen.css')}}
+{{ HTML::style('css/bootstrap-table.min.css')}}
+{{ HTML::script('js/bootstrap-table.min.js') }}
 @stop
 
 
@@ -66,11 +68,12 @@
                         Puede seleccionar uno o varios Autores.
                     </p>
 
-                    {{ Form::select('autor_id', $Autores, null, array(
+                    {{ Form::select('autores', $Autores, null, array(
                             'class' => 'chzn-select form-control', 
                             'data-validate' => 'Requerido',
                             'data-placeholder' => 'Lista de Autores', 
-                            'style' => 'width:350px;', 
+                            'style' => 'width:350px;',
+                            'multiple', 
                             'required' => 'required')) 
                     }}                 
                 </div>
@@ -80,13 +83,13 @@
                 <h3>Editorial</h3>
 
                 <div class="wizard-input-section">
-                    <!-- {{ Form::select('editorial', $Editoriales, null, array(
+                     {{ Form::select('editorial_id', $Editoriales, null, array(
                             'class' => 'chzn-select form-control', 
                             'data-validate' => 'Requerido',
                             'data-placeholder' => 'Editoariales', 
                             'style' => 'width:350px;', 
                             'required' => 'required')) 
-                    }}  -->
+                    }}  
                 </div>
                 <div class="wizard-input-section">
                     <div class="form-group">
@@ -157,52 +160,60 @@
 
         @endif
         <br>
-        <table class="table table-hover">
+        
+        <table id="table-libros" data-toggle="table" data-url="libros" data-height="630" data-pagination="true" 
+            data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-search="true" data-select-item-name="toolbar1">
             <thead>
-                <tr><th>Identificación</th><th>Nombre</th><th>Apellido</th><th>Rol</th><th>Email</th></tr>
+                <tr>                    
+                    <th data-field="operate" data-formatter="operateFormatter" data-width="10" data-events="operateEvents"></th>
+                    <th data-field="titulo" data-sortable="true" data-switchable="false">Titulo</th>
+                    <th data-field="subtitulo" data-sortable="true" data-visible="false">Sub-Titulo</th>
+                    <th data-field="titulooriginal" data-sortable="true" data-visible="false">Titulo Original</th>
+                    <th data-field="NombresAutores" data-sortable="true">Autor</th>                    
+                    <th data-field="anoedicion" data-sortable="true" data-visible="false">Año Edición</th>
+                    <th data-field="edicion" data-sortable="true">Edición</th>
+                    <th data-field="isbn" data-sortable="true">ISBN</th>
+                    <th data-field="coleccion" data-sortable="true" data-visible="false">Colección</th>
+                    <th data-field="created_at" data-sortable="true" data-visible="false"> Creado</th>
+                    
+                </tr>
             </thead>
-            @if(isset($users))
-                <tbody>
-                @foreach($users as $user)
-                    <tr><td>{{ $user->identificacion }}</td>                        
-                        <td>{{ $user->first_name }}</td><td>{{ $user->last_name  }}</td>
-                        <td>{{ $user->rol->name }}</td>
-                        <td>{{ $user->email }}</td>
-                        @if($user->sys != true)
-                            <td>                                            
-                              <div class="btn-group" role="group">
-                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                  <span class="glyphicon glyphicon-cog"></span> Acción
-                                  <span class="caret"></span>
-                                </button>
-                                <ul class="dropdown-menu" role="menu">
-                                  <li>
-                                        @if(Entrust::can('editar_usuarios'))
-                                            {{ Form::open(array('method'=> 'GET', 'route' => array('users.edit', $user->id))) }}
-                                            {{ Form::submit('Editar', array('class'=> 'btn btn-link btnEditar')) }}
-                                            {{ Form::close() }}
-                                        @endif
-                                  </li>
-                                  <li>
-                                        @if(Entrust::can('eliminar_usuarios'))
-                                            {{ Form::open(array('method'=> 'DELETE', 'class'=>'deleteform', 'route' => array('users.destroy', $user->id))) }}
-                                            {{ Form::submit('Eliminar', array('class'=> 'btn btn-link')) }}
-                                        {{ Form::close() }}
-                                  </li>
-                                </ul>
-                              </div>
-                          @endif     
-
-                            </div>
-                            </td>
-
-                       @endif
-                    </tr>
-                @endforeach
-                    </tbody>
-            @endif
         </table>
 
+<script>
+    function operateFormatter(value, row, index) {
+        return [
+            '<div class="btn-group btn-group-xs" role="group">',
+                '<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">',
+                  '<i class="glyphicon glyphicon-cog"></i>',          
+                '</button>',
+                '<ul class="dropdown-menu" role="menu">',
+                  '<li>',
+                    '<a class="edit" href="javascript:void(0)" title="Editar">',
+                        '<i class="glyphicon glyphicon-pencil"></i> Editar',
+                    '</a>',
+                 ' </li>',
+                 '<li>',
+                    '<a class="remove" href="javascript:void(0)" title="Borrar">',
+                        '<i class="glyphicon glyphicon-trash"></i> Borrar',
+                    '</a>',
+                 ' </li>',
+                '</ul>',
+            '</div>'
+        ].join('');
+    }
+
+    window.operateEvents = {
+
+        'click .edit': function (e, value, row, index) {
+            alert('CLICK EN EDITAR, row: ' + JSON.stringify(row));
+        },
+        'click .remove': function (e, value, row, index) {
+            alert('CLICK EN BORRAR, row: ' + JSON.stringify(row));
+            console.log(value, row, index);
+        }
+    };
+</script>
 
 {{ HTML::script('js/utilidades.js') }}
 {{ HTML::script('chosen/chosen.jquery.js') }}

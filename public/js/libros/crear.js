@@ -1,5 +1,9 @@
+
+
 $(document).ready(function(){
-    
+
+
+
     var options = {
 				keyboard : false,
 				contentHeight : 400,
@@ -33,6 +37,7 @@ $(document).ready(function(){
 						wizard.showSubmitCard("success");
 						wizard.updateProgressBar(0);
 					}, 20);
+            
 	        }
 	    });
 
@@ -41,11 +46,13 @@ $(document).ready(function(){
 	});
 
 	wizard.el.find(".wizard-success .im-done").click(function() {
-	wizard.hide();
-	setTimeout(function() {
-		wizard.reset();	
-	}, 250);
-	
+		wizard.hide();
+		setTimeout(function() {
+			wizard.reset();	
+		}, 250);
+		$('#table-libros').bootstrapTable('refresh', {
+	        url: '../libros'
+	    });	
 	});
 
 	wizard.el.find(".wizard-success .create-another-server").click(function() {

@@ -9,13 +9,25 @@ class LibrosController extends \BaseController {
 	 */
 	public function index()
 	{
-		$Autores = Autor::orderBy('nombres')->get();
-		$Autores = $Autores->lists('NombreCompleto', 'id');
-		$editoriales = Editorial::orderBy('nombre')->get();			
-		$editoriales = $editoriales->lists('nombre', 'id');	
-		array_unshift($editoriales, '' );
-		return View::make('libros.libros',array('Autores' => $Autores, 'Editoriales' => $editoriales, 'libros' => Libro::all()));
-
+		if(Request::ajax()){
+			$libros = Libro::all();	
+			$CatalogoLibros = array();		
+			foreach($libros as $libro){          		
+          		foreach ($libro->autores as $autor) {
+          			$libro->NombresAutores = $libro->NombresAutores ." - " . $autor->NombreCompleto;
+          		}
+          		$libro->NombresAutores = substr($libro->NombresAutores, 3);
+          		array_push($CatalogoLibros, $libro); 
+        	}   
+	        return Response::json($CatalogoLibros);
+    	}else{	
+			$Autores = Autor::orderBy('nombres')->get();
+			$Autores = $Autores->lists('NombreCompleto', 'id');
+			$editoriales = Editorial::orderBy('nombre')->get();			
+			$editoriales = $editoriales->lists('nombre', 'id');	
+			array_unshift($editoriales, '' );
+			return View::make('libros.libros',array('Autores' => $Autores, 'Editoriales' => $editoriales, 'libros' => Libro::all()));
+		}
 	}
 
 
@@ -43,16 +55,15 @@ class LibrosController extends \BaseController {
 	public function store()
 	{
 		$datoslibroNuevo = json_decode(Input::get('libroNuevo'), true)[0];
-		//$libroNuevo = Libro::create($libroNuevo);
+		$autoreslibroNuevo = $datoslibroNuevo['autores'];
 
 		$libroNuevo = new Libro;
 		$libroNuevo->fill($datoslibroNuevo);
 		$libroNuevo->save();
-        
-        
+                
+		$libroNuevo->autores()->attach($autoreslibroNuevo);
 		
-		
-		return $libroNuevo;
+		return $libroNuevo->autores;
 
 	}
 

@@ -9,7 +9,7 @@ class Libro extends Eloquent {
 	protected $table = 'libros';
 
 
-    protected $fillable = array('titulo', 'subtitulo', 'titulooriginal', 'anoedicion', 'isbn', 'coleccion', 'autor_id');
+    protected $fillable = array('titulo', 'subtitulo', 'titulooriginal', 'anoedicion', 'isbn', 'coleccion', 'editorial_id');
 
 
 	public function articulos()
@@ -18,9 +18,9 @@ class Libro extends Eloquent {
     }
 
 
-	public function autor()
+	public function autores()
     {
-        return $this->hasOne('Autor', 'id', 'autor_id');
+        return $this->belongsToMany('Autor');
     }
 
 
