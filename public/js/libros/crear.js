@@ -10,7 +10,7 @@ $(document).ready(function(){
 				contentWidth : 700,
 				backdrop: 'static'
 			};
-    var wizard = $("#satellite-wizard").wizard(options);
+    var wizard = $("#libros-wizard").wizard(options);
 	
 	$('#crearlibro').click(function(e) {
 						e.preventDefault();
@@ -19,6 +19,17 @@ $(document).ready(function(){
 
 	wizard.on('closed', function() {
 		wizard.reset();
+	});
+
+	wizard.on("reset", function(wizard) {		
+
+	    $.each(wizard.cards, function(name, card) {
+	        card.el.find("input").val('');
+	        $.each($(".search-choice-close"), function(idx, elementdelete) {	
+			  	$(elementdelete).click()
+		    });
+	        $(".search-choice-close").mouseup();
+	    });
 	});
 
 	wizard.on("submit", function(wizard) {

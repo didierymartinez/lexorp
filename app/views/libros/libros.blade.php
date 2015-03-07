@@ -22,7 +22,7 @@
             
 
 
-    <div class="wizard" id="satellite-wizard" data-title="Adicionar Libro">
+    <div class="wizard" id="libros-wizard" data-title="Adicionar Libro">
           
             <div class="wizard-card" data-cardname="Titulo">
                 <h3>Título</h3>
