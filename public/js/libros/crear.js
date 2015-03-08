@@ -10,7 +10,7 @@ $(document).ready(function(){
 				contentWidth : 700,
 				backdrop: 'static'
 			};
-    var wizard = $("#libros-wizard").wizard(options);
+    wizard = $("#libros-wizard").wizard(options);
 	
 	$('#crearlibro').click(function(e) {
 						e.preventDefault();
@@ -34,10 +34,13 @@ $(document).ready(function(){
 
 	wizard.on("submit", function(wizard) {
 		var libroNuevo = this.serializeObject();
+		
+ 
 
+	    
 	    $.ajax({
-	        type: 'post',
-	        url: '../libros',
+	        type: (!!libroNuevo[0].id) ? 'PUT'   : 'POST',
+	        url:  (!!libroNuevo[0].id) ? '../libros/'+ libroNuevo[0].id   : '../libros',
 	        dataType: 'json',
 	        data: {"libroNuevo":JSON.stringify(libroNuevo)},
 	        success: function (data) {
@@ -96,3 +99,56 @@ function Requerido(el) {
 	return retValue;
 };
 
+    function operateFormatter(value, row, index) {
+        return [
+            '<div class="btn-group btn-group-xs" role="group">',
+                '<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">',
+                  '<i class="glyphicon glyphicon-cog"></i>',          
+                '</button>',
+                '<ul class="dropdown-menu" role="menu">',
+                  '<li>',
+                    '<a class="edit" href="javascript:void(0)" title="Editar">',
+                        '<i class="glyphicon glyphicon-pencil"></i> Editar',
+                    '</a>',
+                 ' </li>',
+                 '<li>',
+                    '<a class="remove" href="javascript:void(0)" title="Borrar">',
+                        '<i class="glyphicon glyphicon-trash"></i> Borrar',
+                    '</a>',
+                 ' </li>',
+                '</ul>',
+            '</div>'
+        ].join('');
+    }
+
+    window.operateEvents = {
+
+        'click .edit': function (e, value, row, index) {
+           
+                       
+            $.each(wizard.el.find("input"), function(id, input){
+              $(input).val(row[input.id])
+            });
+
+
+            $.each(row.autores, function(id, nombre){                    
+              var sel = '.chzn-results li:contains("' +row.autores[id].nombres + ' ' + row.autores[id].apellidos + '")'
+              $(sel).mouseup()
+            });
+             
+             
+            $.each(wizard.el.find(".chzn-select:not([multiple=multiple])"), function(id, input){
+               var valorseleccionado = 'option[value=' + row[input.name] + ']'              
+               var sel = '.chzn-results li:contains("' + $(input).find(valorseleccionado).html() + '")'
+              $(sel).mouseup() 
+            });        
+
+        
+            wizard.show();
+
+        },
+        'click .remove': function (e, value, row, index) {
+            alert('CLICK EN BORRAR, row: ' + JSON.stringify(row));
+            console.log(value, row, index);
+        }
+    };

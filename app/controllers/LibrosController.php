@@ -11,13 +11,16 @@ class LibrosController extends \BaseController {
 	{
 		if(Request::ajax()){
 			$libros = Libro::all();	
-			$CatalogoLibros = array();		
+			$CatalogoLibros = array();	
+
 			foreach($libros as $libro){          		
           		foreach ($libro->autores as $autor) {
           			$libro->NombresAutores = $libro->NombresAutores ." - " . $autor->NombreCompleto;
           		}
           		$libro->NombresAutores = substr($libro->NombresAutores, 3);
+          		$libro->NombreEditorial = $libro->editorial->nombre;
           		array_push($CatalogoLibros, $libro); 
+
         	}   
 	        return Response::json($CatalogoLibros);
     	}else{	
@@ -94,7 +97,7 @@ class LibrosController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		//
+		
 	}
 
 
@@ -106,7 +109,14 @@ class LibrosController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		//
+		if(Request::ajax()){
+			$datosEditados = json_decode(Input::get('libroNuevo'), true)[0];
+
+			$Libro = Libro::find($id);
+	        $Libro->titulo = $datosEditados['titulo'];
+	        $Libro->save();	
+			return Response::json(array( 'libro' => $Libro ));
+		}
 	}
 
 

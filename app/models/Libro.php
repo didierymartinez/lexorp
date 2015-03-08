@@ -23,6 +23,10 @@ class Libro extends Eloquent {
         return $this->belongsToMany('Autor');
     }
 
+    public function editorial()
+    {
+        return $this->belongsTo('Editorial');
+    }
 
     protected static function boot() {
         parent::boot();

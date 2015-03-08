@@ -31,6 +31,7 @@
                     Título Principal
                     <div class="form-group">
                         <div class="col-sm-6">
+                            <input type="hidden" class="form-control" id="id" name="id" >
                             <input type="text" class="form-control" id="titulo" name="titulo" data-validate="Requerido", autofocus>
                         </div>
                     </div>
@@ -69,11 +70,12 @@
                     </p>
 
                     {{ Form::select('autores', $Autores, null, array(
+                            'id' => 'autores',
                             'class' => 'chzn-select form-control', 
                             'data-validate' => 'Requerido',
                             'data-placeholder' => 'Lista de Autores', 
                             'style' => 'width:350px;',
-                            'multiple', 
+                            'multiple',                             
                             'required' => 'required')) 
                     }}                 
                 </div>
@@ -84,6 +86,7 @@
 
                 <div class="wizard-input-section">
                      {{ Form::select('editorial_id', $Editoriales, null, array(
+                            'id' => 'editorial_id',
                             'class' => 'chzn-select form-control', 
                             'data-validate' => 'Requerido',
                             'data-placeholder' => 'Editoariales', 
@@ -91,6 +94,7 @@
                             'required' => 'required')) 
                     }}  
                 </div>
+
                 <div class="wizard-input-section">
                     <div class="form-group">
                         <label for="concept" class="col-sm-3 control-label">Año</label>
@@ -171,7 +175,7 @@
                     <th data-field="titulooriginal" data-sortable="true" data-visible="false">Titulo Original</th>
                     <th data-field="NombresAutores" data-sortable="true">Autor</th>                    
                     <th data-field="anoedicion" data-sortable="true" data-visible="false">Año Edición</th>
-                    <th data-field="edicion" data-sortable="true">Edición</th>
+                    <th data-field="NombreEditorial" data-sortable="true">Editorial</th>
                     <th data-field="isbn" data-sortable="true">ISBN</th>
                     <th data-field="coleccion" data-sortable="true" data-visible="false">Colección</th>
                     <th data-field="created_at" data-sortable="true" data-visible="false"> Creado</th>
@@ -180,40 +184,7 @@
             </thead>
         </table>
 
-<script>
-    function operateFormatter(value, row, index) {
-        return [
-            '<div class="btn-group btn-group-xs" role="group">',
-                '<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">',
-                  '<i class="glyphicon glyphicon-cog"></i>',          
-                '</button>',
-                '<ul class="dropdown-menu" role="menu">',
-                  '<li>',
-                    '<a class="edit" href="javascript:void(0)" title="Editar">',
-                        '<i class="glyphicon glyphicon-pencil"></i> Editar',
-                    '</a>',
-                 ' </li>',
-                 '<li>',
-                    '<a class="remove" href="javascript:void(0)" title="Borrar">',
-                        '<i class="glyphicon glyphicon-trash"></i> Borrar',
-                    '</a>',
-                 ' </li>',
-                '</ul>',
-            '</div>'
-        ].join('');
-    }
 
-    window.operateEvents = {
-
-        'click .edit': function (e, value, row, index) {
-            alert('CLICK EN EDITAR, row: ' + JSON.stringify(row));
-        },
-        'click .remove': function (e, value, row, index) {
-            alert('CLICK EN BORRAR, row: ' + JSON.stringify(row));
-            console.log(value, row, index);
-        }
-    };
-</script>
 
 {{ HTML::script('js/utilidades.js') }}
 {{ HTML::script('chosen/chosen.jquery.js') }}

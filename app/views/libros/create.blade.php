@@ -1,4 +1,4 @@
-@extends('layouts.layout_base')
+extends('layouts.layout_base')
  
 @section('title')
     Crear Libros
@@ -17,7 +17,7 @@
 
  
        
-    <div class="wizard" id="satellite-wizard" data-title="Adicionar Libro">
+    <div class="wizard" id="satellite-wizard" data-title="Gestión de Libros">
           
             <div class="wizard-card" data-cardname="Titulo">
                 <h3>Título</h3>
@@ -26,6 +26,7 @@
                     Título Principal
                     <div class="form-group">
                         <div class="col-sm-6">
+                            <input type="text" class="form-control" id="id" name="id" >
                             <input type="text" class="form-control" id="titulo" name="titulo" data-validate="Requerido">
                         </div>
                     </div>
