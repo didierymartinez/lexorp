@@ -120,12 +120,7 @@
 
             
             <div class="wizard-card">
-                <h3>Resumen</h3>
-
-                <div class="wizard-input-section">
-                    <p>Resumen del libro a crear en forma de ficha Bibliografica </p>
-                </div>
-
+                <h3>Adicional</h3>
 
                 <div class="wizard-input-section">
                     <p>Información Adicional</p>
@@ -152,10 +147,10 @@
     
                 <div class="wizard-success">
                     <div class="alert alert-success">
-                        <span class="create-server-name"></span>Libro Creado <strong>Correctamente.</strong>
+                        <span class="create-server-name"></span>Operación realizada <strong>Correctamente.</strong>
                     </div>
     
-                    <a class="btn btn-default create-another-server">Crear otro Libro</a>
+                    <a class="btn btn-default create-another-server">Crear Nuevo Libro</a>
                     <span style="padding:0 10px"> o </span>
                     <a class="btn btn-success im-done">Terminar</a>
                 </div>
@@ -185,9 +180,10 @@
         </table>
 
 
-
+{{ HTML::script('js/bootbox.min.js') }}
 {{ HTML::script('js/utilidades.js') }}
 {{ HTML::script('chosen/chosen.jquery.js') }}
-{{ HTML::script('js/libros/crear.js') }}
+{{ HTML::script('js/libros/crud.js') }}
+
 
 @stop
