@@ -102,6 +102,7 @@
 </nav>
 <div class="main">
 <div class="container">
+<div id="alertas"></div>
   @if(Session::has('message'))
   <div class="alert {{ Session::get('message')['type']  }} alert-dismissible" role="alert">
   <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>

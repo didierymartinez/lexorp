@@ -158,7 +158,10 @@ function Requerido(el) {
 					        dataType: 'json',
 					        data: {"libroEliminar":JSON.stringify(row)},
 					        success: function (data) {
-					          		alert('Libro eliminado')				            
+					        	$('#table-libros').bootstrapTable('refresh', {
+							        url: '../libros'
+							    });	
+					          	mensajero.show('danger', 'Libro Eliminado')				            
 					        }
 					    });			      				        
 			      }

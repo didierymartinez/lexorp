@@ -160,7 +160,7 @@ li.wizard-nav-item {
 
 /* Inner Card */
 .wizard-input-section {
-	margin-bottom:20px;
+	margin-bottom:1px;
 }
 
 .wizard-dialog .popover.error-popover {
