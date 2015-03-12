@@ -32,8 +32,8 @@ $(document).ready(function() {
                 $('#articulosprestamo tr').last().after(
                   '<tr id="row_'+ data.Libro.id +'">'+
                     '<td>'+ data.Libro.id +'</td>'+
-                    '<td>'+ data.Libro.nombre +'</td>'+
-                    '<td>'+ data.autor.nombres + ' ' +data.autor.apellidos +'</td>'+
+                    '<td>'+ data.Libro.titulo +'</td>'+
+                    '<td>'+ data.Libro.NombresAutores +'</td>'+
                     '<td><a class="elimPrestamo" id="'+ data.Libro.id +'"><span class="glyphicon glyphicon-trash"></span></a></td>'+
                     '</tr>');
             }else{
@@ -45,7 +45,7 @@ $(document).ready(function() {
                     'data-dismiss="alert" aria-hidden="true">' + 
                     '&times;' + 
                     '</button>' + 
-                    'Ya se agregó el Libro: ' + data.Libro.nombre + 
+                    'Ya se agregó el Libro: ' + data.Libro.titulo + 
                     '</div>'
                 );
 

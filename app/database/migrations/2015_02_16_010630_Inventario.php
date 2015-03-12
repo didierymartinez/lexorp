@@ -42,6 +42,8 @@ class Inventario extends Migration {
 
 		Schema::create('movimientos',function($table){
 			$table->increments('id')->unsigned();
+			$table->integer('inventario_id')->unsigned();
+			$table->foreign('inventario_id')->references('id')->on('inventario');
 			$table->integer('movimiento_id')->unsigned();
 			$table->string('movimiento_type');
 			$table->foreign('movimiento_type')->references('Tipo')->on('tipos_movimientos');

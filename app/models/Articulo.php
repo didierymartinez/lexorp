@@ -14,13 +14,13 @@ class Articulo extends Eloquent {
         return $this->morphTo();
     }
 
-    public function Items()
+    public function items()
     {
     	return $this->hasMany('Item');
     }
 
     public function movimientos()
     {
-        return $this->hasManyThrough('Movimiento', 'Item','articulo_id','movimiento_id' );
+        return $this->hasManyThrough('Movimiento', 'Item','articulo_id','inventario_id' );
     }
 }

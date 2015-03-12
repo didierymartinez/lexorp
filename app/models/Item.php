@@ -12,4 +12,9 @@ class Item extends Eloquent {
     {
         return $this->belongsTo('Articulo');
     }
+
+    public function prestamos()
+    {
+        return $this->hasMany('Prestamo','inventario_id');
+    }   
 }

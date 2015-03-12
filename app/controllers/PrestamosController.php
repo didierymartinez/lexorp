@@ -129,9 +129,16 @@ class PrestamosController extends \BaseController {
 				$respuesta[get_class($Articulo)] = $Articulo;        
 				$respuesta['Item'] = $Item; 
 
-		        if($Articulo->articulo_type == 'Libro'){	        
+		        if($Articulo->articulo_type == 'Libro'){
+			        foreach ($Articulo->articulo->autores as $autor) {
+	          			$Articulo->articulo->NombresAutores = $Articulo->articulo->NombresAutores ." - " . $autor->NombreCompleto;
+	          		}
+	          		
+	          		$Articulo->articulo->NombresAutores = substr($Articulo->articulo->NombresAutores, 3);
+	          		$Articulo->articulo->NombreEditorial = $Articulo->articulo->editorial->nombre;
+
 		        	$respuesta[$Articulo->articulo_type] = $Articulo->articulo;	
-		         	$Articulo->articulo->autor;
+		         	
 		        }
 
 		        return Response::json($respuesta);
