@@ -1399,3 +1399,31 @@ $(function () {
     $.extend($.fn.bootstrapTable.defaults, $.fn.bootstrapTable.locales['es-AR']);
 
 })(jQuery);
+
+
+mensajero = (function() {
+
+    var that = {};
+    
+    that.show = function(type, text) {
+
+        $('.container .alert').alert('close');
+
+        $('#alertas').prepend(
+            '<div class="alert alert-' + type + ' alert-dismissable">'+
+            '<button type="button" class="close" ' + 
+            'data-dismiss="alert" aria-hidden="true">' + 
+            '&times;' + 
+            '</button>' + 
+            text + 
+            '</div>'
+        );
+
+         setTimeout(function() {
+             $('.container .alert').alert('close');
+         }, 3000);
+
+    };
+
+    return that;
+}());

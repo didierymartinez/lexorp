@@ -21,7 +21,6 @@ $(document).ready(function() {
         data: {id: $("#codigo").val()},
         success: function (data) {
 
-            debugger;
             
             CantidadPrestamo = jQuery.grep(articulosPrestamo, function(value) {
                 return value.id == data.Libro.id;

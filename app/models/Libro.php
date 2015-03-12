@@ -9,7 +9,7 @@ class Libro extends Eloquent {
 	protected $table = 'libros';
 
 
-    protected $fillable = array('titulo', 'subtitulo', 'titulooriginal', 'anoedicion', 'isbn', 'coleccion', 'editorial_id');
+    protected $fillable = array('titulo', 'subtitulo', 'titulooriginal', 'edicion', 'anoedicion', 'isbn', 'coleccion', 'editorial_id');
 
 
 	public function articulos()

@@ -1,9 +1,13 @@
 body,html{
-    height: 100%;
-      font-family: Segoe UI;
-  font-weight: lighter;
-
+  height: 100%;
+  font-family: wf_SegoeUILight,wf_SegoeUI,"Segoe UI Light","Segoe WP Light","Segoe UI",Segoe,"Segoe WP",Tahoma,Verdana,Arial,sans-serif;
+  font-weight: 300;
   }
+
+h1, h2, h3, h4 {
+  font-family: wf_SegoeUILight,wf_SegoeUI,"Segoe UI Light","Segoe WP Light","Segoe UI",Segoe,"Segoe WP",Tahoma,Verdana,Arial,sans-serif;
+  font-weight: 300;
+}
 
   /* remove outer padding */
   .main .row{

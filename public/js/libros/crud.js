@@ -124,31 +124,57 @@ function Requerido(el) {
     window.operateEvents = {
 
         'click .edit': function (e, value, row, index) {
-           
-                       
+                                  
             $.each(wizard.el.find("input"), function(id, input){
               $(input).val(row[input.id])
             });
 
-
             $.each(row.autores, function(id, nombre){                    
               var sel = '.chzn-results li:contains("' +row.autores[id].nombres + ' ' + row.autores[id].apellidos + '")'
               $(sel).mouseup()
-            });
-             
+            });             
              
             $.each(wizard.el.find(".chzn-select:not([multiple=multiple])"), function(id, input){
                var valorseleccionado = 'option[value=' + row[input.name] + ']'              
                var sel = '.chzn-results li:contains("' + $(input).find(valorseleccionado).html() + '")'
               $(sel).mouseup() 
             });        
-
         
             wizard.show();
 
         },
         'click .remove': function (e, value, row, index) {
-            alert('CLICK EN BORRAR, row: ' + JSON.stringify(row));
-            console.log(value, row, index);
+			bootbox.dialog({
+			  message: "Se eliminará el libro <strong>" + row.titulo + "</strong> de <strong>" + row.NombresAutores +"</strong>",
+			  title: "Está seguro que desea eliminar?",
+			  buttons: {		    
+			    danger: {
+			      label: "Eliminar",
+			      className: "btn-danger",
+			      callback: function() {
+					    $.ajax({
+					        type: 'DELETE',
+					        url:  '../libros/'+ row.id,
+					        dataType: 'json',
+					        data: {"libroEliminar":JSON.stringify(row)},
+					        success: function (data) {
+					        	$('#table-libros').bootstrapTable('refresh', {
+							        url: '../libros'
+							    });	
+					          	mensajero.show('danger', 'Libro Eliminado')				            
+					        }
+					    });			      				        
+			      }
+			    },
+			    main: {
+			      label: "Cancelar",
+			      className: "btn-default",
+			      callback: function() {
+			        return;
+			      }
+			    }
+			  }
+			});
+            
         }
     };

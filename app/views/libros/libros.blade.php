@@ -16,6 +16,9 @@
 @section('content')
        
         @if(Entrust::can('crear_usuarios'))
+
+    <h2>Catalogo de libros</h2>
+        
             <button type="submit" class="btn btn-success" id="crearlibro">
                 <i class="glyphicon glyphicon-plus-sign "></i> Crear
             </button>
@@ -81,51 +84,76 @@
                 </div>
             </div>
 
-            <div class="wizard-card wizard-card-overlay" data-cardname="Edicion">
+             <div class="wizard-card" data-cardname="Edicion">
                 <h3>Editorial</h3>
 
-                <div class="wizard-input-section">
-                     {{ Form::select('editorial_id', $Editoriales, null, array(
+                <div class="wizard-input-section">                    
+                    <div class="form-group">
+                        <div class="col-sm-6">
+                            {{ Form::select('editorial_id', $Editoriales, null, array(
                             'id' => 'editorial_id',
                             'class' => 'chzn-select form-control', 
                             'data-validate' => 'Requerido',
                             'data-placeholder' => 'Editoariales', 
                             'style' => 'width:350px;', 
                             'required' => 'required')) 
-                    }}  
+                    }}
+                        </div>
+                    </div>
                 </div>
 
                 <div class="wizard-input-section">
-                    <div class="form-group">
-                        <label for="concept" class="col-sm-3 control-label">Año</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" id="anoedicion" name="anoedicion">
-                        </div>
-                        <label for="edicion" class="col-sm-3 control-label">Edición</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" id="edicion" name="edicion">
-                        </div>
-                        <label for="isbn" class="col-sm-3 control-label">ISBN</label>
-                        <div class="col-sm-9">
-                            <input type="number" class="form-control" id="isbn" name="isbn">
-                        </div>
-                        <label for="coleccion" class="col-sm-3 control-label">Colección</label>
-                        <div class="col-sm-9">
-                            <input type="number" class="form-control" id="coleccion" name="coleccion">
+                   <div class="form-group">
+                              <label for="anoedicion" class="col-sm-2">Año</label>
+                        <div class="col-sm-8">
+                            <div class="input-group">
+
+                                    <input type="text" class="form-control" id="anoedicion" name="anoedicion">
+                              
+                            </div>
                         </div>
                     </div>
-                   
                 </div>
-            </div>
+
+                <div class="wizard-input-section">
+                   <div class="form-group">                   
+                        <label for="edicion" class="col-sm-2 ">Edición</label>
+                        <div class="col-sm-8">
+                            <div class="input-group">
+                                    <input type="text" class="form-control" id="edicion" name="edicion">                            
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="wizard-input-section">
+                   <div class="form-group">
+                        <label for="isbn" class="col-sm-2">ISBN</label>
+                        <div class="col-sm-8">
+                            <div class="input-group">
+                                    <input type="text" class="form-control" id="isbn" name="isbn">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="wizard-input-section">
+                   <div class="form-group">
+                        <label for="coleccion" class="col-sm-2">Colección</label>
+                        <div class="col-sm-8">
+                            <div class="input-group">
+                                    <input type="text" class="form-control" id="coleccion" name="coleccion">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>   
+
 
             
             <div class="wizard-card">
-                <h3>Resumen</h3>
-
-                <div class="wizard-input-section">
-                    <p>Resumen del libro a crear en forma de ficha Bibliografica </p>
-                </div>
-
+                <h3>Adicional</h3>
 
                 <div class="wizard-input-section">
                     <p>Información Adicional</p>
@@ -152,10 +180,10 @@
     
                 <div class="wizard-success">
                     <div class="alert alert-success">
-                        <span class="create-server-name"></span>Libro Creado <strong>Correctamente.</strong>
+                        <span class="create-server-name"></span>Operación realizada <strong>Correctamente.</strong>
                     </div>
     
-                    <a class="btn btn-default create-another-server">Crear otro Libro</a>
+                    <a class="btn btn-default create-another-server">Crear Nuevo Libro</a>
                     <span style="padding:0 10px"> o </span>
                     <a class="btn btn-success im-done">Terminar</a>
                 </div>
@@ -175,6 +203,7 @@
                     <th data-field="titulooriginal" data-sortable="true" data-visible="false">Titulo Original</th>
                     <th data-field="NombresAutores" data-sortable="true">Autor</th>                    
                     <th data-field="anoedicion" data-sortable="true" data-visible="false">Año Edición</th>
+                    <th data-field="edicion" data-sortable="true" data-visible="false">Edición</th>
                     <th data-field="NombreEditorial" data-sortable="true">Editorial</th>
                     <th data-field="isbn" data-sortable="true">ISBN</th>
                     <th data-field="coleccion" data-sortable="true" data-visible="false">Colección</th>
@@ -185,9 +214,10 @@
         </table>
 
 
-
+{{ HTML::script('js/bootbox.min.js') }}
 {{ HTML::script('js/utilidades.js') }}
 {{ HTML::script('chosen/chosen.jquery.js') }}
-{{ HTML::script('js/libros/crear.js') }}
+{{ HTML::script('js/libros/crud.js') }}
+
 
 @stop

@@ -110,11 +110,18 @@ class LibrosController extends \BaseController {
 	public function update($id)
 	{
 		if(Request::ajax()){
+
 			$datosEditados = json_decode(Input::get('libroNuevo'), true)[0];
 
 			$Libro = Libro::find($id);
-	        $Libro->titulo = $datosEditados['titulo'];
+	        $Libro->fill($datosEditados);
 	        $Libro->save();	
+
+	        $autoreslibro = $datosEditados['autores'];
+	        $Libro->autores()->detach();              
+			$Libro->autores()->attach($autoreslibro);
+		
+
 			return Response::json(array( 'libro' => $Libro ));
 		}
 	}
@@ -128,7 +135,13 @@ class LibrosController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+		if(Request::ajax()){
+			$datosEliminar = json_decode(Input::get('libroNuevo'), true)[0];
+			$autoreslibro = $datosEliminar['autores'];
+			Libro::find($id)->autores()->detach();			
+			Libro::destroy($id);
+			return Response::json('Libro Eliminado');
+		}
 	}
 
 
