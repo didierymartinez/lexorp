@@ -23,7 +23,13 @@ class Prestamo extends Eloquent {
 
         static::created(function($Prestamo) { 
 	        
-	        $Prestamo->movimientos()->save(new Movimiento());
+            $movimiento = new Movimiento();
+            $movimiento->inventario_id = $Prestamo->inventario_id;
+            $movimiento = $Prestamo->movimientos()->save($movimiento);
+
+            $item = Item::find($Prestamo->inventario_id);
+            $item->ultimoMovimiento_id = $movimiento->id;
+            $item->save();
 
         });
     }    

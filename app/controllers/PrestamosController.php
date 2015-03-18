@@ -31,20 +31,17 @@ class PrestamosController extends \BaseController {
 	public function store()
 	{
 		if(Request::ajax()){
-			$articulosPrestamo = Input::get('articulosprestamo');
-
+			$articulosprestamo = json_decode(Input::get('articulosprestamo'), true);
 			$usuario = Input::get('usuario');
 
-			$object = json_decode($articulosPrestamo, true);
+       		foreach($articulosprestamo as $libro){
+          		$prestamo = new Prestamo();
+          		$prestamo->inventario_id = $libro;
+          		$prestamo->usuario_id = $usuario;
+          		$prestamo->save();          	
+        	}           			
 
-       		foreach($articulosPrestamo as $libros){
-          	//foreach ($libros as $libro){
-               // $ids[] = $libros;
-        	//}
-        	}   
-        			
-
-	        return $object[2]['nombre']. count($object) .$usuario;
+	        return $articulosprestamo;
     	}	
 	}
 
@@ -124,24 +121,30 @@ class PrestamosController extends \BaseController {
 			if(!$Item){
 				return Response::json('Articulo no existe');		
 			}else{
-				$Articulo = $Item->articulo;		
 
-				$respuesta[get_class($Articulo)] = $Articulo;        
-				$respuesta['Item'] = $Item; 
+				if(Movimiento::find($Item->ultimoMovimiento_id)->movimiento_type == "Prestamo"){
+					return Response::json('Articulo En Prestamo');		
+				}else{
 
-		        if($Articulo->articulo_type == 'Libro'){
-			        foreach ($Articulo->articulo->autores as $autor) {
-	          			$Articulo->articulo->NombresAutores = $Articulo->articulo->NombresAutores ." - " . $autor->NombreCompleto;
-	          		}
-	          		
-	          		$Articulo->articulo->NombresAutores = substr($Articulo->articulo->NombresAutores, 3);
-	          		$Articulo->articulo->NombreEditorial = $Articulo->articulo->editorial->nombre;
+					$Articulo = $Item->articulo;		
 
-		        	$respuesta[$Articulo->articulo_type] = $Articulo->articulo;	
-		         	
+					$respuesta[get_class($Articulo)] = $Articulo;        
+					$respuesta['Item'] = $Item; 
+
+			        if($Articulo->articulo_type == 'Libro'){
+				        foreach ($Articulo->articulo->autores as $autor) {
+		          			$Articulo->articulo->NombresAutores = $Articulo->articulo->NombresAutores ." - " . $autor->NombreCompleto;
+		          		}
+		          		
+		          		$Articulo->articulo->NombresAutores = substr($Articulo->articulo->NombresAutores, 3);
+		          		$Articulo->articulo->NombreEditorial = $Articulo->articulo->editorial->nombre;
+
+			        	$respuesta[$Articulo->articulo_type] = $Articulo->articulo;	
+			         	
+			        }
+		        	return Response::json($respuesta);
 		        }
-
-		        return Response::json($respuesta);
+		        
 	    	}
     	}			
 	}

@@ -27,7 +27,9 @@ $(document).ready(function() {
             });
 
             if (CantidadPrestamo.length == 0){
-                articulosPrestamo.push(data.Libro);
+                
+                articulosPrestamo.push(data.Libro.id);
+
                 $('#articulosprestamo tr').last().after(
                   '<tr id="row_'+ data.Libro.id +'">'+
                     '<td>'+ data.Libro.id +'</td>'+
@@ -57,9 +59,10 @@ $(document).ready(function() {
                 var thisId = $(this).attr('id');
                 $("#row_" + thisId).remove();
 
-                articulosPrestamo = jQuery.grep(articulosPrestamo, function(value) {
-                            return value.id != thisId;
+                articulosPrestamo = jQuery.grep(articulosPrestamo, function(value) {                    
+                            return value != thisId;
                         });
+
                 $("#totalArticulos").text(articulosPrestamo.length);
             });
 

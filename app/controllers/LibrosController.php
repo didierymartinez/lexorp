@@ -67,7 +67,6 @@ class LibrosController extends \BaseController {
 		$libroNuevo->autores()->attach($autoreslibroNuevo);
 		
 		return $libroNuevo->autores;
-
 	}
 
 

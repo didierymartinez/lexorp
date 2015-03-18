@@ -37,9 +37,9 @@ Route::get('test',function(){
   //       ));
 		//$libroNuevo->save();
 		//[{"titulo":"bsdf","subtitulo":"adfa","titulooriginal":"adf","anoedicion":"1900","edicion":"adf","isbn":"3234","coleccion":"234","infoadicional":""}]
-      $libros = Libro::all();
+      $Item = Item::find(1);
 
-      return   $libros;
+      return   $Item->movimientos;
 
 	//$Movimiento = Movimiento::find(1)->movimiento;
 	//return $Movimiento;
