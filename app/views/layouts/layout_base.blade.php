@@ -7,10 +7,18 @@
 {{ HTML::style('bootstrap/css/bootstrap.css') }}
 {{ HTML::style('css/main.css')}}
 {{ HTML::style('css/table.css')}}
+{{ HTML::style('css/wizard.css')}}
+{{ HTML::style('css/docs.min.css')}}
+{{ HTML::style('chosen/chosen.css')}}
+{{ HTML::style('css/bootstrap-table.min.css')}}
+
 {{ HTML::script('js/jquery.min.js') }}
 {{ HTML::script('js/main.js') }}
 {{ HTML::script('bootstrap/js/bootstrap.min.js') }}
 {{ HTML::script('js/tabla/table.js') }}
+{{ HTML::script('js/bootstrap-table.min.js') }}
+{{ HTML::script('js/utilidades.js') }}
+
 @show
 
 <body>

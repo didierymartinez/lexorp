@@ -6,10 +6,6 @@
 
 @section('head')
 @parent
-{{ HTML::style('css/wizard.css')}}
-{{ HTML::style('chosen/chosen.css')}}
-{{ HTML::style('css/bootstrap-table.min.css')}}
-{{ HTML::script('js/bootstrap-table.min.js') }}
 @stop
 
 
@@ -188,6 +184,7 @@
                     <a class="btn btn-success im-done">Terminar</a>
                 </div>
             </div>
+            
         </div>
 
         @endif
@@ -215,7 +212,6 @@
 
 
 {{ HTML::script('js/bootbox.min.js') }}
-{{ HTML::script('js/utilidades.js') }}
 {{ HTML::script('chosen/chosen.jquery.js') }}
 {{ HTML::script('js/libros/crud.js') }}
 

@@ -156,6 +156,10 @@ h1, h2, h3, h4 {
     padding-left: 15px;
   }
 .container{
+  margin-top: 90px;
+}
+
+.alertas{
   margin-top: 60px;
 }
 

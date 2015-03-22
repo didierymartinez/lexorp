@@ -1,18 +1,6 @@
 $(document).ready(function() {
   articulosPrestamo = [];
 
-  $('#prestamoGuardar').on( 'click', function () {  
-    $.ajax({
-        type: 'post',
-        url: '../prestamos',
-        dataType: 'json',
-        data: {"articulosprestamo":JSON.stringify(articulosPrestamo),"usuario":$('#idusuario').val()},
-        success: function (data) {
-          console.log('ready');
-        }
-    });
-  });
-
 
   $('#adicionararticulo').on( 'click', function () {         
     $.ajax({
@@ -21,9 +9,8 @@ $(document).ready(function() {
         data: {id: $("#codigo").val()},
         success: function (data) {
 
-            
             CantidadPrestamo = jQuery.grep(articulosPrestamo, function(value) {
-                return value.id == data.Libro.id;
+                return value == data.Libro.id;
             });
 
             if (CantidadPrestamo.length == 0){
@@ -38,20 +25,14 @@ $(document).ready(function() {
                     '<td><a class="elimPrestamo" id="'+ data.Libro.id +'"><span class="glyphicon glyphicon-trash"></span></a></td>'+
                     '</tr>');
             }else{
-                $('.container .alert').alert('close');
 
-                $('#alertas').prepend(
-                    '<div class="alert alert-warning alert-dismissable">'+
-                    '<button type="button" class="close" ' + 
-                    'data-dismiss="alert" aria-hidden="true">' + 
-                    '&times;' + 
-                    '</button>' + 
-                    'Ya se agregó el Libro: ' + data.Libro.titulo + 
-                    '</div>'
-                );
+
+                $('#alertaslibro .alert').html('Ya se agregó el Libro: ' + data.Libro.titulo );
+                $('#alertaslibro .alert').addClass('alert-info');
 
                  setTimeout(function() {
-                     $('.container .alert').alert('close');
+                     $('#alertaslibro .alert').html('&nbsp;');
+                     $('#alertaslibro .alert').removeClass('alert-info');
                  }, 3000);
             }
 

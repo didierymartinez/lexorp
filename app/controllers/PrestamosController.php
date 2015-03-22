@@ -122,9 +122,9 @@ class PrestamosController extends \BaseController {
 				return Response::json('Articulo no existe');		
 			}else{
 
-				if(Movimiento::find($Item->ultimoMovimiento_id)->movimiento_type == "Prestamo"){
-					return Response::json('Articulo En Prestamo');		
-				}else{
+				//if(Movimiento::find($Item->ultimoMovimiento_id)->movimiento_type == "Prestamo"){
+				//	return Response::json('Articulo En Prestamo');		
+				//}else{
 
 					$Articulo = $Item->articulo;		
 
@@ -143,7 +143,7 @@ class PrestamosController extends \BaseController {
 			         	
 			        }
 		        	return Response::json($respuesta);
-		        }
+		        //}
 		        
 	    	}
     	}			
