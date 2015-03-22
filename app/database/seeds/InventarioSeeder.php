@@ -28,18 +28,12 @@
             array('Tipo' => 'Traslado')
         ));   
 
-
-         $item1 = Item::create(array(
-                'placa' => '006172',
+        $item1 = Item::create(array(
+                'placa' => '0101',
                 'articulo_id' => '1',
                 'estado_id' => '1'
-        ));
+        ));        
 
-        $entrada = Entrada::create(array(
-            'inventario_id' => $item1->id
-        )); 
-
-        $entrada->movimientos()->save(new Movimiento()); 
 
                
     }

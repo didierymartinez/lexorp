@@ -36,17 +36,22 @@
             array('nombre' => 'EDITORIAL OVEJA NEGRA')
         ));
 
-        //[{"titulo":"asdf","subtitulo":"asdf","titulooriginal":"adsf","anoedicion":"1900","edicion":"adsf","isbn":"","coleccion":"","infoadicional":""}]
-
 
         
-        // $Libro1 = Libro::create(array(
-        //         'nombre' => 'Cien años de soledad',
-        //         'autor_id' => $autor1->id,
-        //         'editorial_id' => '1',
-        //         'ubicacion_id' => '1',
-        // ));
-        
+         $Libro1 = Libro::create(array(
+                 'titulo' => 'El modelo Google',
+                 'subtitulo' => 'Un reto organizacional',
+                 'titulooriginal' => 'The Google model',
+                 'anoedicion' => '2010',
+                 'edicion' => '1',
+                 'isbn' => '1664383',
+                 'coleccion' => '1',
+                 'editorial_id' => '1'
+
+         ));
+      
+        $Libro1->autores()->attach('1');
+
         //  $Libro2 = Libro::create(array(
         //         'nombre' => 'El capital en el siglo XXI',
         //         'autor_id' => $autor2->id,

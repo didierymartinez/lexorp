@@ -3,8 +3,12 @@
  
     public function run()
     {
-        DB::table('libros')->delete();
+        DB::table('autor_libro')->delete();
+        DB::table('libros')->delete();        
         DB::table('autores')->delete();
+
+        DB::table('movimientos')->delete();
+        DB::table('entradas')->delete();
         DB::table('inventario')->delete();
         DB::table('articulos')->delete();
 

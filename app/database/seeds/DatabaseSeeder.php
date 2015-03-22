@@ -16,7 +16,7 @@ class DatabaseSeeder extends Seeder {
 		$this->call('UserSeeder');
 		$this->call('ArticulosSeeder');
 		$this->call('LibrosSeeder');
-		//$this->call('InventarioSeeder');		
+		$this->call('InventarioSeeder');		
         $this->command->info('Datos insertados!');
 	}
 

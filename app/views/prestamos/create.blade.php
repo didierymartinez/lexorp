@@ -115,31 +115,47 @@
             <th>ISBN</th><th>Titulo</th><th>Fecha</th><th>Quitar</th>
         </table>        
 
-
-        <div class="wizard-error">
-            <div class="alert alert-error">
-                <strong>Ocurrió un problema</strong> con su información.
-                Por favor revise la información e intente guardar nuevamente.
-            </div>
-        </div>
-
-        <div class="wizard-failure">
-            <div class="alert alert-error">
-                <strong>Ocurrió un problema</strong> al guardar el formulario.
-                Por favor intente mas tarde.
-            </div>
-        </div>
-
-        <div class="wizard-success">
-            <div class="alert alert-success">
-                <span class="create-server-name"></span>Operación realizada <strong>Correctamente.</strong>
-            </div>
-
-            <a class="btn btn-default create-another-server">Crear Nuevo Libro</a>
-            <span style="padding:0 10px"> o </span>
-            <a class="btn btn-success im-done">Terminar</a>
-        </div>
+      
     </div>
+
+            <div class="wizard-card">
+                <h3>Observaciones</h3>
+
+                <div class="wizard-input-section">
+                    <p>Observaciones del prestamo</p>
+
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="(opcional)" id="infoadicional" name="infoadicional">
+                    </div>
+                </div>
+
+
+                <div class="wizard-error">
+                    <div class="alert alert-error">
+                        <strong>Ocurrió un problema</strong> con su información.
+                        Por favor revise la información e intente guardar nuevamente.
+                    </div>
+                </div>
+    
+                <div class="wizard-failure">
+                    <div class="alert alert-error">
+                        <strong>Ocurrió un problema</strong> al guardar el formulario.
+                        Por favor intente mas tarde.
+                    </div>
+                </div>
+    
+                <div class="wizard-success">
+                    <div class="alert alert-success">
+                        <span class="create-server-name"></span>Operación realizada <strong>Correctamente.</strong>
+                    </div>
+    
+                    <a class="btn btn-default create-another-server">Crear Nuevo Libro</a>
+                    <span style="padding:0 10px"> o </span>
+                    <a class="btn btn-success im-done">Terminar</a>
+                </div>
+            </div>
+
+
 </div>
 
 
