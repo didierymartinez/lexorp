@@ -99,6 +99,7 @@ function Requerido(el) {
 	return retValue;
 };
 
+
     function operateFormatter(value, row, index) {
         return [
             '<div class="btn-group btn-group-xs" role="group">',

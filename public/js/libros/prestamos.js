@@ -18,11 +18,29 @@ $(document).ready(function(){
 	        dataType: 'json',
 	        data: {"articulosprestamo":JSON.stringify(articulosPrestamo),"usuario":$('#idusuario').val()},
 	        success: function (data) {
-	          console.log('ready');
+		        wizard.submitSuccess(); 
+	            wizard.hideButtons(); 
+	            wizard.updateProgressBar(0);
+	            console.log('ready');
 	        }
 	    });
 	
 	});
 
 
+	wizard.el.find(".wizard-success .im-done").click(function() {
+		wizard.hide();
+		setTimeout(function() {
+			wizard.reset();	
+		}, 250);
+		history.go(-1);
+	})
 });
+
+function tieneLibros(el){
+	var retValue = {};
+	retValue.msg = "Seleccionar libros";
+
+	retValue.status = (!!articulosPrestamo.length);
+	return retValue;
+};

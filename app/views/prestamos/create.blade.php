@@ -149,7 +149,7 @@
                         <span class="create-server-name"></span>Operación realizada <strong>Correctamente.</strong>
                     </div>
     
-                    <a class="btn btn-default create-another-server">Crear Nuevo Libro</a>
+                    <a class="btn btn-default create-another-server">Imprimir</a>
                     <span style="padding:0 10px"> o </span>
                     <a class="btn btn-success im-done">Terminar</a>
                 </div>
