@@ -61,6 +61,7 @@ class Inventario extends Migration {
 			$table->increments('id')->unsigned();
 			$table->integer('inventario_id')->unsigned();
 			$table->integer('usuario_id')->unsigned();
+			$table->date('fechadevolucion');			
 	        $table->foreign('inventario_id')->references('id')->on('inventario');
 	        $table->foreign('usuario_id')->references('id')->on('users');
 			$table->timestamps();

@@ -98,7 +98,7 @@ class DevolucionesController extends \BaseController {
 			
 			$respuesta = array();	
 			$Item = Item::where('placa','=',Input::get('id'))->first();
-
+			$Prestamo = Movimiento::find($Item->ultimoMovimiento_id);
 
 			if(!$Item){
 				
@@ -106,9 +106,10 @@ class DevolucionesController extends \BaseController {
 				$respuesta['mensaje'] = 'Articulo no existe';
 			}else{
 
-				//if(Movimiento::find($Item->ultimoMovimiento_id)->movimiento_type == "Prestamo"){
-				//	return Response::json('Articulo En Prestamo');		
-				//}else{
+				if($Prestamo->movimiento_type != "Prestamo"){
+					$respuesta['exito'] = 0;
+					$respuesta['mensaje'] = 'Articulo no esta en Prestamo';
+				}else{
 					$respuesta['exito'] = 1;
 					$Articulo = $Item->articulo;		
 
@@ -122,12 +123,12 @@ class DevolucionesController extends \BaseController {
 		          		
 		          		$Articulo->articulo->NombresAutores = substr($Articulo->articulo->NombresAutores, 3);
 		          		$Articulo->articulo->NombreEditorial = $Articulo->articulo->editorial->nombre;
-
+		          		$Articulo->articulo->fechadevolucion = $Prestamo->movimiento->fechadevolucion;
 			        	$respuesta[$Articulo->articulo_type] = $Articulo->articulo;	
 			         	
 			        }
 		        	
-		        //}
+		        }
 		        
 	    	}
 

@@ -58,9 +58,9 @@ $(document).ready(function(){
 
                     $('#articulosDevolucion tr').last().after(
                       '<tr id="row_'+ data.Libro.id +'">'+
-                        '<td>'+ data.Libro.id +'</td>'+
+                        '<td>'+ data.Item.placa +'</td>'+
                         '<td>'+ data.Libro.titulo +'</td>'+
-                        '<td>'+ data.Libro.NombresAutores +'</td>'+
+                        '<td>'+ data.Libro.fechadevolucion +'</td>'+
                         '<td><a class="elimPrestamo" id="'+ data.Libro.id +'"><span class="glyphicon glyphicon-trash"></span></a></td>'+
                         '</tr>');
 

@@ -113,7 +113,7 @@
         
 
         <table id="articulosprestamo" class="table table-condensed">
-            <th>ISBN</th><th>Titulo</th><th>Fecha</th><th>Quitar</th>
+            <th>ISBN</th><th>Titulo</th><th>Fecha Entrega</th><th>Quitar</th>
         </table>        
 
       

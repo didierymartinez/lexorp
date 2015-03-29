@@ -36,7 +36,8 @@ class PrestamosController extends \BaseController {
 
        		foreach($articulosprestamo as $libro){
           		$prestamo = new Prestamo();
-          		$prestamo->inventario_id = $libro;
+          		$prestamo->inventario_id = $libro[0];
+          		$prestamo->fechadevolucion = date("Y-m-d", strtotime($libro[1])); 
           		$prestamo->usuario_id = $usuario;
           		$prestamo->save();          	
         	}           			
@@ -140,6 +141,11 @@ class PrestamosController extends \BaseController {
 		          		
 		          		$Articulo->articulo->NombresAutores = substr($Articulo->articulo->NombresAutores, 3);
 		          		$Articulo->articulo->NombreEditorial = $Articulo->articulo->editorial->nombre;
+		          		
+		          		$date = new DateTime();
+		          		$date->modify('+8 days');
+		          		
+		          		$Articulo->articulo->fechadevolucion = $date->format('d/m/Y');
 
 			        	$respuesta[$Articulo->articulo_type] = $Articulo->articulo;	
 			         	

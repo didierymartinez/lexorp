@@ -34,7 +34,11 @@
                 'estado_id' => '1'
         ));        
 
-
+        $item2 = Item::create(array(
+                'placa' => '0202',
+                'articulo_id' => '2',
+                'estado_id' => '1'
+        ));     
                
     }
  

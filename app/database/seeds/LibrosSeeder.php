@@ -44,20 +44,27 @@
                  'titulooriginal' => 'The Google model',
                  'anoedicion' => '2010',
                  'edicion' => '1',
-                 'isbn' => '1664383',
+                 'isbn' => '183',
                  'coleccion' => '1',
                  'editorial_id' => '1'
 
          ));
       
-        $Libro1->autores()->attach('1');
+        $Libro1->autores()->attach('2');
 
-        //  $Libro2 = Libro::create(array(
-        //         'nombre' => 'El capital en el siglo XXI',
-        //         'autor_id' => $autor2->id,
-        //         'editorial_id' => '1',
-        //         'ubicacion_id' => '1',
-        // ));
+
+        $Libro2 = Libro::create(array(
+                 'titulo' => 'El capital en el siglo XXI',
+                 'subtitulo' => 'capital',
+                 'titulooriginal' => 'Capital',
+                 'anoedicion' => '2010',
+                 'edicion' => '1',
+                 'isbn' => '16683',
+                 'coleccion' => '1',
+                 'editorial_id' => '1'
+        ));
+
+        $Libro2->autores()->attach('2');
            
         //  $Libro3 = Libro::create(array(
         //         'nombre' => 'The Baffler No. 25',
