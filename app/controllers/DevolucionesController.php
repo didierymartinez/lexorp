@@ -1,6 +1,6 @@
 <?php
 
-class PrestamosController extends \BaseController {
+class DevolucionesController extends \BaseController {
 
 	/**
 	 * Display a listing of the resource.
@@ -9,7 +9,7 @@ class PrestamosController extends \BaseController {
 	 */
 	public function index()
 	{
-		return View::make('prestamos.home');
+		return View::make('devoluciones.home');
 	}
 
 
@@ -31,17 +31,15 @@ class PrestamosController extends \BaseController {
 	public function store()
 	{
 		if(Request::ajax()){
-			$articulosprestamo = json_decode(Input::get('articulosprestamo'), true);
-			$usuario = Input::get('usuario');
+			$articulosdevolucion = json_decode(Input::get('articulosdevolucion'), true);
 
-       		foreach($articulosprestamo as $libro){
-          		$prestamo = new Prestamo();
-          		$prestamo->inventario_id = $libro;
-          		$prestamo->usuario_id = $usuario;
-          		$prestamo->save();          	
+       		foreach($articulosdevolucion as $libro){
+          		$devolucion = new Devolucion();
+          		$devolucion->inventario_id = $libro;
+          		$devolucion->save();          	
         	}           			
 
-	        return $articulosprestamo;
+	        return $articulosdevolucion;
     	}	
 	}
 
@@ -93,22 +91,6 @@ class PrestamosController extends \BaseController {
 		//
 	}
 
-
-	public function crearPrestamo() 
-	{
-		$identificacion = Input::get('identificacion');
-		$usuario = User::where('identificacion', '=', $identificacion)->get()->first();
-		if($usuario){
-			return View::make('prestamos.create')->with('usuario',$usuario);	
-		}else{
-			$message = array(
-			    "type" => "alert-danger",
-			    "title" => "Error:",
-			    "message" => "Identificación ". $identificacion ." no existe "
-			);
-        	return Redirect::route('prestamos.index')->with('message',$message);
-		}
-	}
 
 	public function buscarArticulo()
 	{

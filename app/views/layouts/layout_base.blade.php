@@ -91,7 +91,8 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Prestamos <span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-retweet"></span></a>
           <ul class="dropdown-menu forAnimate" role="menu">
-            <li><a href="{{URL::to('prestamos')}}">Crear</a></li>                        
+            <li><a href="{{URL::to('prestamos')}}"><span style="font-size:16px;" class="glyphicon glyphicon-resize-full"></span> Prestar</a></li>                        
+            <li><a href="{{URL::to('devoluciones')}}"><span style="font-size:16px;" class="glyphicon glyphicon-resize-small"></span> Devolver</a></li>            
           </ul>
         </li>
         

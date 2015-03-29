@@ -7,7 +7,7 @@
 @section('head')
 @parent
 
-    {{ HTML::script('js/libros/prestamos.js') }}
+    {{ HTML::script('js/libros/devoluciones.js') }}
 
     <style type="text/css">
         
@@ -30,60 +30,10 @@
 
 
 @section('content')
-<input type="hidden" value="{{$usuario->id}}" id="idusuario">
 
-<div class="wizard" id="prestamos-wizard" data-title="Realizar Prestamo">
-          
-    <div class="wizard-card" data-cardname="Usuario">
 
-        <h3>Usuario</h3>
-        
-        <div class="col-sm-4 user-image">
-            <img src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xfp1/v/t1.0-1/c23.0.135.135/1653984_10152228375391427_156457130_n.jpg?oh=8b242d31a41f9a670d72512ff0497a4c&oe=5560615B&__gda__=1431785571_749377786dff582c212c8e928d5521ad"
-            alt="{{$usuario->first_name}}" title="{{$usuario->first_name}}" class="img-circle">
-        </div>
-
-        <div class="span4">
-            <div class="bs-callout bs-callout-info" id="callout-glyphicons-location">
-                <h4 id="changing-the-icon-font-location">{{  ucwords(strtolower($usuario->first_name))  }} {{  ucwords(strtolower($usuario->last_name)) }}</h4>
-                <p data-readline-background="rgba(0, 0, 0, 0)">{{$usuario->identificacion}}</p>
-            </div>
-
-            <div class="user-info-block">
-                <ul class="navigation">
-                    <li class="active">
-                        <a data-toggle="tab" href="#information"><span class="glyphicon glyphicon-user"></span></a>
-                    </li>
-                    <li class="">
-                        <a data-toggle="tab" href="#settings"><span class="glyphicon glyphicon-earphone"></span></a>
-                    </li>
-                    <li class="">
-                        <a data-toggle="tab" href="#email"><span class="glyphicon glyphicon-envelope"></span></a>
-                    </li>
-                    <li class="">
-                        <a data-toggle="tab" href="#events"><span class="glyphicon glyphicon-calendar"></span></a>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="tab-content">
-                <div id="information" class="tab-pane active">
-                    <h4>Información del usuario</h4>
-                </div>
-                <div id="settings" class="tab-pane">
-                    <h4>Telefonos</h4>
-                </div>
-                <div id="email" class="tab-pane">
-                    <span class="help-block">Email:</span>  <h4>{{$usuario->email}}</h4>
-                </div>
-                <div id="events" class="tab-pane">
-                    <h4>Ultimo prestamo o prestamos pendientes</h4>
-                </div>
-            </div>
-
-        </div>
-        
-    </div>
+<div class="wizard" id="devoluciones-wizard" data-title="Realizar Devolución">
+            
 
     <div class="wizard-card"  data-cardname="seleccion"> 
         <div class="row">
@@ -112,7 +62,7 @@
 
         
 
-        <table id="articulosprestamo" class="table table-condensed">
+        <table id="articulosDevolucion" class="table table-condensed">
             <th>ISBN</th><th>Titulo</th><th>Fecha</th><th>Quitar</th>
         </table>        
 
@@ -120,10 +70,10 @@
     </div>
 
             <div class="wizard-card">
-                <h3>Observaciones</h3>
+                <h3>Observaciones o Multas</h3>
 
                 <div class="wizard-input-section">
-                    <p>Observaciones del prestamo</p>
+                    <p>Multas</p>
 
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="(opcional)" id="infoadicional" name="infoadicional">

@@ -2,8 +2,6 @@
 
 $(document).ready(function(){
 
-
-
     var options = {
 				keyboard : false,
 				contentHeight : 400,

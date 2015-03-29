@@ -50,8 +50,14 @@ class Inventario extends Migration {
 			$table->timestamps();
 		});	
 
+		Schema::create('entradas',function($table){
+			$table->increments('id')->unsigned();
+			$table->integer('inventario_id')->unsigned();
+			$table->foreign('inventario_id')->references('id')->on('inventario');
+			$table->timestamps();
+		});	
 
-		Schema::create('Prestamos',function($table){
+		Schema::create('prestamos',function($table){
 			$table->increments('id')->unsigned();
 			$table->integer('inventario_id')->unsigned();
 			$table->integer('usuario_id')->unsigned();
@@ -60,12 +66,14 @@ class Inventario extends Migration {
 			$table->timestamps();
 		});
 
-		Schema::create('entradas',function($table){
+		Schema::create('devoluciones',function($table){
 			$table->increments('id')->unsigned();
 			$table->integer('inventario_id')->unsigned();
 			$table->foreign('inventario_id')->references('id')->on('inventario');
 			$table->timestamps();
 		});	
+
+
 /*
 		Schema::create('salidas',function($table){
 			$table->increments('id')->unsigned();

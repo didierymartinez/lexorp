@@ -5,29 +5,27 @@ $(document).ready(function(){
 				contentHeight : 600,
 				contentWidth : 900,
 				backdrop: 'static'
-			};
-	articulosPrestamo = [];
+	};
+
+	articulosDevolucion = [];
 	 		
-    wizard = $("#prestamos-wizard").wizard(options);
+    wizard = $("#devoluciones-wizard").wizard(options);
 
     wizard.show();
-
 
 	wizard.on("submit", function(wizard) {
 		$.ajax({
 	        type: 'post',
-	        url: '../prestamos',
+	        url: '../devoluciones',
 	        dataType: 'json',
-	        data: {"articulosprestamo":JSON.stringify(articulosPrestamo),"usuario":$('#idusuario').val()},
+	        data: {"articulosdevolucion":JSON.stringify(articulosDevolucion)},
 	        success: function (data) {
 		        wizard.submitSuccess(); 
 	            wizard.hideButtons(); 
 	            wizard.updateProgressBar(0);
 	        }
-	    });
-	
+	    });	
 	});
-
 
 	wizard.el.find(".wizard-success .im-done").click(function() {
 		wizard.hide();
@@ -40,7 +38,7 @@ $(document).ready(function(){
 	$('#adicionararticulo').on( 'click', function () {         
     $.ajax({
         type: 'post',
-        url: '../prestamos/buscarArticulo',
+        url: '../devoluciones/buscarArticulo',
         data: {id: $("#codigo").val()},
         success: function (data) {
 
@@ -50,15 +48,15 @@ $(document).ready(function(){
 
             }else{
 
-                CantidadPrestamo = jQuery.grep(articulosPrestamo, function(value) {
+                CantidadPrestamo = jQuery.grep(articulosDevolucion, function(value) {
                     return value == data.Libro.id;
                 });
 
                 if (CantidadPrestamo.length == 0){
                     
-                    articulosPrestamo.push(data.Libro.id);
+                    articulosDevolucion.push(data.Libro.id);
 
-                    $('#articulosprestamo tr').last().after(
+                    $('#articulosDevolucion tr').last().after(
                       '<tr id="row_'+ data.Libro.id +'">'+
                         '<td>'+ data.Libro.id +'</td>'+
                         '<td>'+ data.Libro.titulo +'</td>'+
@@ -78,16 +76,16 @@ $(document).ready(function(){
                     var thisId = $(this).attr('id');
                     $("#row_" + thisId).remove();
 
-                    articulosPrestamo = jQuery.grep(articulosPrestamo, function(value) {                    
+                    articulosDevolucion = jQuery.grep(articulosDevolucion, function(value) {                    
                                 return value != thisId;
                             });
 
-                    $("#totalArticulos").text(articulosPrestamo.length);
+                    $("#totalArticulos").text(articulosDevolucion.length);
                     wizard.cards.seleccion.validate();
                 });
 
                 $("#codigo").val("")
-                $("#totalArticulos").text(articulosPrestamo.length)
+                $("#totalArticulos").text(articulosDevolucion.length)
             }
         },
 
@@ -127,6 +125,6 @@ function tienelibros(el){
 	var retValue = {};
 	retValue.msg = "Seleccionar libros";
 
-	retValue.status = (!!articulosPrestamo.length);
+	retValue.status = (!!articulosDevolucion.length);
 	return retValue;
 }
