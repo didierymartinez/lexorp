@@ -9,22 +9,6 @@
 
     {{ HTML::script('js/libros/prestamos.js') }}
 
-    <style type="text/css">
-        
-        .user-image img { height: 90px;}
-        
-        .user-details .user-info-block {width: 76%; position: absolute; top: 12px; background: rgb(255, 255, 255); z-index: 0;}
-        .user-info-block .user-heading {width: 100%; text-align: center; margin: 10px 0 0;}
-        .user-info-block .navigation {float: left; width: 100%; margin: 0px; padding: 0; list-style: none; border: 1px solid #333;}
-        .navigation li {float: left; margin: 0; padding: 0; height: 30px}
-        .navigation li a {padding: 4px 30px; float: left; height: 30px; color: #333;}
-        .navigation li.active a {background: #333; color: #fff; height: 30px}
-        .user-info-block .user-body {float: left; padding: 5%; width: 90%;}
-        .user-body .tab-content > div {float: left; width: 100%;}
-        .user-body .tab-content h4 {width: 100%; margin: 10px 0; color: #333;}
-        #alertaslibro .alert {padding: 4px;}
-        .badge-notify{background:rgb(0, 136, 204);  position:relative;  top: -20px;  left: -7px; }
-    </style>
 @stop
 
 

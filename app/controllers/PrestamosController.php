@@ -118,6 +118,7 @@ class PrestamosController extends \BaseController {
 			$respuesta = array();	
 			$Item = Item::where('placa','=',Input::get('id'))->first();
 
+			$Prestamo = Movimiento::find($Item->ultimoMovimiento_id);
 
 			if(!$Item){
 				
@@ -125,9 +126,10 @@ class PrestamosController extends \BaseController {
 				$respuesta['mensaje'] = 'Articulo no existe';
 			}else{
 
-				//if(Movimiento::find($Item->ultimoMovimiento_id)->movimiento_type == "Prestamo"){
-				//	return Response::json('Articulo En Prestamo');		
-				//}else{
+				if($Prestamo->movimiento_type == "Prestamo"){
+					$respuesta['exito'] = 0;
+					$respuesta['mensaje'] = 'Articulo esta en Prestamo';
+				}else{				
 					$respuesta['exito'] = 1;
 					$Articulo = $Item->articulo;		
 
@@ -149,10 +151,8 @@ class PrestamosController extends \BaseController {
 
 			        	$respuesta[$Articulo->articulo_type] = $Articulo->articulo;	
 			         	
-			        }
-		        	
-		        //}
-		        
+			        }		        
+		        }		        
 	    	}
 
 	    	return Response::json($respuesta);

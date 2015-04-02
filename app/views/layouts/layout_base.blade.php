@@ -11,6 +11,7 @@
 {{ HTML::style('css/docs.min.css')}}
 {{ HTML::style('chosen/chosen.css')}}
 {{ HTML::style('css/bootstrap-table.min.css')}}
+{{ HTML::style('css/bootstrap-datepicker.min.css')}}
 
 {{ HTML::script('js/jquery.min.js') }}
 {{ HTML::script('js/main.js') }}
@@ -18,6 +19,8 @@
 {{ HTML::script('js/tabla/table.js') }}
 {{ HTML::script('js/bootstrap-table.min.js') }}
 {{ HTML::script('js/utilidades.js') }}
+{{ HTML::script('js/bootstrap-datepicker.min.js') }}
+
 
 @show
 
@@ -83,7 +86,7 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Biblioteca <span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-book"></span></a>
           <ul class="dropdown-menu forAnimate" role="menu">
             <li><a href="{{URL::to('libros')}}"><span style="font-size:16px;" class="glyphicon glyphicon-book"></span> Libros</a></li>
-            <li><a href="{{URL::to('users/get')}}"><span style="font-size:16px;" class="glyphicon glyphicon-user"></span> Usuarios</a></li>
+            <li><a href="{{URL::to('usuariosbiblioteca')}}"><span style="font-size:16px;" class="glyphicon glyphicon-user"></span> Usuarios</a></li>
             <li><a href="{{URL::to('createusuario')}}"><span style="font-size:16px;" class="glyphicon glyphicon-barcode"></span> Inventario</a></li>
           </ul>
         </li>
@@ -100,7 +103,7 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Configuración <span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-cog"></span></a>
           <ul class="dropdown-menu forAnimate" role="menu">
             <li><a href="#">Roles</a></li>
-            <li><a href="./users/get">Usuarios Sistema</a></li>
+            <li><a href="users/get">Usuarios Sistema</a></li>
             <li class="divider"></li>
             <li><a href="#">Aplicación</a></li>            
           </ul>
