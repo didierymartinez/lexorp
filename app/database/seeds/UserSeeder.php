@@ -2,6 +2,9 @@
 class UserSeeder extends Seeder {
   public function run()
   {
+    DB::table('usuariosbiblioteca')->delete();  
+    DB::statement('ALTER TABLE usuariosbiblioteca AUTO_INCREMENT = 1;');
+
     DB::table('users')->delete();  
     DB::statement('ALTER TABLE users AUTO_INCREMENT = 1;');
 

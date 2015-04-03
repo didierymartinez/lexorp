@@ -11,21 +11,21 @@ class UsuariosBibliotecaController extends \BaseController {
 	public function index()
 	{
 		if(Request::ajax()){
-			$libros = Libro::all();	
-			$CatalogoLibros = array();	
+			$usuarios = UsuarioBiblioteca::all();
 
-			foreach($libros as $libro){          		
-          		foreach ($libro->autores as $autor) {
-          			$libro->NombresAutores = $libro->NombresAutores ." - " . $autor->NombreCompleto;
-          		}
-          		$libro->NombresAutores = substr($libro->NombresAutores, 3);
-          		$libro->NombreEditorial = $libro->editorial->nombre;
-          		array_push($CatalogoLibros, $libro); 
+			foreach ($usuarios as $usuario) {
+      			$usuario->NombreCompleto = $usuario->NombreCompleto;
+      			$usuario->activo = ($usuario->activo == "1") ? "Si" : "No";
+      			$usuario->tipoidentificacionDesc = $usuario->tipoIdentificacion->Descripcion;
+      		}
+      	
+	        return Response::json($usuarios);
 
-        	}   
-	        return Response::json($CatalogoLibros);
     	}else{	
-			return View::make('users.biblioteca.usuarios');
+    		$tiposidentificacion = TipoIdentificacion::orderBy('id')->get();			
+			$tiposidentificacion = $tiposidentificacion->lists('Descripcion', 'id');	
+			array_unshift($tiposidentificacion, '' );
+			return View::make('users.biblioteca.usuarios', array('tiposidentificacion' => $tiposidentificacion));
 		}
 	}
 
@@ -37,12 +37,7 @@ class UsuariosBibliotecaController extends \BaseController {
 	 */
 	public function create()
 	{
-		$Autores = Autor::orderBy('nombres')->get();
-		$Autores = $Autores->lists('NombreCompleto', 'id');
-		$editoriales = Editorial::orderBy('nombre')->get();			
-		$editoriales = $editoriales->lists('nombre', 'id');	
-		array_unshift($editoriales, '' );
-		return View::make('libros.create',array('Autores' => $Autores, 'Editoriales' => $editoriales));
+
 	}
 
 
@@ -53,16 +48,14 @@ class UsuariosBibliotecaController extends \BaseController {
 	 */
 	public function store()
 	{
-		$datoslibroNuevo = json_decode(Input::get('libroNuevo'), true)[0];
-		$autoreslibroNuevo = $datoslibroNuevo['autores'];
+		$datosusuarioNuevo = json_decode(Input::get('usuarioNuevo'), true)[0];
 
-		$libroNuevo = new Libro;
-		$libroNuevo->fill($datoslibroNuevo);
-		$libroNuevo->save();
+		$usuarioNuevo = new UsuarioBiblioteca;
+		$usuarioNuevo->fill($datosusuarioNuevo);
+		$usuarioNuevo->save();
                 
-		$libroNuevo->autores()->attach($autoreslibroNuevo);
 		
-		return $libroNuevo->autores;
+		return $usuarioNuevo;
 	}
 
 
@@ -74,13 +67,8 @@ class UsuariosBibliotecaController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		if(Request::ajax()){
 
-	        $Libro = Articulo::find(Input::get('id'))->articulo;
-	        $Autor = $Libro->autor;
 
-	        return Response::json(array( 'libro' => $Libro ,'autor' => $Autor));
-    	}	
 	}
 
 
@@ -106,18 +94,13 @@ class UsuariosBibliotecaController extends \BaseController {
 	{
 		if(Request::ajax()){
 
-			$datosEditados = json_decode(Input::get('libroNuevo'), true)[0];
+			$datosEditados = json_decode(Input::get('usuarioNuevo'), true)[0];
 
-			$Libro = Libro::find($id);
-	        $Libro->fill($datosEditados);
-	        $Libro->save();	
+			$Usuario = UsuarioBiblioteca::find($id);
+	        $Usuario->fill($datosEditados);
+	        $Usuario->save();	
 
-	        $autoreslibro = $datosEditados['autores'];
-	        $Libro->autores()->detach();              
-			$Libro->autores()->attach($autoreslibro);
-		
-
-			return Response::json(array( 'libro' => $Libro ));
+			return Response::json(array( 'Usuario' => $Usuario ));
 		}
 	}
 
@@ -130,12 +113,17 @@ class UsuariosBibliotecaController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		if(Request::ajax()){
-			$datosEliminar = json_decode(Input::get('libroNuevo'), true)[0];
-			$autoreslibro = $datosEliminar['autores'];
-			Libro::find($id)->autores()->detach();			
-			Libro::destroy($id);
-			return Response::json('Libro Eliminado');
+		if(Request::ajax()){	
+			
+			$usuario = UsuarioBiblioteca::find($id);
+			$usuario->activo = !$usuario->activo;
+			$usuario->save();
+
+			$user = $usuario->User;
+			$user->active = !$user->active;
+			$user->save();
+
+			return Response::json($user);
 		}
 	}
 

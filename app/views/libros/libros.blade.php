@@ -93,7 +93,7 @@
                             'data-placeholder' => 'Editoariales', 
                             'style' => 'width:350px;', 
                             'required' => 'required')) 
-                    }}
+                            }}
                         </div>
                     </div>
                 </div>

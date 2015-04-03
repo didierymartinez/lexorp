@@ -23,23 +23,30 @@ Route::get('test',function(){
 	//$Articulo = Articulo::find(1);
 	//return $Articulo->movimientos;
 
+	$usuarionuevo = UsuarioBiblioteca::find(1)->get()->first();
+
+		// $usuarionuevo = new UsuarioBiblioteca;
+
+		// $usuarionuevo->identificacion = '3766';
+  //               $usuarionuevo->tipoidentificacion= 'CC';
+  //               $usuarionuevo->nombres = 'Isidora';
+  //               $usuarionuevo->apellidos = 'Arguello';
+  //               $usuarionuevo->sexo= 'F';
+  //               $usuarionuevo->fecha_nacimiento = '18/05/1962';
+  //               $usuarionuevo->direccion= 'Calle 143 # 118 - 20 ';
+  //               $usuarionuevo->tel_fijo = '4935660';
+  //               $usuarionuevo->celular = '3208100605';
+  //              $usuarionuevo-> email = 'arguelloisidora@gmail.com';
 
 
-		// $libroNuevo = new Libro;
-		// $libroNuevo->fill(array(
-  //               'titulo' => 'Cien años de soledad',
-  //               'subtitulo' => 'Cien años de soledad',
-  //               'titulooriginal' => 'Cien años de soledad',
-  //               'anoedicion' => '1900',
-  //               'edicion' => '1',
-  //               'isbn' => '1',
-  //               'coleccion' => 'pruen'
-  //       ));
-		//$libroNuevo->save();
+		// $usuarionuevo->save();
+		$date = DateTime::createFromFormat('d/m/Y', "24/04/2012");
+		return $date->format('Y-m-d');
+
 		//[{"titulo":"bsdf","subtitulo":"adfa","titulooriginal":"adf","anoedicion":"1900","edicion":"adf","isbn":"3234","coleccion":"234","infoadicional":""}]
-      $Item = Item::find(2);
+      //$Item = Item::find(2);
 
-      return   $Item->prestamos;
+      //return   $Item->prestamos;
 
 	//$Movimiento = Movimiento::find(1)->movimiento;
 	//return $Movimiento;

@@ -4,6 +4,42 @@
 		"selected_items":
 		[
 			[
+				"usuario",
+				"UsuarioBiblioteca"
+			],
+			[
+				"Tipo",
+				"tipoidentificacion"
+			],
+			[
+				"u",
+				"usuarionuevo"
+			],
+			[
+				"usui",
+				"usuariosbiblioteca"
+			],
+			[
+				"usua",
+				"usuariosbiblioteca"
+			],
+			[
+				"Usua",
+				"Usuario"
+			],
+			[
+				"Usuari",
+				"Usuario"
+			],
+			[
+				"Usuar",
+				"UsuarioBiblioteca"
+			],
+			[
+				"Usuario",
+				"UsuariosBibliotecaController"
+			],
+			[
 				"s",
 				"span	Tag"
 			],
@@ -84,6 +120,46 @@
 	"buffers":
 	[
 		{
+			"file": "app/views/users/biblioteca/usuarios.blade.php",
+			"settings":
+			{
+				"buffer_size": 8103,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/controllers/UsuariosBibliotecaController.php",
+			"settings":
+			{
+				"buffer_size": 2420,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/js/usuarios/crud.js",
+			"settings":
+			{
+				"buffer_size": 5333,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/models/UsuarioBiblioteca.php",
+			"settings":
+			{
+				"buffer_size": 2186,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/views/libros/libros.blade.php",
+			"settings":
+			{
+				"buffer_size": 9110,
+				"line_ending": "Windows"
+			}
+		},
+		{
 			"file": "public/js/libros/crud.js",
 			"settings":
 			{
@@ -92,120 +168,10 @@
 			}
 		},
 		{
-			"file": "app/views/prestamos/create.blade.php",
-			"settings":
-			{
-				"buffer_size": 5618,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "app/views/layouts/layout_base.blade.php",
-			"settings":
-			{
-				"buffer_size": 5796,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/G/Descargas2015/bootstrap-datepicker-1.4.0-dist/js/bootstrap-datepicker.js",
-			"settings":
-			{
-				"buffer_size": 50050,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "public/locales/bootstrap-datepicker.es.min.js",
-			"settings":
-			{
-				"buffer_size": 510,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"contents": "$(document).ready(function() {\n  articulosPrestamo = [];\n\n\n  $('#adicionararticulo').on( 'click', function () {         \n    $.ajax({\n        type: 'post',\n        url: '../prestamos/buscarArticulo',\n        data: {id: $(\"#codigo\").val()},\n        success: function (data) {\n\n            CantidadPrestamo = jQuery.grep(articulosPrestamo, function(value) {\n                return value == data.Libro.id;\n            });\n\n            if (CantidadPrestamo.length == 0){\n                \n                articulosPrestamo.push(data.Libro.id);\n\n                $('#articulosprestamo tr').last().after(\n                  '<tr id=\"row_'+ data.Libro.id +'\">'+\n                    '<td>'+ data.Libro.id +'</td>'+\n                    '<td>'+ data.Libro.titulo +'</td>'+\n                    '<td>'+ data.Libro.NombresAutores +'</td>'+\n                    '<td><a class=\"elimPrestamo\" id=\"'+ data.Libro.id +'\"><span class=\"glyphicon glyphicon-trash\"></span></a></td>'+\n                    '</tr>');\n            }else{\n\n\n                $('#alertaslibro .alert').html('Ya se agregó el Libro: ' + data.Libro.titulo );\n                $('#alertaslibro .alert').addClass('alert-info');\n\n                 setTimeout(function() {\n                     $('#alertaslibro .alert').html('&nbsp;');\n                     $('#alertaslibro .alert').removeClass('alert-info');\n                 }, 3000);\n            }\n\n            $(\".elimPrestamo\").on('click', function () { \n                var thisId = $(this).attr('id');\n                $(\"#row_\" + thisId).remove();\n\n                articulosPrestamo = jQuery.grep(articulosPrestamo, function(value) {                    \n                            return value != thisId;\n                        });\n\n                $(\"#totalArticulos\").text(articulosPrestamo.length);\n            });\n\n            $(\"#codigo\").val(\"\")\n            $(\"#totalArticulos\").text(articulosPrestamo.length)\n            \n        },\n\n        error: function(errors){\n            console.log(errors)\n        }\n    });     \n  });\n});",
-			"file": "public/js/prestamos.js",
-			"file_size": 2096,
-			"file_write_time": 130714746945543061,
-			"settings":
-			{
-				"buffer_size": 2036,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "public/js/libros/prestamos.js",
-			"settings":
-			{
-				"buffer_size": 3817,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "app/views/prestamos/home.blade.php",
-			"settings":
-			{
-				"buffer_size": 758,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "app/views/libros/libros.blade.php",
-			"settings":
-			{
-				"buffer_size": 9102,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "app/controllers/PrestamosController.php",
-			"settings":
-			{
-				"buffer_size": 3509,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"contents": "<?php\n\nclass UserController extends \\BaseController {\n\n    \n    public function __construct()\n    {\n        $this->beforeFilter('ver_usuarios', array('only' => 'index') );\n        $this->beforeFilter('crear_usuarios', array('only' => 'create') );\n        $this->beforeFilter('crear_usuarios', array('only' => 'store') );\n        $this->beforeFilter('editar_usuarios', array('only' => 'edit') );\n        $this->beforeFilter('editar_usuarios', array('only' => 'update') );\n        $this->beforeFilter('eliminar_usuarios', array('only' => 'delete') );\n    }\n	/**\n	 * Display a listing of the resource.\n	 *\n	 * @return Response\n	 */\n	public function index()\n	{\n		return View::make('users.home');\n	}\n\n\n	/**\n	 * Show the form for creating a new resource.\n	 * \n	 * @return Response\n	 */\n	public function create()\n	{\n        $roles = Role::all()->lists('name','id');\n		return View::make('users.create', array('roles' => $roles));\n	}\n\n	/**\n	 * Show the form for creating a new resource.\n	 *\n	 * @return Response\n	 */\n	public function createusuario()\n	{\n        $roles = Role::all()->lists('name','id');\n		return View::make('users.createusuario', array('roles' => $roles));\n	}\n\n	/**\n	 * Store a newly created resource in storage.\n	 *\n	 * @return Response\n	 */\n	public function store()\n	{\n		$input = Input::all();\n        $input['password'] = Hash::make($input['password']);//hacemos un hash de la contraseña\n        \n        $user = User::create($input);\n        $user->attachRole(Role::find(Input::get('rol')));\n        $message = array(\n			    \"type\" => \"alert-success\",\n			    \"title\" => \"Creado:\",\n			    \"message\" => \"Se registró el usuario \".Input::get('first_name')\n			);\n        return Redirect::route('users.index')->with('message',$message);\n	}\n\n	/**\n	 * Store a newly created resource in storage.\n	 *\n	 * @return Response\n	 */\n	public function storeUsuario()\n	{\n		$input = Input::all();\n        $input['password'] = Hash::make($input['password']);//hacemos un hash de la contraseña\n        $user = User::create($input);\n        $user->attachRole(Role::find(3));\n        $message = array(\n			    \"type\" => \"alert-success\",\n			    \"title\" => \"Creado:\",\n			    \"message\" => \"Se registró el usuario \".Input::get('first_name')\n			);\n        return Redirect::route('users.index')->with('message',$message);\n	}\n\n	\n	/**\n	 * Display the specified resource.\n	 *\n	 * @param  int  $id\n	 * @return Response\n	 */\n	public function show($id)\n	{\n		if(Request::ajax()){\n	        $users = User::where('identificacion','=',Input::get('identificacion'))->get()->first();\n	        return Response::json(array('user' => $users ));\n    	}else{\n			$users = User::where('sys','!=','1')->get();			\n	        foreach($users as $user){\n	            $user['rol'] = $user->roles()->first();\n	        }\n	        return View::make('users.users', array('users' => $users));    		\n    	}		\n	}\n\n\n	/**\n	 * Show the form for editing the specified resource.\n	 *\n	 * @param  int  $id\n	 * @return Response\n	 */\n	public function edit($id)\n	{\n        $user = User::find($id);\n        $userRole = $user->roles()->first();\n        $user['rol'] = $userRole;\n		return View::make('users.edit', array('user' => $user, 'roles' => Role::all()->lists('name','id')));\n	}\n\n\n	/**\n	 * Update the specified resource in storage.\n	 *\n	 * @param  int  $id\n	 * @return Response\n	 */\n	public function update($id)\n	{\n		$nombre = Input::get('first_name');\n        $apellido = Input::get('last_name');\n        $email = Input::get('email');\n        $password = Hash::make(Input::get('password'));\n        \n        $user = User::find($id);\n        $user->first_name = $nombre;\n        $user->last_name = $apellido;\n        $user->email = $email;\n        if(!empty(Input::get('password'))){\n            $user->password = $password;\n        }\n        $user->save();\n         \n        $user->roles()->detach();//no es necesario eliminar la relacion con el antiguo rol ya que la libreria permite tener multiples roles\n        \n        $user->attachRole(Role::find(Input::get('rol')));\n        \n        $message = array(\n			    \"type\" => \"alert-info\",\n			    \"title\" => \"Edición:\",\n			    \"message\" => \"Se actualizó datos del usuario \".$nombre\n			);\n        return Redirect::route('users.index')->with('message',$message);\n	}\n\n\n	/**\n	 * Remove the specified resource from storage.\n	 *\n	 * @param  int  $id\n	 * @return Response\n	 */\n	public function destroy($id)\n	{\n		User::destroy($id);\n		 $message = array(\n			    \"type\" => \"alert-danger\",\n			    \"title\" => \"Eliminado:\",\n			    \"message\" => \"Se quitó usuario de la Aplicación\"\n			);\n\n        return Redirect::route('users.index')->with('message',$message);\n	}\n\n\n}\n",
-			"file": "app/controllers/UserController.php",
-			"file_size": 4829,
-			"file_write_time": 130724152432393413,
-			"settings":
-			{
-				"buffer_size": 4644,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "app/controllers/UsuariosBibliotecaController.php",
-			"settings":
-			{
-				"buffer_size": 3093,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "app/routes.php",
 			"settings":
 			{
-				"buffer_size": 2954,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "app/views/users/biblioteca/usuarios.blade.php",
-			"settings":
-			{
-				"buffer_size": 11959,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "public/js/usuarios/crud.js",
-			"settings":
-			{
-				"buffer_size": 5065,
+				"buffer_size": 3341,
 				"line_ending": "Windows"
 			}
 		}
@@ -310,6 +276,27 @@
 	},
 	"file_history":
 	[
+		"/C/xampp/htdocs/lexorp/app/models/TipoIdentificacion.php",
+		"/C/xampp/htdocs/lexorp/app/database/seeds/DatabaseSeeder.php",
+		"/C/xampp/htdocs/lexorp/app/database/seeds/UserSeeder.php",
+		"/C/xampp/htdocs/lexorp/app/routes.php",
+		"/C/xampp/htdocs/lexorp/app/database/seeds/UsuariosSeeder.php",
+		"/C/xampp/htdocs/lexorp/app/database/migrations/2015_04_03_020958_add_activo_to_users.php",
+		"/C/xampp/htdocs/lexorp/app/models/User.php",
+		"/C/xampp/htdocs/lexorp/app/database/migrations/2015_04_02_235806_add_table_usuariosbiblioteca.php",
+		"/C/xampp/htdocs/lexorp/app/database/migrations/2014_10_12_145910_Users.php",
+		"/C/xampp/htdocs/lexorp/app/controllers/UsuariosBibliotecaController.php",
+		"/C/xampp/htdocs/lexorp/app/controllers/UserController.php",
+		"/C/xampp/htdocs/lexorp/app/controllers/PrestamosController.php",
+		"/C/xampp/htdocs/lexorp/app/views/libros/libros.blade.php",
+		"/C/xampp/htdocs/lexorp/app/views/prestamos/home.blade.php",
+		"/C/xampp/htdocs/lexorp/public/js/libros/prestamos.js",
+		"/C/xampp/htdocs/lexorp/public/js/prestamos.js",
+		"/C/xampp/htdocs/lexorp/public/locales/bootstrap-datepicker.es.min.js",
+		"/G/Descargas2015/bootstrap-datepicker-1.4.0-dist/js/bootstrap-datepicker.js",
+		"/C/xampp/htdocs/lexorp/app/views/layouts/layout_base.blade.php",
+		"/C/xampp/htdocs/lexorp/app/views/prestamos/create.blade.php",
+		"/C/xampp/htdocs/lexorp/public/js/libros/crud.js",
 		"/C/xampp/htdocs/lexorp/public/js/usuarios/crud.js",
 		"/C/xampp/htdocs/lexorp/public/js/bootstrap-datepicker.min.js",
 		"/C/xampp/htdocs/lexorp/public/css/bootstrap-datepicker.min.css",
@@ -319,16 +306,9 @@
 		"/C/xampp/htdocs/lexorp/app/views/users/users.blade.php",
 		"/C/xampp/htdocs/lexorp/app/database/seeds/InventarioSeeder.php",
 		"/C/xampp/htdocs/lexorp/app/views/libros/home.blade.php",
-		"/C/xampp/htdocs/lexorp/app/controllers/PrestamosController.php",
-		"/C/xampp/htdocs/lexorp/app/views/libros/libros.blade.php",
-		"/C/xampp/htdocs/lexorp/public/js/libros/prestamos.js",
-		"/C/xampp/htdocs/lexorp/app/views/prestamos/home.blade.php",
-		"/C/xampp/htdocs/lexorp/app/views/layouts/layout_base.blade.php",
 		"/C/xampp/htdocs/lexorp/public/js/libros/prestamos",
 		"/C/xampp/htdocs/lexorp/public/css/login.css",
-		"/C/xampp/htdocs/lexorp/app/routes.php",
 		"/C/xampp/htdocs/lexorp/app/models/Prestamo.php",
-		"/C/xampp/htdocs/lexorp/public/js/prestamos.js",
 		"/C/xampp/htdocs/lexorp/app/database/migrations/2015_02_16_010630_Inventario.php",
 		"/C/xampp/htdocs/lexorp/app/models/Articulo.php",
 		"/C/xampp/htdocs/lexorp/app/models/Item.php",
@@ -338,7 +318,6 @@
 		"/C/xampp/htdocs/lexorp/app/models/Libro.php",
 		"/C/xampp/htdocs/lexorp/public/js/libros/crear.js",
 		"/C/xampp/htdocs/lexorp/app/views/libros/create.blade.php",
-		"/C/xampp/htdocs/lexorp/app/database/seeds/DatabaseSeeder.php",
 		"/C/xampp/htdocs/lexorp/app/database/seeds/LibrosSeeder.php",
 		"/C/xampp/htdocs/lexorp/public/js/utilidades.js",
 		"/C/xampp/htdocs/lexorp/public/css/wizard.css",
@@ -354,18 +333,15 @@
 		"/C/xampp/htdocs/lexorp/app/models/Autor.php",
 		"/C/xampp/htdocs/lexorp/public/js/wizard.js",
 		"/G/Descargas2015/Neiva/Neiva.htm",
-		"/C/xampp/htdocs/lexorp/app/controllers/UserController.php",
 		"/C/xampp/htdocs/lexorp/app/views/users/home.blade.php",
 		"/C/xampp/htdocs/lexorp/app/controllers/ArticulosController.php",
 		"/C/xampp/htdocs/lexorp/app/views/home/home.blade.php",
 		"/C/xampp/htdocs/lexorp/app/views/layouts/layout_base_BKP.blade.php",
 		"/C/xampp/htdocs/lexorp/app/database/migrations/2015_02_01_181111_Prestamos.php",
-		"/C/xampp/htdocs/lexorp/app/views/prestamos/create.blade.php",
 		"/C/xampp/htdocs/lexorp/app/database/seeds/ArticulosSeeder - copia.php",
 		"/C/xampp/htdocs/lexorp/app/database/migrations/2015_01_31_220253_Articulos.php",
 		"/C/xampp/htdocs/lexorp/app/models/TipoArticulos.php",
 		"/C/xampp/htdocs/lexorp/app/database/seeds/ArticulosSeeder.php",
-		"/C/xampp/htdocs/lexorp/app/database/seeds/UserSeeder.php",
 		"/C/xampp/htdocs/lexorp/app/database/migrations/2015_02_14_024319_inventario.php",
 		"/C/xampp/htdocs/lexorp/app/database/migrations/2015_02_14_023940_create_inventario.php",
 		"/C/xampp/htdocs/lexorp/app/views/users/perfil.blade.php",
@@ -376,12 +352,10 @@
 		"/C/xampp/htdocs/lexorp/app/views/users/createusuario.blade.php",
 		"/C/xampp/htdocs/lexorp/app/views/login/login.blade.php",
 		"/C/xampp/htdocs/lexorp/app/views/users/create.blade.php",
-		"/C/xampp/htdocs/lexorp/app/database/migrations/2014_10_12_145910_Users.php",
 		"/C/xampp/htdocs/loginBasico/app/views/users/login.blade.php",
 		"/C/xampp/htdocs/loginBasico/app/views/users/register.blade.php",
 		"/C/xampp/htdocs/lexorp/app/database/seeds/RolesSeeder.php",
 		"/C/xampp/htdocs/lexorp/app/database/migrations/2014_10_12_150706_entrust_setup_tables.php",
-		"/C/xampp/htdocs/lexorp/app/models/User.php",
 		"/C/Users/dyma5_000/AppData/Roaming/Sublime Text 2/Packages/User/Package Control.sublime-settings",
 		"/C/Users/dyma5_000/AppData/Roaming/Sublime Text 2/Packages/Git/Git.sublime-settings",
 		"/C/Users/dyma5_000/AppData/Roaming/Sublime Text 2/Packages/User/Git.sublime-settings",
@@ -423,6 +397,11 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"`",
+			"libro",
+			" data-validate=\"Requerido\"",
+			"data-validate=\"Requerido\"",
+			"         <div class=\"row\">                        \n            <div class=\"col-xs-6 col-sm-6 col-md-6\">                        \n               <div class=\"form-group\">\n                  Nombres\n                  <input type=\"text\" name=\"nombres\" id=\"first_name\" class=\"form-control input-sm\" data-validate=\"Requerido\">\n               </div> \n            </div>\n            <div class=\"col-xs-6 col-sm-6 col-md-6\">                        \n               <div class=\"form-group\">\n                  Apellidos\n                  <input type=\"text\" name=\"last_name\" id=\"last_name\" class=\"form-control input-sm\" data-validate=\"Requerido\">\n               </div>\n            </div>\ndata-validate=\"Requerido\"",
 			"en",
 			"language",
 			"@",
@@ -470,6 +449,9 @@
 		"regex": false,
 		"replace_history":
 		[
+			"'",
+			" ",
+			"",
 			"35px",
 			"Libro",
 			"totalArticulos",
@@ -479,17 +461,154 @@
 		"reverse": false,
 		"show_context": true,
 		"use_buffer2": true,
-		"whole_word": true,
+		"whole_word": false,
 		"wrap": true
 	},
 	"groups":
 	[
 		{
-			"selected": 13,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
+					"file": "app/views/users/biblioteca/usuarios.blade.php",
+					"settings":
+					{
+						"buffer_size": 8103,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								807,
+								807
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 3,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/controllers/UsuariosBibliotecaController.php",
+					"settings":
+					{
+						"buffer_size": 2420,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								446,
+								446
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 714.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "public/js/usuarios/crud.js",
+					"settings":
+					{
+						"buffer_size": 5333,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4018,
+								4018
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/models/UsuarioBiblioteca.php",
+					"settings":
+					{
+						"buffer_size": 2186,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								638,
+								638
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/views/libros/libros.blade.php",
+					"settings":
+					{
+						"buffer_size": 9110,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3706,
+								3706
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 798.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
 					"file": "public/js/libros/crud.js",
 					"settings":
 					{
@@ -500,260 +619,13 @@
 						"selection":
 						[
 							[
-								0,
-								0
+								3872,
+								3529
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 294.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "app/views/prestamos/create.blade.php",
-					"settings":
-					{
-						"buffer_size": 5618,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								153,
-								153
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "app/views/layouts/layout_base.blade.php",
-					"settings":
-					{
-						"buffer_size": 5796,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								758,
-								758
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "/G/Descargas2015/bootstrap-datepicker-1.4.0-dist/js/bootstrap-datepicker.js",
-					"settings":
-					{
-						"buffer_size": 50050,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								42040,
-								42048
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 21184.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "public/locales/bootstrap-datepicker.es.min.js",
-					"settings":
-					{
-						"buffer_size": 510,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								510
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 2442.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "public/js/prestamos.js",
-					"settings":
-					{
-						"buffer_size": 2036,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1005,
-								1005
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "public/js/libros/prestamos.js",
-					"settings":
-					{
-						"buffer_size": 3817,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "app/views/prestamos/home.blade.php",
-					"settings":
-					{
-						"buffer_size": 758,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "app/views/libros/libros.blade.php",
-					"settings":
-					{
-						"buffer_size": 9102,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2243,
-								2243
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 588.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "app/controllers/PrestamosController.php",
-					"settings":
-					{
-						"buffer_size": 3509,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2463,
-								2463
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 1554.0,
@@ -762,72 +634,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 10,
-					"file": "app/controllers/UserController.php",
-					"settings":
-					{
-						"buffer_size": 4644,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2430,
-								2854
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 42.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 11,
-					"file": "app/controllers/UsuariosBibliotecaController.php",
-					"settings":
-					{
-						"buffer_size": 3093,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								779,
-								779
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 378.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 12,
+					"buffer": 6,
 					"file": "app/routes.php",
 					"settings":
 					{
-						"buffer_size": 2954,
+						"buffer_size": 3341,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1654,
-								1654
+								1363,
+								1454
 							]
 						],
 						"settings":
@@ -835,61 +654,7 @@
 							"syntax": "Packages/PHP/PHP.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 294.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 13,
-					"file": "app/views/users/biblioteca/usuarios.blade.php",
-					"settings":
-					{
-						"buffer_size": 11959,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								5212,
-								5212
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1050.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 14,
-					"file": "public/js/usuarios/crud.js",
-					"settings":
-					{
-						"buffer_size": 5065,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1879,
-								1879
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 546.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

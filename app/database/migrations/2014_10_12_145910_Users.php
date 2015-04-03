@@ -21,9 +21,11 @@ class Users extends Migration {
 	        $table->string('first_name', 20);
 	        $table->string('last_name', 20);
 	        $table->boolean('sys')->default(false);
+	        $table->boolean('active')->default(true);
 	        $table->rememberToken();
 	        $table->timestamps();
         });
+
 	}
 
 	/**
