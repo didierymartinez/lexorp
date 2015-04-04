@@ -17,13 +17,11 @@ Route::get('/', function()
 });
 
 Route::get('test',function(){
-	//$Articulo = Articulo::find(1)->articulo;
-	//return get_class($Articulo);
+	return libro::find(1)->articulos->first()->items->count();
 
 	//$Articulo = Articulo::find(1);
 	//return $Articulo->movimientos;
 
-	$usuarionuevo = UsuarioBiblioteca::find(1)->get()->first();
 
 		// $usuarionuevo = new UsuarioBiblioteca;
 
@@ -40,8 +38,16 @@ Route::get('test',function(){
 
 
 		// $usuarionuevo->save();
-		$date = DateTime::createFromFormat('d/m/Y', "24/04/2012");
-		return $date->format('Y-m-d');
+		
+		// $usuario = User::where('identificacion', '=', '80549322')->get()->first();
+
+      	
+
+		// 	$usuario->NombreCompleto = $usuario->NombreCompleto;
+		// 	$usuario->activo = ($usuario->activo == "1") ? "Si" : "No";
+		// 	$usuario->tipoidentificacionDesc = $usuario->tipoIdentificacion;
+
+		// return $usuario;
 
 		//[{"titulo":"bsdf","subtitulo":"adfa","titulooriginal":"adf","anoedicion":"1900","edicion":"adf","isbn":"3234","coleccion":"234","infoadicional":""}]
       //$Item = Item::find(2);
@@ -79,11 +85,6 @@ Route::resource('/articulos','ArticulosController');
 
 Route::resource('/tiposarticulos','TiposArticulosController');
 
-
-
-Route::get('createusuario', array('as' => 'users.createusuario', 'uses' => 'UserController@createusuario'));
-Route::get('users.storeUsuario', array('as' => 'users.storeUsuario', 'uses' => 'UserController@createusuario'));
-Route::post('users.storeUsuario','UserController@storeUsuario');
 
 Route::get('/permisos','PermisosController@index');
 Route::get('/permisos/asignar','PermisosController@asignar');

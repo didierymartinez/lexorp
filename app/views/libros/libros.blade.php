@@ -8,12 +8,14 @@
 @parent
 @stop
 
+@section('titulopagina')
+Catalogo de libros
+@stop
+
 
 @section('content')
        
         @if(Entrust::can('crear_usuarios'))
-
-    <h2>Catalogo de libros</h2>
         
             <button type="submit" class="btn btn-success" id="crearlibro">
                 <i class="glyphicon glyphicon-plus-sign "></i> Crear
@@ -196,6 +198,7 @@
                 <tr>                    
                     <th data-field="operate" data-formatter="operateFormatter" data-width="10" data-events="operateEvents"></th>
                     <th data-field="titulo" data-sortable="true" data-switchable="false">Titulo</th>
+                    <th data-field="ejemplares" data-sortable="true" data-switchable="false">Ejemplares</th>
                     <th data-field="subtitulo" data-sortable="true" data-visible="false">Sub-Titulo</th>
                     <th data-field="titulooriginal" data-sortable="true" data-visible="false">Titulo Original</th>
                     <th data-field="NombresAutores" data-sortable="true">Autor</th>                    

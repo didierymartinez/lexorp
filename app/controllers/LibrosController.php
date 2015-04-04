@@ -19,6 +19,7 @@ class LibrosController extends \BaseController {
           		}
           		$libro->NombresAutores = substr($libro->NombresAutores, 3);
           		$libro->NombreEditorial = $libro->editorial->nombre;
+          		$libro->ejemplares = $libro->articulos->first()->items->count();
           		array_push($CatalogoLibros, $libro); 
 
         	}   
@@ -136,10 +137,27 @@ class LibrosController extends \BaseController {
 	{
 		if(Request::ajax()){
 			$datosEliminar = json_decode(Input::get('libroNuevo'), true)[0];
-			$autoreslibro = $datosEliminar['autores'];
-			Libro::find($id)->autores()->detach();			
-			Libro::destroy($id);
-			return Response::json('Libro Eliminado');
+
+
+        	
+	
+			if(Libro::find($id)->articulos->first()->items->count() == 0){
+				$autoreslibro = $datosEliminar['autores'];
+				Libro::find($id)->autores()->detach();			
+				Libro::destroy($id);
+				$message = array(
+				    "type" => "danger",
+				    "message" => "Se eliminó libro"
+				);			
+			}else{
+				$message = array(
+				    "type" => "danger",
+				    "message" => "Este libro tiene ejemplares No se puede Eliminar"
+				);
+			}
+
+			return Response::json($message);
+			
 		}
 	}
 

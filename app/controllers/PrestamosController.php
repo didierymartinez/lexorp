@@ -98,14 +98,28 @@ class PrestamosController extends \BaseController {
 	public function crearPrestamo() 
 	{
 		$identificacion = Input::get('identificacion');
-		$usuario = User::where('identificacion', '=', $identificacion)->get()->first();
-		if($usuario){
-			return View::make('prestamos.create')->with('usuario',$usuario);	
+		$usuario = UsuarioBiblioteca::where('identificacion', '=', $identificacion)->get()->first();
+    	
+
+		if ($usuario){
+			if($usuario->activo == 0){
+				$message = array(
+			    "type" => "alert-danger",
+			    "title" => "Error:",
+			    "message" => "Usuario ". $identificacion ." esta Inactivo"
+				);
+	        	return Redirect::route('prestamos.index')->with('message',$message);
+			} else{
+				$usuario->NombreCompleto = $usuario->NombreCompleto;
+				$usuario->activo = ($usuario->activo == "1") ? "Si" : "No";
+				$usuario->tipoidentificacionDesc = $usuario->tipoIdentificacion->Descripcion;
+				return View::make('prestamos.create')->with('usuario',$usuario);	
+			}
 		}else{
 			$message = array(
 			    "type" => "alert-danger",
 			    "title" => "Error:",
-			    "message" => "Identificación ". $identificacion ." no existe "
+			    "message" => "Usuario con identificación: ". $identificacion ." no existe"
 			);
         	return Redirect::route('prestamos.index')->with('message',$message);
 		}
@@ -116,15 +130,15 @@ class PrestamosController extends \BaseController {
 		if(Request::ajax()){
 			
 			$respuesta = array();	
-			$Item = Item::where('placa','=',Input::get('id'))->first();
-
-			$Prestamo = Movimiento::find($Item->ultimoMovimiento_id);
+			$Item = Item::where('placa','=',Input::get('id'))->first();			
 
 			if(!$Item){
 				
 				$respuesta['exito'] = 0;
 				$respuesta['mensaje'] = 'Articulo no existe';
 			}else{
+
+				$Prestamo = Movimiento::find($Item->ultimoMovimiento_id);
 
 				if($Prestamo->movimiento_type == "Prestamo"){
 					$respuesta['exito'] = 0;

@@ -4,6 +4,9 @@
     Realizar Prestamos
 @stop
 
+@section('titulopagina')
+Realizar Prestamo
+@stop
 
 @section('content')
 

@@ -34,16 +34,6 @@ class UserController extends \BaseController {
 		return View::make('users.create', array('roles' => $roles));
 	}
 
-	/**
-	 * Show the form for creating a new resource.
-	 *
-	 * @return Response
-	 */
-	public function createusuario()
-	{
-        $roles = Role::all()->lists('name','id');
-		return View::make('users.createusuario', array('roles' => $roles));
-	}
 
 	/**
 	 * Store a newly created resource in storage.
@@ -57,25 +47,6 @@ class UserController extends \BaseController {
         
         $user = User::create($input);
         $user->attachRole(Role::find(Input::get('rol')));
-        $message = array(
-			    "type" => "alert-success",
-			    "title" => "Creado:",
-			    "message" => "Se registró el usuario ".Input::get('first_name')
-			);
-        return Redirect::route('users.index')->with('message',$message);
-	}
-
-	/**
-	 * Store a newly created resource in storage.
-	 *
-	 * @return Response
-	 */
-	public function storeUsuario()
-	{
-		$input = Input::all();
-        $input['password'] = Hash::make($input['password']);//hacemos un hash de la contraseña
-        $user = User::create($input);
-        $user->attachRole(Role::find(3));
         $message = array(
 			    "type" => "alert-success",
 			    "title" => "Creado:",

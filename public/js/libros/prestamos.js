@@ -24,8 +24,7 @@ $(document).ready(function(){
 	            wizard.hideButtons(); 
 	            wizard.updateProgressBar(0);
 	        }
-	    });
-	
+	    });	
 	});
 
 
@@ -45,19 +44,14 @@ $(document).ready(function(){
         success: function (data) {
 
             if(data.exito == 0){
-
               wizard.mensajes.show('danger',data.mensaje);
-
             }else{
-
                 CantidadPrestamo = jQuery.grep(articulosPrestamo, function(value) {
                     return value == data.Libro.id;
                 });
 
-                if (CantidadPrestamo.length == 0){
-                    
-                    var articulo = [data.Libro.id, data.Libro.fechadevolucion]
-                    
+                if (CantidadPrestamo.length == 0){                  
+                    var articulo = [data.Libro.id, data.Libro.fechadevolucion]                    
                     articulosPrestamo.push(articulo);
 
                     $('#articulosprestamo tr').last().after(
@@ -81,7 +75,7 @@ $(document).ready(function(){
                     $("#row_" + thisId).remove();
 
                     articulosPrestamo = jQuery.grep(articulosPrestamo, function(value) {                    
-                                return value != thisId;
+                                return value[0] != thisId;
                             });
 
                     $("#totalArticulos").text(articulosPrestamo.length);
@@ -106,18 +100,15 @@ $(document).ready(function(){
         }
     });
 
-    wizard.mensajes = (function() {
-
-        var that = {};
-        
+   wizard.mensajes = (function() {
+        var that = {};        
         that.show = function(type, text) {
-          $('#alertaslibro .alert').html(text);
-          $('#alertaslibro .alert').addClass('alert-' + type);
-
-          setTimeout(function() {
-           $('#alertaslibro .alert').html('&nbsp;');
-           $('#alertaslibro .alert').removeClass('alert-' + type);
-          }, 3000);
+            $('.alertaswizard .alert').html(text);
+            $('.alertaswizard .alert').addClass('alert-' + type);
+            setTimeout(function() {
+                $('.alertaswizard .alert').html('&nbsp;');
+                $('.alertaswizard .alert').removeClass('alert-' + type);
+            }, 3000);
         };
 
         return that;

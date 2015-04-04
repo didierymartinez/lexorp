@@ -156,11 +156,11 @@ h1, h2, h3, h4 {
     padding-left: 15px;
   }
 .container{
-  margin-top: 90px;
+  margin-top: 40px;
 }
 
 .alertas{
-  margin-top: 60px;
+  margin-top: 40px;
 }
 
 div.spinedit { display: inline-block; position: relative; }
@@ -197,5 +197,5 @@ div.spinedit .icon-chevron-down { top: 0px; left: -28px;  font-size: 11px  }
 .user-info-block .user-body {float: left; padding: 5%; width: 90%;}
 .user-body .tab-content > div {float: left; width: 100%;}
 .user-body .tab-content h4 {width: 100%; margin: 10px 0; color: #333;}
-#alertaslibro .alert {padding: 4px;}
+.alertaswizard .alert {padding: 4px;}
 .badge-notify{background:rgb(0, 136, 204);  position:relative;  top: -20px;  left: -7px; }

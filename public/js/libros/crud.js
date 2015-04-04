@@ -32,9 +32,6 @@ $(document).ready(function(){
 
 	wizard.on("submit", function(wizard) {
 		var libroNuevo = this.serializeObject();
-		
- 
-
 	    
 	    $.ajax({
 	        type: (!!libroNuevo[0].id) ? 'PUT'   : 'POST',
@@ -52,9 +49,6 @@ $(document).ready(function(){
             
 	        }
 	    });
-
-			
-
 	});
 
 	wizard.el.find(".wizard-success .im-done").click(function() {
@@ -99,6 +93,7 @@ function Requerido(el) {
 
 
     function operateFormatter(value, row, index) {
+
         return [
             '<div class="btn-group btn-group-xs" role="group">',
                 '<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">',
@@ -110,11 +105,7 @@ function Requerido(el) {
                         '<i class="glyphicon glyphicon-pencil"></i> Editar',
                     '</a>',
                  ' </li>',
-                 '<li>',
-                    '<a class="remove" href="javascript:void(0)" title="Borrar">',
-                        '<i class="glyphicon glyphicon-trash"></i> Borrar',
-                    '</a>',
-                 ' </li>',
+                 	(row.ejemplares==0)?'<li><a class="remove" href="javascript:void(0)" title="Borrar"><i class="glyphicon glyphicon-trash"></i> Borrar</a></li>':' ',
                 '</ul>',
             '</div>'
         ].join('');
@@ -156,11 +147,11 @@ function Requerido(el) {
 					        url:  '../libros/'+ row.id,
 					        dataType: 'json',
 					        data: {"libroEliminar":JSON.stringify(row)},
-					        success: function (data) {
+					        success: function (data) {					        	
 					        	$('#table-libros').bootstrapTable('refresh', {
 							        url: '../libros'
 							    });	
-					          	mensajero.show('danger', 'Libro Eliminado')				            
+					          	mensajero.show(data.type, data.message)				            
 					        }
 					    });			      				        
 			      }

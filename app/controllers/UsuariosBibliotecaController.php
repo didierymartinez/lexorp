@@ -67,8 +67,18 @@ class UsuariosBibliotecaController extends \BaseController {
 	 */
 	public function show($id)
 	{
+		if(Request::ajax()){
 
+			$idUsuario = json_decode(Input::get('idUsuario'), true);
 
+			if($idUsuario != ""){
+				$usuario = UsuarioBiblioteca::where('id', '<>', $idUsuario)->where('identificacion', '=', $id)->get()->first();	        
+	        	return Response::json(array( 'error' => ($usuario) ? 1 : 0,'mensaje' => ($usuario) ? 'El usuario con identificación   '. $usuario->identificacion.' ya existe': 'Valido' ));				
+			}else{
+				$usuario = UsuarioBiblioteca::where('identificacion', '=', $id)->get()->first();	        
+	        	return Response::json(array( 'error' => ($usuario) ? 1 : 0,'mensaje' => ($usuario) ? 'El usuario con identificación   '. $usuario->identificacion.' ya existe': 'Valido' ));
+			}        
+    	}	
 	}
 
 

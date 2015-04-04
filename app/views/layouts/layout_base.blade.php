@@ -114,13 +114,23 @@
 </nav>
 <div class="main">
 <div class="container">
-<div id="alertas"></div>
-  @if(Session::has('message'))
-  <div class="alert {{ Session::get('message')['type']  }} alert-dismissible" role="alert">
-  <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-  <strong>{{ Session::get('message')["title"]  }}</strong> {{ Session::get('message')["message"]  }}
-  </div>
-  @endif
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>@yield('titulopagina')</h2>  
+    </div>
+    <div class="col-md-8" style="padding-top:18px;">
+      <div id="alertas">&nbsp;</div>
+        @if(Session::has('message'))
+        <div class="alert {{ Session::get('message')['type']  }} alert-dismissible" style="padding: 8px;" role="alert">
+        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <strong>{{ Session::get('message')["title"]  }}</strong> {{ Session::get('message')["message"]  }}
+        </div>
+        @endif
+    </div>
+</div>
+
+  
 
 
   @yield('content')

@@ -29,7 +29,7 @@
 
         <div class="span4">
             <div class="bs-callout bs-callout-info" id="callout-glyphicons-location">
-                <h4 id="changing-the-icon-font-location">{{  ucwords(strtolower($usuario->first_name))  }} {{  ucwords(strtolower($usuario->last_name)) }}</h4>
+                <h4 id="changing-the-icon-font-location">{{  ucwords(strtolower($usuario->NombreCompleto))  }}</h4>
                 <p data-readline-background="rgba(0, 0, 0, 0)">{{$usuario->identificacion}}</p>
             </div>
 
@@ -49,13 +49,69 @@
                     </li>
                 </ul>
             </div>
-
+        
             <div class="tab-content">
+                </br></br>
                 <div id="information" class="tab-pane active">
-                    <h4>Información del usuario</h4>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <span class="help-block">Tipo Identificación:</span>  
+                        </div>
+                        <div class="col-md-8">
+                            <h4>{{$usuario->tipoidentificacionDesc}}</h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <span class="help-block">Identificación:</span>  
+                        </div>
+                        <div class="col-md-8">
+                            <h4>{{$usuario->identificacion}}</h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <span class="help-block">Sexo:</span>  
+                        </div>
+                        <div class="col-md-8">
+                            <h4>{{$usuario->sexo}}</h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <span class="help-block">Fecha de Nacimiento:</span>  
+                        </div>
+                        <div class="col-md-8">
+                            <h4>{{$usuario->fecha_nacimiento}}</h4>
+                        </div>
+                    </div>
                 </div>
                 <div id="settings" class="tab-pane">
-                    <h4>Telefonos</h4>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <span class="help-block">Telefono Fijo:</span>  
+                        </div>
+                        <div class="col-md-8">
+                            <h4>{{$usuario->tel_fijo}}</h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <span class="help-block">Celular:</span>  
+                        </div>
+                        <div class="col-md-8">
+                            <h4>{{$usuario->celular}}</h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <span class="help-block">Dirección:</span>  
+                        </div>
+                        <div class="col-md-8">
+                            <h4>{{$usuario->direccion}}</h4>
+                        </div>
+                    </div>
+
                 </div>
                 <div id="email" class="tab-pane">
                     <span class="help-block">Email:</span>  <h4>{{$usuario->email}}</h4>
@@ -72,7 +128,7 @@
     <div class="wizard-card"  data-cardname="seleccion"> 
         <div class="row">
         <div class="col-md-12"><h3>Seleccione Libros</h3></div>
-        <div class="col-md-8"><div id="alertaslibro"><div class="alert alert-dismissable">&nbsp;</div></div></div>
+        <div class="col-md-8"><div id="alertaslibro" class="alertaswizard"><div class="alert alert-dismissable">&nbsp;</div></div></div>
         <div class="col-md-4" > 
             <span class="pull-right">Total:
             <span class="glyphicon glyphicon-book" aria-hidden="true" style="font-size:20px;"></span> 
@@ -97,7 +153,7 @@
         
 
         <table id="articulosprestamo" class="table table-condensed">
-            <th>ISBN</th><th>Titulo</th><th>Fecha Entrega</th><th>Quitar</th>
+            <th>Placa</th><th>Titulo</th><th>Fecha Entrega</th><th>Quitar</th>
         </table>        
 
       

@@ -43,8 +43,7 @@ $(document).ready(function(){
 						wizard._submitting = false;
 						wizard.showSubmitCard("success");
 						wizard.updateProgressBar(0);
-					}, 20);
-            
+					}, 20);            
 	        }
 	    });
 
@@ -68,7 +67,48 @@ $(document).ready(function(){
 
 	$('#fecha_nacimiento').datepicker({autoclose: true});
 
-	$('.input-sm').css('font-size','15px')
+	$('.input-sm').css('font-size','15px');
+
+	$('#identificacion').on('blur', function(){		
+		var id = $('#id').val();
+
+			$.ajax({
+		        type: 'GET',
+		        url:  '../usuariosbiblioteca/'+ this.value,
+		        dataType: 'json',
+		        data: {"idUsuario": JSON.stringify(id)},
+		        success: function (data) {
+		        	if(data.error == '1'){
+			        	wizard.mensajes.show('danger', data.mensaje);
+			        	$('#identificacion').focus(); 
+
+							var retValue = {};
+								retValue.status = false;
+								retValue.msg = "Dato Requerido";
+
+							return retValue;           
+		      		}
+		        },
+		        error: function (xhr, ajaxOptions, thrownError) {
+			        alert(xhr.responseText);
+			    }
+		    });	
+	});
+
+
+   wizard.mensajes = (function() {
+        var that = {};        
+        that.show = function(type, text) {
+            $('.alertaswizard .alert').html(text);
+            $('.alertaswizard .alert').addClass('alert-' + type);
+            setTimeout(function() {
+                $('.alertaswizard .alert').html('&nbsp;');
+                $('.alertaswizard .alert').removeClass('alert-' + type);
+            }, 3000);
+        };
+
+        return that;
+    }());
 });
 
 

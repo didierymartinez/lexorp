@@ -8,10 +8,12 @@ Usuarios Biblioteca
 @parent
 @stop
 
+@section('titulopagina')
+Usuarios Biblioteca
+@stop
 
 @section('content')
 
-<h2>Usuarios Biblioteca</h2>
 @if(Entrust::can('crear_usuarios'))
 <button type="submit" class="btn btn-success" id="crearusuario">
  <i class="glyphicon glyphicon-plus-sign "></i> Crear
@@ -22,6 +24,7 @@ Usuarios Biblioteca
 
    <div class="wizard-card" data-cardname="Titulo">
       <h3>Datos Personales</h3>
+
       <!-- <div class="col-sm-4 user-image">
          <img src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xfp1/v/t1.0-1/c23.0.135.135/1653984_10152228375391427_156457130_n.jpg?oh=8b242d31a41f9a670d72512ff0497a4c&oe=5560615B&__gda__=1431785571_749377786dff582c212c8e928d5521ad"
          class="img-circle">
@@ -37,15 +40,15 @@ Usuarios Biblioteca
             </button> -->
          </div>            
       </div>
-
-      <br>
+      <div class="col-md-8"><div id="alertasusuarios" class="alertaswizard"><div class="alert alert-dismissable">&nbsp;</div></div></div>
+     
       <div class="wizard-input-section">
          <div class="row">
             <div class="col-xs-6 col-sm-6 col-md-6">                        
                <div class="form-group">
                   Identificación
                   <input type="hidden" class="form-control" id="id" name="id" >
-                  <input type="text" name="identificacion" id="identificacion" class="form-control input-sm" >
+                  <input type="text" name="identificacion" id="identificacion" class="form-control input-sm" data-validate="Requerido">
                </div> 
             </div>
             <div class="col-xs-6 col-sm-6 col-md-6">                        
@@ -70,13 +73,13 @@ Usuarios Biblioteca
             <div class="col-xs-6 col-sm-6 col-md-6">                        
                <div class="form-group">
                   Nombres
-                  <input type="text" name="nombres" id="nombres" class="form-control input-sm" >
+                  <input type="text" name="nombres" id="nombres" class="form-control input-sm" data-validate="Requerido">
                </div> 
             </div>
             <div class="col-xs-6 col-sm-6 col-md-6">                        
                <div class="form-group">
                   Apellidos
-                  <input type="text" name="apellidos" id="apellidos" class="form-control input-sm" >
+                  <input type="text" name="apellidos" id="apellidos" class="form-control input-sm" data-validate="Requerido">
                </div>
             </div>
          </div>
@@ -85,7 +88,7 @@ Usuarios Biblioteca
                <div class="form-group">
                   <div class="col-xs-4 col-sm-4 col-md-4">
                   Sexo
-                  <select id="sexo" name="sexo" data-placeholder="Seleccione" style="width:200px;" class="chzn-select form-control">
+                  <select id="sexo" name="sexo" data-placeholder="Seleccione" style="width:200px;" class="chzn-select form-control" data-validate="Requerido">
                      <option value=""></option>
                      <option value="M">Masculino</option>
                      <option value="F">Femenino</option>
@@ -96,7 +99,7 @@ Usuarios Biblioteca
              <div class="col-xs-6 col-sm-6 col-md-6">                        
                 <div class="form-group">
                   Fecha Nacimiento
-                  <input type="text" name="fecha_nacimiento" id="fecha_nacimiento" class="form-control input-sm" >
+                  <input type="text" name="fecha_nacimiento" id="fecha_nacimiento" class="form-control input-sm" data-validate="Requerido">
                </div>
             </div>
          </div>
@@ -111,7 +114,7 @@ Usuarios Biblioteca
             <div class="col-xs-12 col-sm-12 col-md-12">
                <div class="form-group">
                   Dirección
-                  <input type="text" name="direccion" id="direccion" class="form-control input-sm" >
+                  <input type="text" name="direccion" id="direccion" class="form-control input-sm" data-validate="Requerido">
                </div>             
             </div>        
             <div class="col-xs-6 col-sm-6 col-md-6">                        

@@ -1402,15 +1402,11 @@ $(function () {
 
 
 mensajero = (function() {
-
-    var that = {};
-    
+    var that = {};    
     that.show = function(type, text) {
-
         $('.container .alert').alert('close');
-
         $('#alertas').prepend(
-            '<div class="alert alert-' + type + ' alert-dismissable">'+
+            '<div  style="padding: 8px; margin-bottom: -18px;" class="alert alert-' + type + ' alert-dismissable">'+
             '<button type="button" class="close" ' + 
             'data-dismiss="alert" aria-hidden="true">' + 
             '&times;' + 
@@ -1418,7 +1414,6 @@ mensajero = (function() {
             text + 
             '</div>'
         );
-
          setTimeout(function() {
              $('.container .alert').alert('close');
          }, 3000);
