@@ -28,6 +28,21 @@ class Libro extends Eloquent {
         return $this->belongsTo('Editorial');
     }
 
+    public function enPrestamo()
+    {
+        $cantidad = 0;
+
+        foreach ($this->articulos->first()->items as $item)
+        {
+            if($item->ultimomovimiento()->first()->movimiento_type == 'Prestamo'){
+                $cantidad += 1;
+            }
+            
+        }
+
+        return $cantidad;
+    }
+
     protected static function boot() {
         parent::boot();
 

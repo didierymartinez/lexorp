@@ -18,6 +18,16 @@ class Item extends Eloquent {
         return $this->hasMany('Prestamo','inventario_id');
     }   
 
+    public function movimientos()
+    {
+        return $this->hasMany('Movimiento','inventario_id');
+    }   
+
+    public function ultimomovimiento()
+    {
+        return $this->hasOne('Movimiento', 'id', 'ultimoMovimiento_id');
+    } 
+
     protected static function boot() {
         parent::boot();
 

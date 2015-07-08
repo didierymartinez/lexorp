@@ -17,7 +17,7 @@ Route::get('/', function()
 });
 
 Route::get('test',function(){
-	return libro::find(1)->articulos->first()->items->count();
+	//return libro::find(1)->articulos->first()->items->count();
 
 	//$Articulo = Articulo::find(1);
 	//return $Articulo->movimientos;
@@ -57,7 +57,20 @@ Route::get('test',function(){
 	//$Movimiento = Movimiento::find(1)->movimiento;
 	//return $Movimiento;
 
-	//return Libro::find(1)->articulos;
+	//return libro::find(1)->articulos->first()->items->first()->movimientos()->where('movimiento_type', '=', 'Prestamo')->first();
+	//return  libro::find(1)->articulos->first()->items;
+
+	
+	return libro::find(1)->enPrestamo();
+
+	
+
+	//return	item::whereHas('movimientos', function($q)
+	//		{
+	//		    $q->where('movimiento_type', '=', 'Prestamo');
+
+	//		})->get();
+
 });
 
 Route::post('login', 'AuthController@login');
@@ -79,6 +92,7 @@ Route::post('prestamos/crearprestamo',array('as' => 'prestamos.crearprestamo', '
 
 
 Route::resource('/libros','LibrosController');
+Route::resource('/inventario','InventarioController');
 Route::resource('/articulos','ArticulosController');
 //Route::get('/libros/get/{id}',array('as' => 'libros.get', 'uses' => 'LibrosController@get'));
 

@@ -49,19 +49,19 @@ $(document).ready(function(){
             }else{
 
                 CantidadPrestamo = jQuery.grep(articulosDevolucion, function(value) {
-                    return value == data.Libro.id;
+                    return value == data.Item.id;
                 });
 
                 if (CantidadPrestamo.length == 0){
                     
-                    articulosDevolucion.push(data.Libro.id);
+                    articulosDevolucion.push(data.Item.id);
 
                     $('#articulosDevolucion tr').last().after(
-                      '<tr id="row_'+ data.Libro.id +'">'+
+                      '<tr id="row_'+ data.Item.id +'">'+
                         '<td>'+ data.Item.placa +'</td>'+
                         '<td>'+ data.Libro.titulo +'</td>'+
                         '<td>'+ data.Libro.fechadevolucion +'</td>'+
-                        '<td><a class="elimPrestamo" id="'+ data.Libro.id +'"><span class="glyphicon glyphicon-trash"></span></a></td>'+
+                        '<td><a class="elimPrestamo" id="'+ data.Item.id +'"><span class="glyphicon glyphicon-trash"></span></a></td>'+
                         '</tr>');
 
                     wizard.mensajes.show('success','Libro agregado: ' + data.Libro.titulo);

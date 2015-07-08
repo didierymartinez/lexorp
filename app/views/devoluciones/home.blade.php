@@ -63,7 +63,7 @@
         
 
         <table id="articulosDevolucion" class="table table-condensed">
-            <th>ISBN</th><th>Titulo</th><th>Fecha</th><th>Quitar</th>
+            <th>Placa</th><th>Titulo</th><th>Fecha</th><th>Quitar</th>
         </table>        
 
       
