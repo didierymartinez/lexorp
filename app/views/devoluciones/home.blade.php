@@ -37,15 +37,15 @@
 
     <div class="wizard-card"  data-cardname="seleccion"> 
         <div class="row">
-        <div class="col-md-12"><h3>Seleccione Libros</h3></div>
-        <div class="col-md-8"><div id="alertaslibro"><div class="alert alert-dismissable">&nbsp;</div></div></div>
-        <div class="col-md-4" > 
-            <span class="pull-right">Total:
-            <span class="glyphicon glyphicon-book" aria-hidden="true" style="font-size:20px;"></span> 
-            <span id="totalArticulos" class="badge badge-notify">0</span>
-            </span>
-        </div>    
-      </div>
+            <div class="col-md-12"><h3>Seleccione Libros</h3></div>
+            <div class="col-md-8"><div id="alertaslibro"><div class="alert alert-dismissable">&nbsp;</div></div></div>
+            <div class="col-md-4" > 
+                <span class="pull-right">Total:
+                <span class="glyphicon glyphicon-book" aria-hidden="true" style="font-size:20px;"></span> 
+                <span id="totalArticulos" class="badge badge-notify">0</span>
+                </span>
+            </div>    
+        </div>
 
         
 

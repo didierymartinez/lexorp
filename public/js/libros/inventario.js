@@ -4,17 +4,13 @@ $(document).ready(function(){
 
     var options = {
 				keyboard : false,
-				contentHeight : 400,
-				contentWidth : 700,
+				contentHeight : 600,
+				contentWidth : 900,
 				backdrop: 'static'
 			};
+
     wizard = $("#libros-wizard").wizard(options);
 	
-	$('#crearlibro').click(function(e) {
-						e.preventDefault();
-						wizard.show();
-	});	
-
 	wizard.on('closed', function() {
 		wizard.reset();
 	});
@@ -65,13 +61,65 @@ $(document).ready(function(){
 		wizard.reset();
 	});
 
+	wizard.cards["Adquisición"].on("validate", function(card) {
+	    var cantidad = card.el.find("input")[2].value;
+	
+            
+            getRows = function () {
+                var id = 1,
+                  rows = [];
+
+                for (var i = 1; i <= cantidad; i++) {
+                    rows.push({
+                    	id: id,
+                        tomo: 1,
+                        observaciones: ''
+                    });
+                    id++;
+                }
+                return rows;
+            },        
+            $table = $('#table-ejemplares').bootstrapTable({
+                data: []
+            });
+
+
+            $table.bootstrapTable('load', getRows());
+
+	    if ($table) {       
+	    	$('#totalArticulosNuevos').text(cantidad);
+
+
+
+			    $('.spinerTomo').spinedit({
+				minimum: 1,
+				step: 1
+		 	})
+		 	.css('border-color', 'white')
+		 	.on("valueChanged", function(e) {
+			  
+				$table.bootstrapTable('getData')[$(this).attr('idEjemplar') - 1].tomo = e.value; 
+
+			});
+
+		
+
+	    	return true;
+	    }
+	    
+
+	});
+
 	$(".chzn-select").chosen({allow_single_deselect: true});
 
-	$('#anoedicion').spinedit({
-			minimum: 1900,
-			maximum: new Date().getFullYear(),
+	$('#cantidad').spinedit({
+			minimum: 1,
 			step: 1
 	 });
+
+	$('#fecha').datepicker({autoclose: true});
+
+;
 });
 
 
@@ -92,33 +140,34 @@ function Requerido(el) {
 };
 
 
+
+
  function disponiblesFormatter(value, row, index) {
-        return [
-            '<a class="like" href="javascript:void(0)" title="'+ value +'">',
-                '<span id="totalArticulos" class="badge  progress-bar-info">'+ value +'</span>',
-            '</a>'
-        ].join('');
+        return  formatoCantidadArticulos('totalArticulosDisponibles', 'info', value)
     }
 
  function enprestamoFormatter(value, row, index) {
-        return [
-            '<a class="like" href="javascript:void(0)" title="'+ value +'">',
-                '<span id="totalArticulos" class="badge  progress-bar-danger">'+ value +'</span>',
-            '</a>'
-        ].join('');
+        return  formatoCantidadArticulos('totalArticulosenPrestamo', 'danger', value) 
     }
 
  function totalFormatter(value, row, index) {
-        return [
-            '<a class="like" href="javascript:void(0)" title="'+ value +'">',
-                '<span id="totalArticulos" class="badge progress-bar-success">'+ value +'</span>',
-            '</a>'
-        ].join('');
+		return  formatoCantidadArticulos('totalArticulos', 'success', value)       
     }
 
 
+function formatoCantidadArticulos(id, estilo, value){
+	return [
+            '<a class="like" href="javascript:void(0)" title="'+ value +'">',
+                '<span id="'+ id +'" class="badge progress-bar-'+ estilo +'">'+ value +'</span>',
+            '</a>'
+        ].join('');
+	}
+ 
 
+ function tomoFormatter(value, row, index) {
 
+    return '<input type="text" id="tomo'+ row.id +'" idEjemplar="'+ row.id +'"  name="tomo'+ row.id +'" class="form-control spinerTomo">';
+}
 
     window.totalEvents = {
         'click .like': function (e, value, row, index) {
@@ -136,7 +185,7 @@ function Requerido(el) {
                 '</button>',
                 '<ul class="dropdown-menu" role="menu">',
                   '<li>',
-                    '<a class="edit" href="javascript:void(0)" title="Crear Ejemplar">',
+                    '<a class="insertarejemplares" href="javascript:void(0)" title="Crear Ejemplar">',
                         '<i class="glyphicon glyphicon-plus"></i> Crear Ejemplar',
                     '</a>',
                  ' </li>',
@@ -147,59 +196,9 @@ function Requerido(el) {
     }
 
     window.operateEvents = {
+        'click .insertarejemplares': function (e, value, row, index) {
+        	wizard.setTitle('Adicionar Ejemplares de: ' + row.titulo);
 
-        'click .edit': function (e, value, row, index) {
-                                  
-            $.each(wizard.el.find("input"), function(id, input){
-              $(input).val(row[input.id])
-            });
-
-            $.each(row.autores, function(id, nombre){                    
-              var sel = '.chzn-results li:contains("' +row.autores[id].nombres + ' ' + row.autores[id].apellidos + '")'
-              $(sel).mouseup()
-            });             
-             
-            $.each(wizard.el.find(".chzn-select:not([multiple=multiple])"), function(id, input){
-               var valorseleccionado = 'option[value=' + row[input.name] + ']'              
-               var sel = '.chzn-results li:contains("' + $(input).find(valorseleccionado).html() + '")'
-              $(sel).mouseup() 
-            });        
-        
             wizard.show();
-
-        },
-        'click .remove': function (e, value, row, index) {
-			bootbox.dialog({
-			  message: "Se eliminará el libro <strong>" + row.titulo + "</strong> de <strong>" + row.NombresAutores +"</strong>",
-			  title: "Está seguro que desea eliminar?",
-			  buttons: {		    
-			    danger: {
-			      label: "Eliminar",
-			      className: "btn-danger",
-			      callback: function() {
-					    $.ajax({
-					        type: 'DELETE',
-					        url:  '../libros/'+ row.id,
-					        dataType: 'json',
-					        data: {"libroEliminar":JSON.stringify(row)},
-					        success: function (data) {					        	
-					        	$('#table-libros').bootstrapTable('refresh', {
-							        url: '../libros'
-							    });	
-					          	mensajero.show(data.type, data.message)				            
-					        }
-					    });			      				        
-			      }
-			    },
-			    main: {
-			      label: "Cancelar",
-			      className: "btn-default",
-			      callback: function() {
-			        return;
-			      }
-			    }
-			  }
-			});
-            
-        }
+        }       
     };

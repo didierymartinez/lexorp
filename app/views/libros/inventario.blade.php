@@ -17,131 +17,91 @@
        
 
 
-    <div class="wizard" id="libros-wizard" data-title="Adicionar Libro">
+    <div class="wizard" id="libros-wizard" data-title="Adicionar Ejemplares">
           
-            <div class="wizard-card" data-cardname="Titulo">
-                <h3>Título</h3>
+            <div class="wizard-card" data-cardname="Adquisición">
+                <h3>Adquisición</h3>
 
-                <div class="wizard-input-section">
-                    Título Principal
-                    <div class="form-group">
-                        <div class="col-sm-6">
-                            <input type="hidden" class="form-control" id="id" name="id" >
-                            <input type="text" class="form-control" id="titulo" name="titulo" data-validate="Requerido", autofocus>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="wizard-input-section">
-                    Subtítulo
-
-                    <div class="form-group">
-                        <div class="col-sm-8">
-                            <div class="input-group">
-                                <input type="text" class="form-control" id="subtitulo" name="subtitulo" />                                
+                    <div class="wizard-input-section">
+                       <div class="form-group">                   
+                            <label for="edicion" class="col-xs-3">Fecha</label>
+                            <div class="col-sm-9">
+                                <div class="form-group col-xs-6">
+                                  <input type="text" id="fecha" name="fecha" class="form-control" data-validate="Requerido">
+                               </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="wizard-input-section">
-                    Título Idioma Original
-                    <div class="form-group">
-                        <div class="col-sm-8">
-                            <div class="input-group">
-                                <input type="text" class="form-control" id="titulooriginal" name="titulooriginal" />                                
+                    <div class="wizard-input-section">                    
+                        <div class="form-group">
+                             <label for="tipo" class="col-xs-3">Tipo</label>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <select id="tipo" name="tipo" data-placeholder="Seleccione" style="width:200px;" class="chzn-select form-control" data-validate="Requerido">
+                                         <option value=""></option>
+                                         <option value="C">Compra</option>
+                                         <option value="D">Donación</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+
+
+                    <div class="wizard-input-section">
+                       <div class="form-group">
+                            <label for="anoedicion" class="col-xs-3">Cantidad</label>
+                            <div class="col-sm-9">
+                                <div class="form-group">
+                                        <input type="text" id="cantidad" name="cantidad" class="form-control">                                 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    
+                    <div class="wizard-input-section">
+                       <div class="form-group">
+                            <label for="coleccion" class="col-xs-3">Proveedor</label>
+                            <div class="col-sm-9">
+                                <div class="form-group">
+                                        <input type="text" id="Proveedor" name="Proveedor" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+      
+             </div>
+
+            <div class="wizard-card wizard-card-overlay" data-cardname="Ejemplares">
+                <h3>Ejemplares</h3>
+                <div class="row col-md-12">
+            
+                    <div class="col-md-8"><div id="alertaslibro"><div class="alert alert-dismissable">&nbsp;</div></div></div>
+                    <div class="col-md-4" > 
+                        <span class="pull-right">Total:
+                        <span class="glyphicon glyphicon-book" aria-hidden="true" style="font-size:20px;"></span> 
+                        <span id="totalArticulosNuevos" class="badge badge-notify">0</span>
+                        </span>
+                    </div>    
+               
+            
+                    <table id="table-ejemplares" data-height="299">
+                        <thead>
+                        <tr>
+                            <th data-field="id" data-width="10" data-align="center">Ejemplar</th>                                
+                            <th data-field="tomo" data-formatter="tomoFormatter" data-align="center">Tomo</th>
+                            <th data-field="observaciones">Observaciones</th>
+                        </tr>
+                        </thead>
+                    </table>
+                </div>            
             </div>
 
-            <div class="wizard-card wizard-card-overlay" data-cardname="Autor">
-                <h3>Autor</h3>
-
-                <div class="wizard-input-section">
-                    <p>
-                        Puede seleccionar uno o varios Autores.
-                    </p>
-
-                    {{ Form::select('autores', $Autores, null, array(
-                            'id' => 'autores',
-                            'class' => 'chzn-select form-control', 
-                            'data-validate' => 'Requerido',
-                            'data-placeholder' => 'Lista de Autores', 
-                            'style' => 'width:350px;',
-                            'multiple',                             
-                            'required' => 'required')) 
-                    }}                 
-                </div>
-            </div>
-
-             <div class="wizard-card" data-cardname="Edicion">
-                <h3>Editorial</h3>
-
-                <div class="wizard-input-section">                    
-                    <div class="form-group">
-                        <div class="col-sm-6">
-                            {{ Form::select('editorial_id', $Editoriales, null, array(
-                            'id' => 'editorial_id',
-                            'class' => 'chzn-select form-control', 
-                            'data-validate' => 'Requerido',
-                            'data-placeholder' => 'Editoariales', 
-                            'style' => 'width:350px;', 
-                            'required' => 'required')) 
-                            }}
-                        </div>
-                    </div>
-                </div>
-
-                <div class="wizard-input-section">
-                   <div class="form-group">
-                              <label for="anoedicion" class="col-sm-2">Año</label>
-                        <div class="col-sm-8">
-                            <div class="input-group">
-
-                                    <input type="text" class="form-control" id="anoedicion" name="anoedicion">
-                              
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="wizard-input-section">
-                   <div class="form-group">                   
-                        <label for="edicion" class="col-sm-2 ">Edición</label>
-                        <div class="col-sm-8">
-                            <div class="input-group">
-                                    <input type="text" class="form-control" id="edicion" name="edicion">                            
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="wizard-input-section">
-                   <div class="form-group">
-                        <label for="isbn" class="col-sm-2">ISBN</label>
-                        <div class="col-sm-8">
-                            <div class="input-group">
-                                    <input type="text" class="form-control" id="isbn" name="isbn">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="wizard-input-section">
-                   <div class="form-group">
-                        <label for="coleccion" class="col-sm-2">Colección</label>
-                        <div class="col-sm-8">
-                            <div class="input-group">
-                                    <input type="text" class="form-control" id="coleccion" name="coleccion">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>   
-
+            
 
             
             <div class="wizard-card">
@@ -184,7 +144,7 @@
         </div>
 
 
-        
+
         <table id="table-libros" data-toggle="table" data-url="inventario" data-height="630" data-pagination="true" 
             data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-search="true" data-select-item-name="toolbar1">
             <thead>
