@@ -89,20 +89,20 @@ $(document).ready(function(){
 	    if ($table) {       
 	    	$('#totalArticulosNuevos').text(cantidad);
 
+			$('input[id^="observaciones"]').on('blur', function(e){
+				$table.bootstrapTable('getData')[$(this).attr('idEjemplarObs') - 1].observaciones = this.value; 
+			})
 
-
-			    $('.spinerTomo').spinedit({
+			$('.spinerTomo').spinedit({
 				minimum: 1,
 				step: 1
 		 	})
 		 	.css('border-color', 'white')
-		 	.on("valueChanged", function(e) {
-			  
+		 	.on("valueChanged", function(e) {			  
 				$table.bootstrapTable('getData')[$(this).attr('idEjemplar') - 1].tomo = e.value; 
-
 			});
 
-		
+
 
 	    	return true;
 	    }
@@ -118,6 +118,8 @@ $(document).ready(function(){
 	 });
 
 	$('#fecha').datepicker({autoclose: true});
+
+
 
 ;
 });
@@ -169,6 +171,11 @@ function formatoCantidadArticulos(id, estilo, value){
     return '<input type="text" id="tomo'+ row.id +'" idEjemplar="'+ row.id +'"  name="tomo'+ row.id +'" class="form-control spinerTomo">';
 }
 
+ function observacionesFormatter(value, row, index) {
+
+    return '<input type="text" id="observaciones'+ row.id +'" idEjemplarObs="'+ row.id +'" class="form-control">';
+}
+
     window.totalEvents = {
         'click .like': function (e, value, row, index) {
             alert('You click like icon, row: ' + JSON.stringify(row));
@@ -185,8 +192,8 @@ function formatoCantidadArticulos(id, estilo, value){
                 '</button>',
                 '<ul class="dropdown-menu" role="menu">',
                   '<li>',
-                    '<a class="insertarejemplares" href="javascript:void(0)" title="Crear Ejemplar">',
-                        '<i class="glyphicon glyphicon-plus"></i> Crear Ejemplar',
+                    '<a class="insertarejemplares" href="javascript:void(0)" title="Crear Ejemplares">',
+                        '<i class="glyphicon glyphicon-plus"></i> Crear Ejemplares',
                     '</a>',
                  ' </li>',
                  	(row.ejemplares==0)?'<li><a class="remove" href="javascript:void(0)" title="Borrar"><i class="glyphicon glyphicon-trash"></i> Borrar</a></li>':' ',

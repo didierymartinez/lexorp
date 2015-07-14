@@ -94,7 +94,7 @@
                         <tr>
                             <th data-field="id" data-width="10" data-align="center">Ejemplar</th>                                
                             <th data-field="tomo" data-formatter="tomoFormatter" data-align="center">Tomo</th>
-                            <th data-field="observaciones">Observaciones</th>
+                            <th data-field="observaciones" data-formatter="observacionesFormatter" >Observaciones</th>
                         </tr>
                         </thead>
                     </table>

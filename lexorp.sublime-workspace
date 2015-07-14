@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"spi",
+				"spinerTomo"
+			],
+			[
 				"usuario",
 				"UsuarioBiblioteca"
 			],
@@ -120,58 +124,42 @@
 	"buffers":
 	[
 		{
-			"file": "app/views/users/biblioteca/usuarios.blade.php",
+			"file": "app/views/libros/inventario.blade.php",
 			"settings":
 			{
-				"buffer_size": 8103,
+				"buffer_size": 8258,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "app/controllers/UsuariosBibliotecaController.php",
+			"file": "public/js/libros/inventario.js",
 			"settings":
 			{
-				"buffer_size": 2420,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "public/js/usuarios/crud.js",
-			"settings":
-			{
-				"buffer_size": 5333,
+				"buffer_size": 5596,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "app/models/UsuarioBiblioteca.php",
+			"file": "app/views/devoluciones/home.blade.php",
 			"settings":
 			{
-				"buffer_size": 2186,
+				"buffer_size": 4282,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "app/views/libros/libros.blade.php",
+			"file": "public/js/libros/devoluciones.js",
 			"settings":
 			{
-				"buffer_size": 9110,
+				"buffer_size": 3713,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "public/js/libros/crud.js",
+			"file": "app/controllers/InventarioController.php",
 			"settings":
 			{
-				"buffer_size": 4971,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "app/routes.php",
-			"settings":
-			{
-				"buffer_size": 3341,
+				"buffer_size": 4013,
 				"line_ending": "Windows"
 			}
 		}
@@ -276,28 +264,32 @@
 	},
 	"file_history":
 	[
+		"/C/xampp/htdocs/lexorp/app/views/libros/inventario/items.blade.php",
+		"/C/xampp/htdocs/lexorp/public/js/libros/inventario/crud.js",
+		"/C/xampp/htdocs/lexorp/public/js/libros/prestamos.js",
+		"/C/xampp/htdocs/lexorp/app/views/layouts/layout_base.blade.php",
+		"/C/xampp/htdocs/lexorp/app/routes.php",
+		"/C/xampp/htdocs/lexorp/public/js/libros/crud.js",
+		"/C/xampp/htdocs/lexorp/app/views/libros/libros.blade.php",
+		"/C/xampp/htdocs/lexorp/app/models/UsuarioBiblioteca.php",
+		"/C/xampp/htdocs/lexorp/public/js/usuarios/crud.js",
+		"/C/xampp/htdocs/lexorp/app/controllers/UsuariosBibliotecaController.php",
+		"/C/xampp/htdocs/lexorp/app/views/users/biblioteca/usuarios.blade.php",
 		"/C/xampp/htdocs/lexorp/app/models/TipoIdentificacion.php",
 		"/C/xampp/htdocs/lexorp/app/database/seeds/DatabaseSeeder.php",
 		"/C/xampp/htdocs/lexorp/app/database/seeds/UserSeeder.php",
-		"/C/xampp/htdocs/lexorp/app/routes.php",
 		"/C/xampp/htdocs/lexorp/app/database/seeds/UsuariosSeeder.php",
 		"/C/xampp/htdocs/lexorp/app/database/migrations/2015_04_03_020958_add_activo_to_users.php",
 		"/C/xampp/htdocs/lexorp/app/models/User.php",
 		"/C/xampp/htdocs/lexorp/app/database/migrations/2015_04_02_235806_add_table_usuariosbiblioteca.php",
 		"/C/xampp/htdocs/lexorp/app/database/migrations/2014_10_12_145910_Users.php",
-		"/C/xampp/htdocs/lexorp/app/controllers/UsuariosBibliotecaController.php",
 		"/C/xampp/htdocs/lexorp/app/controllers/UserController.php",
 		"/C/xampp/htdocs/lexorp/app/controllers/PrestamosController.php",
-		"/C/xampp/htdocs/lexorp/app/views/libros/libros.blade.php",
 		"/C/xampp/htdocs/lexorp/app/views/prestamos/home.blade.php",
-		"/C/xampp/htdocs/lexorp/public/js/libros/prestamos.js",
 		"/C/xampp/htdocs/lexorp/public/js/prestamos.js",
 		"/C/xampp/htdocs/lexorp/public/locales/bootstrap-datepicker.es.min.js",
 		"/G/Descargas2015/bootstrap-datepicker-1.4.0-dist/js/bootstrap-datepicker.js",
-		"/C/xampp/htdocs/lexorp/app/views/layouts/layout_base.blade.php",
 		"/C/xampp/htdocs/lexorp/app/views/prestamos/create.blade.php",
-		"/C/xampp/htdocs/lexorp/public/js/libros/crud.js",
-		"/C/xampp/htdocs/lexorp/public/js/usuarios/crud.js",
 		"/C/xampp/htdocs/lexorp/public/js/bootstrap-datepicker.min.js",
 		"/C/xampp/htdocs/lexorp/public/css/bootstrap-datepicker.min.css",
 		"/C/xampp/htdocs/lexorp/app/controllers/LibrosController.php",
@@ -397,6 +389,11 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"spinerTomo",
+			"totalArticulos",
+			"cantidad",
+			"ano",
+			"editar",
 			"`",
 			"libro",
 			" data-validate=\"Requerido\"",
@@ -467,51 +464,133 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 4,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "app/views/users/biblioteca/usuarios.blade.php",
+					"file": "app/views/libros/inventario.blade.php",
 					"settings":
 					{
-						"buffer_size": 8103,
+						"buffer_size": 8258,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								807,
-								807
+								4194,
+								4053
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 3,
+							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1215.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "app/controllers/UsuariosBibliotecaController.php",
+					"file": "public/js/libros/inventario.js",
 					"settings":
 					{
-						"buffer_size": 2420,
+						"buffer_size": 5596,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								446,
-								446
+								687,
+								687
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 180.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/views/devoluciones/home.blade.php",
+					"settings":
+					{
+						"buffer_size": 4282,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1606,
+								1606
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 315.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "public/js/libros/devoluciones.js",
+					"settings":
+					{
+						"buffer_size": 3713,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2431,
+								2431
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 783.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/controllers/InventarioController.php",
+					"settings":
+					{
+						"buffer_size": 4013,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2177,
+								2177
 							]
 						],
 						"settings":
@@ -520,141 +599,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 714.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "public/js/usuarios/crud.js",
-					"settings":
-					{
-						"buffer_size": 5333,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4018,
-								4018
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "app/models/UsuarioBiblioteca.php",
-					"settings":
-					{
-						"buffer_size": 2186,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								638,
-								638
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "app/views/libros/libros.blade.php",
-					"settings":
-					{
-						"buffer_size": 9110,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3706,
-								3706
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 798.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "public/js/libros/crud.js",
-					"settings":
-					{
-						"buffer_size": 4971,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3872,
-								3529
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 1554.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "app/routes.php",
-					"settings":
-					{
-						"buffer_size": 3341,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1363,
-								1454
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 765.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
