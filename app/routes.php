@@ -86,13 +86,17 @@ Route::resource('/devoluciones','DevolucionesController');
 
 Route::post('devoluciones/buscarArticulo',array('as' => 'devoluciones.buscarArticulo', 'uses' => 'DevolucionesController@buscarArticulo'));
 
+
 Route::post('prestamos/buscarArticulo',array('as' => 'prestamos.buscarArticulo', 'uses' => 'PrestamosController@buscarArticulo'));
 Route::post('prestamos/crearprestamo',array('as' => 'prestamos.crearprestamo', 'uses' => 'PrestamosController@crearprestamo'));
 
 
 
 Route::resource('/libros','LibrosController');
+
 Route::resource('/inventario','InventarioController');
+Route::post('inventario/buscarXestado',array('as' => 'inventario.buscarXestado', 'uses' => 'InventarioController@buscarXestado'));
+
 Route::resource('/articulos','ArticulosController');
 //Route::get('/libros/get/{id}',array('as' => 'libros.get', 'uses' => 'LibrosController@get'));
 

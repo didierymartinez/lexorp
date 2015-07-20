@@ -8,6 +8,14 @@ class Item extends Eloquent {
 	 */
 	protected $table = 'Inventario';
 
+    protected $fillable = array(
+        'articulo_id',
+        'estado_id',
+        'ultimoMovimiento_id',
+        'tomo',
+        'observaciones'
+    );
+
 	public function Articulo()
     {
         return $this->belongsTo('Articulo');
@@ -33,16 +41,17 @@ class Item extends Eloquent {
 
         static::created(function($item) { 
 	        
-       	$entrada = Entrada::create(array(
-            'inventario_id' => $item->id
-        )); 
+           	$entrada = Entrada::create(array(
+                'inventario_id' => $item->id
+            )); 
 
-        $movimiento = new Movimiento();
-        $movimiento->inventario_id = $item->id;
-        $movimiento = $entrada->movimientos()->save($movimiento);
+            $movimiento = new Movimiento();
+            $movimiento->inventario_id = $item->id;
+            $movimiento = $entrada->movimientos()->save($movimiento);
 
-        $item->ultimoMovimiento_id = $movimiento->id;
-        $item->save();
+            $item->ultimoMovimiento_id = $movimiento->id;
+            $item->placa = $item->articulo_id."-".$item->id;  
+            $item->save();
 
         });
     }    

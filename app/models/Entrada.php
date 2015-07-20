@@ -8,6 +8,9 @@ class Entrada extends Eloquent {
 	 */
 	protected $table = 'entradas';
 
+	protected $fillable = array(
+        'inventario_id'
+    );
 
 	public function movimientos()
     {

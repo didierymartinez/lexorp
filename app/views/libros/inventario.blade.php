@@ -24,10 +24,12 @@
 
                     <div class="wizard-input-section">
                        <div class="form-group">                   
+
+                            <input type="hidden" id="idArticulo" name="idArticulo">
                             <label for="edicion" class="col-xs-3">Fecha</label>
                             <div class="col-sm-9">
                                 <div class="form-group col-xs-6">
-                                  <input type="text" id="fecha" name="fecha" class="form-control" data-validate="Requerido">
+                                  <input type="text" id="Fecha" name="Fecha" class="form-control" data-validate="Requerido" data-serialize="1">
                                </div>
                             </div>
                         </div>
@@ -38,42 +40,37 @@
                              <label for="tipo" class="col-xs-3">Tipo</label>
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <select id="tipo" name="tipo" data-placeholder="Seleccione" style="width:200px;" class="chzn-select form-control" data-validate="Requerido">
+                                    <select id="Tipo" name="Tipo" data-placeholder="Seleccione" style="width:200px;" class="chzn-select form-control" data-validate="Requerido" data-serialize="1">
                                          <option value=""></option>
-                                         <option value="C">Compra</option>
-                                         <option value="D">Donación</option>
+                                         <option value="Compra">Compra</option>
+                                         <option value="Donación">Donación</option>
                                     </select>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-
                     <div class="wizard-input-section">
                        <div class="form-group">
                             <label for="anoedicion" class="col-xs-3">Cantidad</label>
                             <div class="col-sm-9">
                                 <div class="form-group">
-                                        <input type="text" id="cantidad" name="cantidad" class="form-control">                                 
+                                        <input type="text" id="Cantidad" name="Cantidad" class="form-control" data-serialize="1">                                 
                                 </div>
                             </div>
                         </div>
                     </div>
-
-
                     
                     <div class="wizard-input-section">
                        <div class="form-group">
                             <label for="coleccion" class="col-xs-3">Proveedor</label>
                             <div class="col-sm-9">
                                 <div class="form-group">
-                                        <input type="text" id="Proveedor" name="Proveedor" class="form-control">
+                                        <input type="text" id="Proveedor" name="Proveedor" class="form-control" data-serialize="1">
                                 </div>
                             </div>
                         </div>
                     </div>
-
-      
              </div>
 
             <div class="wizard-card wizard-card-overlay" data-cardname="Ejemplares">
@@ -135,7 +132,7 @@
                         <span class="create-server-name"></span>Operación realizada <strong>Correctamente.</strong>
                     </div>
     
-                    <a class="btn btn-default create-another-server">Crear Nuevo Libro</a>
+                    <a class="btn btn-default create-another-server">Crear Mas Ejemplares</a>
                     <span style="padding:0 10px"> o </span>
                     <a class="btn btn-success im-done">Terminar</a>
                 </div>
@@ -170,6 +167,27 @@
         </table>
 
 
+<div>
+                
+            
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">×</span>
+                    <span class="sr-only">Cerrar</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel"></h4>
+            </div>
+            <div class="modal-body">
+                <table id="table-javascript"></table>
+            </div>
+            <div class="clearfix"></div>
+            </div>
+    </div>
+</div>
+            
 {{ HTML::script('js/bootbox.min.js') }}
 {{ HTML::script('chosen/chosen.jquery.js') }}
 {{ HTML::script('js/libros/inventario.js') }}

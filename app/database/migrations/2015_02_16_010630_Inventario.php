@@ -34,6 +34,9 @@ class Inventario extends Migration {
 			$table->foreign('estado_id')->references('id')->on('tipos_estado_inventario');
 			
 			$table->integer('ultimoMovimiento_id')->unsigned();
+			$table->integer('tomo')->unsigned();
+			$table->string('observaciones', 500);
+
 			$table->timestamps();
 		});	
 

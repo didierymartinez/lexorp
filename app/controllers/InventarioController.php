@@ -20,7 +20,7 @@ class InventarioController extends \BaseController {
           		$libro->NombresAutores = substr($libro->NombresAutores, 3);
           		$libro->NombreEditorial = $libro->editorial->nombre;
           		$libro->ejemplaresTotal = $libro->articulos->first()->items->count();
-          		$libro->ejemplaresPrestados = $libro->enPrestamo();
+          		$libro->ejemplaresPrestados = $libro->CantidadenPrestamo();
           		$libro->ejemplaresDisponibles = intval($libro->ejemplaresTotal) - intval($libro->ejemplaresPrestados);
           		
           		array_push($CatalogoLibros, $libro); 
@@ -45,12 +45,7 @@ class InventarioController extends \BaseController {
 	 */
 	public function create()
 	{
-		$Autores = Autor::orderBy('nombres')->get();
-		$Autores = $Autores->lists('NombreCompleto', 'id');
-		$editoriales = Editorial::orderBy('nombre')->get();			
-		$editoriales = $editoriales->lists('nombre', 'id');	
-		array_unshift($editoriales, '' );
-		return View::make('libros.create',array('Autores' => $Autores, 'Editoriales' => $editoriales));
+		
 	}
 
 
@@ -61,16 +56,19 @@ class InventarioController extends \BaseController {
 	 */
 	public function store()
 	{
-		$datoslibroNuevo = json_decode(Input::get('libroNuevo'), true)[0];
-		$autoreslibroNuevo = $datoslibroNuevo['autores'];
-
-		$libroNuevo = new Libro;
-		$libroNuevo->fill($datoslibroNuevo);
-		$libroNuevo->save();
-                
-		$libroNuevo->autores()->attach($autoreslibroNuevo);
+		$datosAdquisicion = json_decode(Input::get('adquisicion'), true);
+		$datosEjemplares = json_decode(Input::get('items'), true);
 		
-		return $libroNuevo->autores;
+		$Adquisicion = new Adquisicion;
+		$Adquisicion->fill($datosAdquisicion);
+		$Adquisicion->save();
+
+		foreach($datosEjemplares as $ejemplar){ 
+				unset($ejemplar['id']);
+				Item::create($ejemplar);
+		}
+		
+		return $datosEjemplares;
 	}
 
 
@@ -82,15 +80,33 @@ class InventarioController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		if(Request::ajax()){
 
-	        $Libro = Articulo::find(Input::get('id'))->articulo;
-	        $Autor = $Libro->autor;
-
-	        return Response::json(array( 'libro' => $Libro ,'autor' => $Autor));
-    	}	
 	}
 
+
+	public function buscarXestado()
+	{
+		if(Request::ajax()){
+
+			switch (Input::get('idEstado')) {
+				case 'enprestamo':
+					$Libros = libro::find(Input::get('idLibro'))->enPrestamo();
+					break;
+				
+				case 'disponibles':
+					$Libros = libro::find(Input::get('idLibro'))->disponibles();
+					break;
+
+				case 'total':
+					$Libros = libro::find(Input::get('idLibro'))->total();
+					break;	
+			}
+
+	        
+
+	        return Response::json($Libros);
+    	}	
+	}
 
 	/**
 	 * Show the form for editing the specified resource.
@@ -112,21 +128,7 @@ class InventarioController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		if(Request::ajax()){
 
-			$datosEditados = json_decode(Input::get('libroNuevo'), true)[0];
-
-			$Libro = Libro::find($id);
-	        $Libro->fill($datosEditados);
-	        $Libro->save();	
-
-	        $autoreslibro = $datosEditados['autores'];
-	        $Libro->autores()->detach();              
-			$Libro->autores()->attach($autoreslibro);
-		
-
-			return Response::json(array( 'libro' => $Libro ));
-		}
 	}
 
 
@@ -138,30 +140,7 @@ class InventarioController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		if(Request::ajax()){
-			$datosEliminar = json_decode(Input::get('libroNuevo'), true)[0];
 
-
-        	
-	
-			if(Libro::find($id)->articulos->first()->items->count() == 0){
-				$autoreslibro = $datosEliminar['autores'];
-				Libro::find($id)->autores()->detach();			
-				Libro::destroy($id);
-				$message = array(
-				    "type" => "danger",
-				    "message" => "Se eliminó libro"
-				);			
-			}else{
-				$message = array(
-				    "type" => "danger",
-				    "message" => "Este libro tiene ejemplares No se puede Eliminar"
-				);
-			}
-
-			return Response::json($message);
-			
-		}
 	}
 
 

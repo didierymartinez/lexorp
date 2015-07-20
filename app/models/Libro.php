@@ -28,7 +28,7 @@ class Libro extends Eloquent {
         return $this->belongsTo('Editorial');
     }
 
-    public function enPrestamo()
+    public function CantidadenPrestamo()
     {
         $cantidad = 0;
 
@@ -41,6 +41,43 @@ class Libro extends Eloquent {
         }
 
         return $cantidad;
+    }
+
+    public function enPrestamo()
+    {
+        $LibrosEnPrestamo = array();
+              
+
+        foreach ($this->articulos->first()->items as $item)
+        {
+            if($item->ultimomovimiento()->first()->movimiento_type == 'Prestamo'){
+                 array_push($LibrosEnPrestamo, $item);  
+            }
+            
+        }
+
+        return $LibrosEnPrestamo;
+    }
+
+    public function disponibles()
+    {
+        $LibrosDisponibles = array();
+              
+
+        foreach ($this->articulos->first()->items as $item)
+        {
+            if($item->ultimomovimiento()->first()->movimiento_type != 'Prestamo'){
+                 array_push($LibrosDisponibles, $item);  
+            }
+            
+        }
+
+        return $LibrosDisponibles;
+    }
+
+    public function total()
+    {
+        return $this->articulos->first()->items;
     }
 
     protected static function boot() {

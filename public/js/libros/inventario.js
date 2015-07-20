@@ -27,13 +27,16 @@ $(document).ready(function(){
 	});
 
 	wizard.on("submit", function(wizard) {
-		var libroNuevo = this.serializeObject();
+		var adquisicion = wizard.cards["Adquisición"].serializeObject();
+		var items = $('#table-ejemplares').bootstrapTable('getData');
+	    
+
 	    
 	    $.ajax({
-	        type: (!!libroNuevo[0].id) ? 'PUT'   : 'POST',
-	        url:  (!!libroNuevo[0].id) ? '../libros/'+ libroNuevo[0].id   : '../libros',
+	        type:  'POST',
+	        url:  '../inventario',
 	        dataType: 'json',
-	        data: {"libroNuevo":JSON.stringify(libroNuevo)},
+	        data: {"adquisicion":JSON.stringify(adquisicion),"items":JSON.stringify(items)},
 	        success: function (data) {
 	          		setTimeout(function() {
 						wizard.trigger("success");
@@ -53,7 +56,7 @@ $(document).ready(function(){
 			wizard.reset();	
 		}, 250);
 		$('#table-libros').bootstrapTable('refresh', {
-	        url: '../libros'
+	        url: '../inventario'
 	    });	
 	});
 
@@ -62,9 +65,9 @@ $(document).ready(function(){
 	});
 
 	wizard.cards["Adquisición"].on("validate", function(card) {
-	    var cantidad = card.el.find("input")[2].value;
+	    var cantidad = $('#Cantidad').val();
+	    var idArticulo = $('#idArticulo').val();
 	
-            
             getRows = function () {
                 var id = 1,
                   rows = [];
@@ -72,6 +75,8 @@ $(document).ready(function(){
                 for (var i = 1; i <= cantidad; i++) {
                     rows.push({
                     	id: id,
+                    	articulo_id: idArticulo,  
+                    	estado_id: 1,
                         tomo: 1,
                         observaciones: ''
                     });
@@ -112,12 +117,12 @@ $(document).ready(function(){
 
 	$(".chzn-select").chosen({allow_single_deselect: true});
 
-	$('#cantidad').spinedit({
+	$('#Cantidad').spinedit({
 			minimum: 1,
 			step: 1
 	 });
 
-	$('#fecha').datepicker({autoclose: true});
+	$('#Fecha').datepicker({autoclose: true});
 
 
 
@@ -145,22 +150,22 @@ function Requerido(el) {
 
 
  function disponiblesFormatter(value, row, index) {
-        return  formatoCantidadArticulos('totalArticulosDisponibles', 'info', value)
+        return  formatoCantidadArticulos('totalArticulosDisponibles', 'Disponibles', 'disponibles', 'info', value)
     }
 
  function enprestamoFormatter(value, row, index) {
-        return  formatoCantidadArticulos('totalArticulosenPrestamo', 'danger', value) 
+        return  formatoCantidadArticulos('totalArticulosenPrestamo', 'En Prestamo', 'enprestamo', 'danger', value) 
     }
 
  function totalFormatter(value, row, index) {
-		return  formatoCantidadArticulos('totalArticulos', 'success', value)       
+		return  formatoCantidadArticulos('totalArticulos', 'Total Ejemplares', 'total', 'success', value)       
     }
 
 
-function formatoCantidadArticulos(id, estilo, value){
+function formatoCantidadArticulos(id, titulo, estado, estilo, value){
 	return [
-            '<a class="like" href="javascript:void(0)" title="'+ value +'">',
-                '<span id="'+ id +'" class="badge progress-bar-'+ estilo +'">'+ value +'</span>',
+            '<a class="like" href="javascript:void(0)" title="'+ value +'" >',
+                '<span id="'+ id +'" titulo="'+ titulo +'" estado="'+ estado +'" class="badge progress-bar-'+ estilo +'">'+ value +'</span>',
             '</a>'
         ].join('');
 	}
@@ -168,18 +173,58 @@ function formatoCantidadArticulos(id, estilo, value){
 
  function tomoFormatter(value, row, index) {
 
-    return '<input type="text" id="tomo'+ row.id +'" idEjemplar="'+ row.id +'"  name="tomo'+ row.id +'" class="form-control spinerTomo">';
+    return '<input type="text" id="tomo'+ row.id +'" idEjemplar="'+ row.id +'"  name="tomo'+ row.id +'" class="form-control spinerTomo"  data-serialize="1">';
 }
 
  function observacionesFormatter(value, row, index) {
 
-    return '<input type="text" id="observaciones'+ row.id +'" idEjemplarObs="'+ row.id +'" class="form-control">';
+    return '<input type="text" id="observaciones'+ row.id +'" name="observaciones'+ row.id +'" idEjemplarObs="'+ row.id +'" class="form-control"  data-serialize="1">';
 }
 
     window.totalEvents = {
         'click .like': function (e, value, row, index) {
-            alert('You click like icon, row: ' + JSON.stringify(row));
-            console.log(value, row, index);
+            console.log(e, value, row, index);
+            
+            $('#myModalLabel').html( '<span class="'+ $(e.toElement).attr("class") +' "><h5>' + $(e.toElement).attr("titulo") + '</h5></span>' + ' ' +row.titulo);
+            
+
+            $('#myModal').modal('toggle');
+
+            $('#table-javascript').bootstrapTable('destroy');
+
+            $('#table-javascript').bootstrapTable({
+                method: 'POST',
+                url: '/inventario/buscarXestado?idLibro=' + row.id + '&idEstado=' + $(e.toElement).attr("estado") + '',
+                cache: false,
+                height: 400,
+                striped: true,
+                pagination: true,
+                pageSize: 50,
+                pageList: [10, 25, 50, 100, 200],
+                search: true,
+                showColumns: true,
+                showRefresh: true,
+                minimumCountColumns: 2,
+                clickToSelect: true,
+                columns: [
+                {
+                    field: 'id',
+                    title: 'ID',
+                    sortable: true
+                }, {
+                    field: 'placa',
+                    title: 'Placa',
+                    sortable: true
+                }, {
+                    field: 'tomo',
+                    title: 'Tomo',
+                    sortable: true
+                }, {
+                    field: 'observaciones',
+                    title: 'Observaciones',
+                    sortable: true
+                }]
+            });
         }
     };
 
@@ -195,8 +240,7 @@ function formatoCantidadArticulos(id, estilo, value){
                     '<a class="insertarejemplares" href="javascript:void(0)" title="Crear Ejemplares">',
                         '<i class="glyphicon glyphicon-plus"></i> Crear Ejemplares',
                     '</a>',
-                 ' </li>',
-                 	(row.ejemplares==0)?'<li><a class="remove" href="javascript:void(0)" title="Borrar"><i class="glyphicon glyphicon-trash"></i> Borrar</a></li>':' ',
+                 ' </li>',                 	
                 '</ul>',
             '</div>'
         ].join('');
@@ -205,7 +249,7 @@ function formatoCantidadArticulos(id, estilo, value){
     window.operateEvents = {
         'click .insertarejemplares': function (e, value, row, index) {
         	wizard.setTitle('Adicionar Ejemplares de: ' + row.titulo);
-
+        	$('#idArticulo').val(row.id);
             wizard.show();
         }       
     };
