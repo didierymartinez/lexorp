@@ -76,8 +76,28 @@ class Libro extends Eloquent {
     }
 
     public function total()
-    {
-        return $this->articulos->first()->items;
+    {        
+
+        $LibrosDisponibles = array();
+     
+        foreach ($this->articulos->first()->items as $item)
+        {
+            switch ($item->ultimomovimiento()->first()->movimiento_type) {
+                case 'Prestamo':
+                    $item->estado = 'En Prestamo';    
+                    break;
+                
+                default:
+                    $item->estado = 'Disponible';
+                    break;
+            }
+                
+            array_push($LibrosDisponibles, $item);  
+            
+        }
+
+        return $LibrosDisponibles;
+
     }
 
     protected static function boot() {

@@ -106,9 +106,6 @@ $(document).ready(function(){
 		 	.on("valueChanged", function(e) {			  
 				$table.bootstrapTable('getData')[$(this).attr('idEjemplar') - 1].tomo = e.value; 
 			});
-
-
-
 	    	return true;
 	    }
 	    
@@ -124,9 +121,6 @@ $(document).ready(function(){
 
 	$('#Fecha').datepicker({autoclose: true});
 
-
-
-;
 });
 
 
@@ -149,52 +143,18 @@ function Requerido(el) {
 
 
 
- function disponiblesFormatter(value, row, index) {
-        return  formatoCantidadArticulos('totalArticulosDisponibles', 'Disponibles', 'disponibles', 'info', value)
-    }
-
- function enprestamoFormatter(value, row, index) {
-        return  formatoCantidadArticulos('totalArticulosenPrestamo', 'En Prestamo', 'enprestamo', 'danger', value) 
-    }
-
- function totalFormatter(value, row, index) {
-		return  formatoCantidadArticulos('totalArticulos', 'Total Ejemplares', 'total', 'success', value)       
-    }
-
-
-function formatoCantidadArticulos(id, titulo, estado, estilo, value){
-	return [
-            '<a class="like" href="javascript:void(0)" title="'+ value +'" >',
-                '<span id="'+ id +'" titulo="'+ titulo +'" estado="'+ estado +'" class="badge progress-bar-'+ estilo +'">'+ value +'</span>',
-            '</a>'
-        ].join('');
-	}
- 
-
- function tomoFormatter(value, row, index) {
-
-    return '<input type="text" id="tomo'+ row.id +'" idEjemplar="'+ row.id +'"  name="tomo'+ row.id +'" class="form-control spinerTomo"  data-serialize="1">';
-}
-
- function observacionesFormatter(value, row, index) {
-
-    return '<input type="text" id="observaciones'+ row.id +'" name="observaciones'+ row.id +'" idEjemplarObs="'+ row.id +'" class="form-control"  data-serialize="1">';
-}
-
     window.totalEvents = {
         'click .like': function (e, value, row, index) {
-            console.log(e, value, row, index);
-            
-            $('#myModalLabel').html( '<span class="'+ $(e.toElement).attr("class") +' "><h5>' + $(e.toElement).attr("titulo") + '</h5></span>' + ' ' +row.titulo);
-            
+            var estado = $(e.toElement).attr("estado");
 
+            $('#myModalLabel').html( '<span class="'+ $(e.toElement).attr("class") +' "><h5>' + $(e.toElement).attr("titulo") + '</h5></span>' + ' ' +row.titulo);
             $('#myModal').modal('toggle');
 
             $('#table-javascript').bootstrapTable('destroy');
 
             $('#table-javascript').bootstrapTable({
                 method: 'POST',
-                url: '/inventario/buscarXestado?idLibro=' + row.id + '&idEstado=' + $(e.toElement).attr("estado") + '',
+                url: '/inventario/buscarXestado?idLibro=' + row.id + '&idEstado=' + estado + '',
                 cache: false,
                 height: 400,
                 striped: true,
@@ -206,27 +166,64 @@ function formatoCantidadArticulos(id, titulo, estado, estilo, value){
                 showRefresh: true,
                 minimumCountColumns: 2,
                 clickToSelect: true,
-                columns: [
-                {
-                    field: 'id',
-                    title: 'ID',
-                    sortable: true
-                }, {
-                    field: 'placa',
-                    title: 'Placa',
-                    sortable: true
-                }, {
-                    field: 'tomo',
-                    title: 'Tomo',
-                    sortable: true
-                }, {
-                    field: 'observaciones',
-                    title: 'Observaciones',
-                    sortable: true
-                }]
+                columns: columnas(estado)
             });
+
+            
         }
     };
+
+    function columnas(estado){
+        var cols = [];
+        cols.push({ field: 'id', title: 'ID', sortable: true });   
+        cols.push({ field: 'placa', title: 'Placa', sortable: true });   
+        cols.push({ field: 'tomo', title: 'Tomo', sortable: true });   
+        cols.push({ field: 'observaciones', title: 'Observaciones', sortable: true });   
+        if(estado == "total"){
+           cols.push({ field: 'estado', title: 'Disponible', sortable: true, formatter: estadoFormatter });   
+        }
+        return cols;
+    }
+
+
+     function disponiblesFormatter(value, row, index) {
+            return  formatoCantidadArticulos('totalArticulosDisponibles', 'Disponibles', 'disponibles', 'info', value)
+        }
+
+     function enprestamoFormatter(value, row, index) {
+            return  formatoCantidadArticulos('totalArticulosenPrestamo', 'En Prestamo', 'enprestamo', 'danger', value) 
+        }
+
+     function totalFormatter(value, row, index) {
+            return  formatoCantidadArticulos('totalArticulos', 'Total Ejemplares', 'total', 'success', value)       
+        }
+
+
+    function formatoCantidadArticulos(id, titulo, estado, estilo, value){
+        return [
+                '<a class="like" href="javascript:void(0)" title="'+ value +'" >',
+                    '<span id="'+ id +'" titulo="'+ titulo +'" estado="'+ estado +'" class="badge progress-bar-'+ estilo +'">'+ value +'</span>',
+                '</a>'
+            ].join('');
+        }
+     
+
+     function tomoFormatter(value, row, index) {
+
+        return '<input type="text" id="tomo'+ row.id +'" idEjemplar="'+ row.id +'"  name="tomo'+ row.id +'" class="form-control spinerTomo"  data-serialize="1">';
+    }
+
+     function observacionesFormatter(value, row, index) {
+
+        return '<input type="text" id="observaciones'+ row.id +'" name="observaciones'+ row.id +'" idEjemplarObs="'+ row.id +'" class="form-control"  data-serialize="1">';
+    }
+
+    function estadoFormatter(value, row, index){
+        var estilo = (value == 'Disponible') ? 'info' : 'danger'
+        return [
+            '<span class="badge progress-bar-'+ estilo +'"> </span>',
+        ].join('');
+    }
 
     function operateFormatter(value, row, index) {
 
