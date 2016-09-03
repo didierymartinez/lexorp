@@ -95,7 +95,16 @@ Route::post('prestamos/crearprestamo',array('as' => 'prestamos.crearprestamo', '
 Route::resource('/libros','LibrosController');
 
 Route::resource('/inventario','InventarioController');
+Route::get('/tags',array('as' => 'inventario.tags', 'uses' => 'InventarioController@tags'));
+
+
+
 Route::post('inventario/buscarXestado',array('as' => 'inventario.buscarXestado', 'uses' => 'InventarioController@buscarXestado'));
+
+Route::get('/', function()
+{
+	return View::make('login.login');
+});
 
 Route::resource('/articulos','ArticulosController');
 //Route::get('/libros/get/{id}',array('as' => 'libros.get', 'uses' => 'LibrosController@get'));

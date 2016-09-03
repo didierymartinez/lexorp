@@ -107,7 +107,11 @@ class InventarioController extends \BaseController {
 	        return Response::json($Libros);
     	}	
 	}
-
+	
+	public function tags()
+	{
+		return View::make('libros.tags');
+	}
 	/**
 	 * Show the form for editing the specified resource.
 	 *

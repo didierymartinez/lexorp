@@ -97,17 +97,21 @@
                   <ul class="dropdown-menu forAnimate" role="menu">
                     <li>
                       <a href="{{URL::to('inventario')}}">
-                        <span style="font-size:16px;" class="glyphicon glyphicon-book"></span> Libros
+                        <span style="font-size:16px;" class="glyphicon glyphicon-book"></span>&nbsp Libros
+                      </a>
+                    </li>                    <li>
+                      <a href="{{URL::to('tags')}}">
+                        <span style="font-size:16px;" class="glyphicon glyphicon-tags"></span>&nbsp Tags
                       </a>
                     </li>
                     <li>
                       <a href="#">
-                        <span style="font-size:16px;" class="glyphicon glyphicon-search"></span> Busqueda
+                        <span style="font-size:16px;" class="glyphicon glyphicon-search"></span>&nbsp Busqueda
                       </a>
                     </li>
                     <li>
                       <a href="#">
-                        <span style="font-size:16px;" class="glyphicon glyphicon-transfer"></span> Movimientos
+                        <span style="font-size:16px;" class="glyphicon glyphicon-transfer"></span>&nbsp Movimientos
                       </a>
                     </li>
                   </ul>
