@@ -51,9 +51,9 @@
                 'tag_id' => $tag2->id
         ));
 
-        $tag1->objeto_id = $item2->id;
-        $tag1->objeto_type = 'Item';
-        $tag1->save();
+        $tag2->objeto_id = $item2->id;
+        $tag2->objeto_type = 'Item';
+        $tag2->save();
 
     }
  
