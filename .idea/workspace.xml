@@ -1,25 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7518a9ab-e5c9-4ae3-bb91-d18276676792" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/database/migrations/2015_02_16_010630_Inventario.php" afterPath="$PROJECT_DIR$/app/database/migrations/2015_02_16_010630_Inventario.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/database/seeds/ArticulosSeeder.php" afterPath="$PROJECT_DIR$/app/database/seeds/ArticulosSeeder.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/database/seeds/DatabaseSeeder.php" afterPath="$PROJECT_DIR$/app/database/seeds/DatabaseSeeder.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/database/seeds/InventarioSeeder.php" afterPath="$PROJECT_DIR$/app/database/seeds/InventarioSeeder.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/Item.php" afterPath="$PROJECT_DIR$/app/models/Item.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/database/seeds/PermissionsSeeder.php" afterPath="$PROJECT_DIR$/app/database/seeds/PermissionsSeeder.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/database/seeds/RolesSeeder.php" afterPath="$PROJECT_DIR$/app/database/seeds/RolesSeeder.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/database/seeds/UserSeeder.php" afterPath="$PROJECT_DIR$/app/database/seeds/UserSeeder.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/UsuarioBiblioteca.php" afterPath="$PROJECT_DIR$/app/models/UsuarioBiblioteca.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/database/seeds/UsuariosSeeder.php" afterPath="$PROJECT_DIR$/app/database/seeds/UsuariosSeeder.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/prestamos/home.blade.php" afterPath="$PROJECT_DIR$/app/views/prestamos/home.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/libros/inventario.blade.php" afterPath="$PROJECT_DIR$/app/views/libros/inventario.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/layout_base.blade.php" afterPath="$PROJECT_DIR$/app/views/layouts/layout_base.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/routes.php" afterPath="$PROJECT_DIR$/app/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/libros/tags.blade.php" afterPath="$PROJECT_DIR$/app/views/libros/tags.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libros/tags.js" afterPath="$PROJECT_DIR$/public/js/libros/tags.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/utilidades.js" afterPath="$PROJECT_DIR$/public/js/utilidades.js" />
-    </list>
+    <list default="true" id="7518a9ab-e5c9-4ae3-bb91-d18276676792" name="Default" comment="" />
     <ignored path="lexorp.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -40,7 +22,46 @@
     <favorites_list name="lexorp" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="prestamos.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/js/libros/prestamos.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="33" column="40" selection-start="806" selection-end="806" vertical-scroll-proportion="0.45535713" vertical-offset="204" max-vertical-offset="4658">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="devoluciones.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/js/libros/devoluciones.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="34" column="23" selection-start="796" selection-end="796" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4522">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="home.blade.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/devoluciones/home.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="56" column="49" selection-start="2323" selection-end="2340" vertical-scroll-proportion="-15.038462" vertical-offset="561" max-vertical-offset="2244">
+              <folding>
+                <element signature="n#style#0;n#span#0;n#div#3;n#div#1;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="create.blade.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/prestamos/create.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="160" column="14" selection-start="6325" selection-end="6704" vertical-scroll-proportion="-15.307693" vertical-offset="2322" max-vertical-offset="3876">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -55,7 +76,6 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/public/js/utilidades.js" />
-        <option value="$PROJECT_DIR$/public/js/libros/tags.js" />
         <option value="$PROJECT_DIR$/app/models/TipoTag.php" />
         <option value="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" />
         <option value="$PROJECT_DIR$/vendor/composer/autoload_static.php" />
@@ -64,7 +84,6 @@
         <option value="$PROJECT_DIR$/app/models/Tag.php" />
         <option value="$PROJECT_DIR$/app/models/Item.php" />
         <option value="$PROJECT_DIR$/app/models/UsuarioBiblioteca.php" />
-        <option value="$PROJECT_DIR$/app/routes.php" />
         <option value="$PROJECT_DIR$/app/controllers/UsuariosTagController.php" />
         <option value="$PROJECT_DIR$/app/database/migrations/2016_09_11_184339_tags.php" />
         <option value="$PROJECT_DIR$/app/database/seeds/ArticulosSeeder.php" />
@@ -75,7 +94,16 @@
         <option value="$PROJECT_DIR$/app/database/seeds/PermissionsSeeder.php" />
         <option value="$PROJECT_DIR$/app/database/seeds/DatabaseSeeder.php" />
         <option value="$PROJECT_DIR$/app/database/seeds/UsuariosSeeder.php" />
+        <option value="$PROJECT_DIR$/app/views/prestamos/create.blade.php" />
+        <option value="$PROJECT_DIR$/public/js/libros/tags.js" />
+        <option value="$PROJECT_DIR$/app/views/libros/tags.blade.php" />
+        <option value="$PROJECT_DIR$/public/css/lectorRFID.css" />
         <option value="$PROJECT_DIR$/public/js/libros/leerTagUsuario.js" />
+        <option value="$PROJECT_DIR$/app/routes.php" />
+        <option value="$PROJECT_DIR$/app/controllers/TagsController.php" />
+        <option value="$PROJECT_DIR$/app/views/devoluciones/home.blade.php" />
+        <option value="$PROJECT_DIR$/public/js/libros/devoluciones.js" />
+        <option value="$PROJECT_DIR$/public/js/libros/prestamos.js" />
       </list>
     </option>
   </component>
@@ -194,6 +222,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lexorp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lexorp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -212,7 +258,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
+              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -230,7 +276,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="database" />
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="prestamos" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -248,33 +298,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="database" />
+              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="seeds" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lexorp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lexorp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="database" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="migrations" />
+              <option name="myItemId" value="devoluciones" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -324,6 +352,7 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="922" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
+    <property name="FullScreen" value="false" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -357,10 +386,10 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3297062" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.11860718" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
@@ -391,90 +420,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="923">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/HomeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1734">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/home/home.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="44" selection-start="450" selection-end="450" vertical-scroll-proportion="-10.461538" vertical-offset="0" max-vertical-offset="1768">
-          <folding>
-            <marker date="1472598105299" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1472598105299" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1472598105299" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1472598105299" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1472598105299" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1472598105299" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1472598105299" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1472598105299" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1472598105299" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1472598105299" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1472598105299" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1472598105299" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1472598105299" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1472598105299" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1472598105299" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1472598105299" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1472598105299" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1472598105299" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1472598105299" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1472598105299" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1472598105299" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1472598105299" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1472598105299" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1472598105299" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/layout_base.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="38" selection-start="576" selection-end="588" vertical-scroll-proportion="64.07692" vertical-offset="1938" max-vertical-offset="3468">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/utilidades.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1412" column="11" selection-start="49065" selection-end="49065" vertical-scroll-proportion="0.0" vertical-offset="23625" max-vertical-offset="24565">
-          <folding>
-            <marker date="1473559496908" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1473559496908" expanded="false" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/libros/tags.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="14" selection-start="496" selection-end="496" vertical-scroll-proportion="-15.692307" vertical-offset="102" max-vertical-offset="2261">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/Editorial.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="741">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/Devolucion.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="741">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/Autor.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="762">
@@ -629,23 +574,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="61" column="107" selection-start="2112" selection-end="2208" vertical-scroll-proportion="-8.5" vertical-offset="663" max-vertical-offset="1887">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/LibrosController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="2907">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/UsuariosTagController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="0" selection-start="1415" selection-end="1415" vertical-scroll-proportion="-33.46154" vertical-offset="337" max-vertical-offset="1955">
           <folding />
         </state>
       </provider>
@@ -777,13 +708,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/libros/leerTagUsuario.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="93" column="35" selection-start="2244" selection-end="2244" vertical-scroll-proportion="0.35084745" vertical-offset="1374" max-vertical-offset="2618">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/database/seeds/LibrosSeeder.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="1649">
@@ -794,6 +718,85 @@
     <entry file="file://$PROJECT_DIR$/app/database/seeds/RolesSeeder.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="0" selection-start="76" selection-end="76" vertical-scroll-proportion="0.15070923" vertical-offset="0" max-vertical-offset="564">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/lectorRFID.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="20" selection-start="427" selection-end="427" vertical-scroll-proportion="0.43367347" vertical-offset="136" max-vertical-offset="1802">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/libros/tags.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="42" selection-start="298" selection-end="298" vertical-scroll-proportion="0.22416107" vertical-offset="207" max-vertical-offset="952">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/libros/tags.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="91" column="5" selection-start="1810" selection-end="1810" vertical-scroll-proportion="1.192602" vertical-offset="612" max-vertical-offset="2244">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/prestamos/home.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="0" selection-start="706" selection-end="918" vertical-scroll-proportion="0.37203166" vertical-offset="160" max-vertical-offset="918">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="84" column="44" selection-start="2776" selection-end="2776" vertical-scroll-proportion="0.19398907" vertical-offset="1133" max-vertical-offset="1887">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/TagsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="5" selection-start="157" selection-end="157" vertical-scroll-proportion="0.24670185" vertical-offset="0" max-vertical-offset="1955">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/libros/leerTagUsuario.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="82" column="43" selection-start="1706" selection-end="1706" vertical-scroll-proportion="0.3469388" vertical-offset="1122" max-vertical-offset="2618">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/prestamos/create.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="160" column="14" selection-start="6325" selection-end="6704" vertical-scroll-proportion="-15.307693" vertical-offset="2322" max-vertical-offset="3876">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/devoluciones/home.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="56" column="49" selection-start="2323" selection-end="2340" vertical-scroll-proportion="-15.038462" vertical-offset="561" max-vertical-offset="2244">
+          <folding>
+            <element signature="n#style#0;n#span#0;n#div#3;n#div#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/libros/devoluciones.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="23" selection-start="796" selection-end="796" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4522">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/libros/prestamos.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="40" selection-start="806" selection-end="806" vertical-scroll-proportion="0.45535713" vertical-offset="204" max-vertical-offset="4658">
           <folding />
         </state>
       </provider>

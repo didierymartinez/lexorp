@@ -80,7 +80,7 @@ new function() {
 			
 				xhr = $.ajax({
 					type: 'GET',
-					url:  '../usuariostag/'+ data,
+					url:  '../tags/'+ data,
 					dataType: 'json',
 					success: function (data) {
                         close();

@@ -81,7 +81,7 @@ Route::get('logout', 'AuthController@logout');
 Route::resource('/home','HomeController');
 Route::resource('/users','UserController');
 Route::resource('/usuariosbiblioteca','UsuariosBibliotecaController');
-Route::resource('/usuariostag','UsuariosTagController');
+Route::resource('/tags','TagsController');
 Route::resource('/roles','RolesController');
 
 Route::resource('/prestamos','PrestamosController');

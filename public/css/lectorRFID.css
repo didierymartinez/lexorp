@@ -26,6 +26,7 @@ body{
     overflow: hidden;
     text-align: center;
     background-color: rgba(214, 224, 226, 0.2);
+    cursor: pointer;
 }
 
 .card.hovercard .cardheader {

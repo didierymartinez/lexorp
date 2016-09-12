@@ -39,14 +39,14 @@ new function() {
 		leyendo = true;
 		connectionStatus.text('Conectado');
 		ws.send('iniciarLectura');
-		iniciarLectura.attr("src" , "../images/stop.jpg");
+		iniciarLecturaImg.attr("src" , "../images/stop.jpg");
 	};
 
 	var onClose = function() {
 		ws = null;
 		connectionStatus.text('Cerrado');
 		leyendo = false;
-		iniciarLectura.attr("src" , "../images/play.jpg");
+        iniciarLecturaImg.attr("src" , "../images/play.jpg");
 
 	};
 
@@ -96,10 +96,9 @@ new function() {
 
 			serverUrl = 'ws://192.168.0.123:5555';
 			connectionStatus = $('#connectionStatus');
+            iniciarLecturaImg = $('#inventarioetiquetasImg');
 
-			iniciarLectura = $('#inventarioetiquetas');
-
-			iniciarLectura.click(function(e) {
+            $('#inventarioetiquetas').click(function(e) {
 				if(!leyendo){
 					close();
 					open();

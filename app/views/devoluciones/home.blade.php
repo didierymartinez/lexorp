@@ -58,8 +58,18 @@
                   </span>
                 </div>                
             </div>
+            <div class="row">
+                <div class="col-md-4  col-md-offset-1">
+                    <div class="btn btn-info btn-block" id="buscar1TagLibro">
+                        <span class="glyphicon glyphicon-play" id="imagenEstado" aria-hidden="true"></span>
+                        <span id="connectionStatus">Leer 1 libro</span>
+                    </div>
+                </div>
+
+            </div>
         </div>
 
+        </br>
         
 
         <table id="articulosDevolucion" class="table table-condensed">

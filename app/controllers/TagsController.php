@@ -1,6 +1,6 @@
 <?php
 
-class UsuariosTagController extends \BaseController {
+class TagsController extends \BaseController {
 
 
 	/**

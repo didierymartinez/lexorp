@@ -20,7 +20,7 @@
             
 	<div class="row">
 		<div class="col-lg-12 col-sm-12">
-            <div class="card hovercard">
+            <div  id="inventarioetiquetas" class="card hovercard">
                 <div class="cardheader inventarioetiquetas"></div>
 					<div class="progress">
 						<div class="progress-bar progress-bar-striped progress-bar-info" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
@@ -28,7 +28,7 @@
 						</div>
 					</div>
                 <div class="avatar">
-                    <img id="inventarioetiquetas" src="../images/play.jpg">
+                    <img id="inventarioetiquetasImg" src="../images/play.jpg">
                 </div>
                 <div class="info">
                     <div class="title col-lg-12 col-sm-12">
