@@ -25,7 +25,7 @@
 
 
         $tag1 = new Tag;
-        $tag1->epc = '9230-2010-0000-001A-0000-0705';
+        $tag1->epc = '0000-83A3-0000-0066-0000-0168';
         $tag1->save();
 
         $item1 = Item::create(array(
@@ -40,7 +40,20 @@
         $tag1->save();
 
 
+        $tag2 = new Tag;
+        $tag2->epc = '9370-2110-0000-001A-0000-0C5E';
+        $tag2->save();
 
+        $item2 = Item::create(array(
+                'placa' => '0202',
+                'articulo_id' => '2',
+                'estado_id' => '1',
+                'tag_id' => $tag2->id
+        ));
+
+        $tag1->objeto_id = $item2->id;
+        $tag1->objeto_type = 'Item';
+        $tag1->save();
 
     }
  

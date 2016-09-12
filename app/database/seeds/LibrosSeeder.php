@@ -39,12 +39,12 @@
 
         
          $Libro1 = Libro::create(array(
-                 'titulo' => 'El modelo Google',
+                 'titulo' => 'Proyectos agiles con Scrum',
                  'subtitulo' => 'Un reto organizacional',
-                 'titulooriginal' => 'The Google model',
+                 'titulooriginal' => 'Scrum agile',
                  'anoedicion' => '2010',
                  'edicion' => '1',
-                 'isbn' => '183',
+                 'isbn' => '9789874515803',
                  'coleccion' => '1',
                  'editorial_id' => '1'
 
