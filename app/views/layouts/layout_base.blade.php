@@ -100,7 +100,7 @@
                         <span style="font-size:16px;" class="glyphicon glyphicon-book"></span>&nbsp Libros
                       </a>
                     </li>                    <li>
-                      <a href="{{URL::to('tags')}}">
+                      <a href="{{URL::to('inventario/tags')}}">
                         <span style="font-size:16px;" class="glyphicon glyphicon-tags"></span>&nbsp Tags
                       </a>
                     </li>

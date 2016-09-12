@@ -57,6 +57,11 @@ class UsuarioBiblioteca extends Eloquent {
         return $this->attributes['nombres'] .' '. $this->attributes['apellidos'];
     }
 
+    public function tag()
+    {
+        return $this->hasOne('Tag', 'id', 'tag_id');
+    }
+
     protected static function boot() {
         parent::boot();
 

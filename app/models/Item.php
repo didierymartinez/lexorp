@@ -34,7 +34,12 @@ class Item extends Eloquent {
     public function ultimomovimiento()
     {
         return $this->hasOne('Movimiento', 'id', 'ultimoMovimiento_id');
-    } 
+    }
+
+    public function tag()
+    {
+        return $this->hasOne('Tag', 'id', 'tag_id');
+    }
 
     protected static function boot() {
         parent::boot();

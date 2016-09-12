@@ -3,13 +3,7 @@
  
     public function run()
     {
-        DB::table('tipos_estado_inventario')->delete();
-        DB::table('tipos_movimientos')->delete();
-        
 
-        DB::statement('ALTER TABLE tipos_estado_inventario AUTO_INCREMENT = 1;');
-        DB::statement('ALTER TABLE tipos_movimientos AUTO_INCREMENT = 1;');
-        
 
         DB::table('tipos_estado_inventario')->insert(array(
         	array('Tipo' => 'Disponible'),
@@ -26,20 +20,28 @@
             array('Tipo' => 'Devolucion'),
             array('Tipo' => 'Reserva'),
             array('Tipo' => 'Traslado')
-        ));   
+        ));
+
+
+
+        $tag1 = new Tag;
+        $tag1->epc = '9230-2010-0000-001A-0000-0705';
+        $tag1->save();
 
         $item1 = Item::create(array(
                 'placa' => '0101',
                 'articulo_id' => '1',
-                'estado_id' => '1'
-        ));        
+                'estado_id' => '1',
+                'tag_id' => $tag1->id
+        ));
 
-        $item2 = Item::create(array(
-                'placa' => '0202',
-                'articulo_id' => '2',
-                'estado_id' => '1'
-        ));     
-               
+        $tag1->objeto_id = $item1->id;
+        $tag1->objeto_type = 'Item';
+        $tag1->save();
+
+
+
+
     }
  
 }

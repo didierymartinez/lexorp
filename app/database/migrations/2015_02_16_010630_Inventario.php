@@ -32,7 +32,7 @@ class Inventario extends Migration {
 
 			$table->integer('estado_id')->unsigned();
 			$table->foreign('estado_id')->references('id')->on('tipos_estado_inventario');
-			
+
 			$table->integer('ultimoMovimiento_id')->unsigned();
 			$table->integer('tomo')->unsigned();
 			$table->string('observaciones', 500);

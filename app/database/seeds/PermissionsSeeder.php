@@ -4,16 +4,6 @@
     public function run()
     {
 
-    
-    DB::table('assigned_roles')->delete();
-    DB::table('permission_role')->delete();
-    DB::table('permissions')->delete();
-
-        DB::statement('ALTER TABLE assigned_roles AUTO_INCREMENT = 1;');
-        DB::statement('ALTER TABLE permission_role AUTO_INCREMENT = 1;');
-        DB::statement('ALTER TABLE permissions AUTO_INCREMENT = 1;');
-
-
     $ver_usuarios = new Permission();
     $ver_usuarios->name = 'ver_usuarios';
     $ver_usuarios->display_name = 'Ver Usuarios';

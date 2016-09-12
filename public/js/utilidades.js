@@ -1413,6 +1413,9 @@ $(function () {
 })(jQuery);
 
 
+
+
+
 mensajero = (function() {
     var that = {};    
     that.show = function(type, text) {

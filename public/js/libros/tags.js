@@ -1,14 +1,13 @@
 new function() {
-	var ws = null;
-	var connected = false;
+	ws = null;
+	var leyendo = false;
 
 	var connectionStatus;
 	var serverUrl;
-	
+
 	var iniciarLectura;
-	var detenerLectura; 
 	var tagsLeidos = new Array();
-		
+
 
 	function checkAvailability(arr, val) {
 		return arr.some(function(arrVal) {
@@ -25,42 +24,38 @@ new function() {
 
 		connectionStatus.text('Abriendo...');
 
-		
+
 	}
-	
+
 	var close = function() {
-		if (ws) {
+		if (!!ws) {
 			connectionStatus.text('Cerrando...');
-			detenerLectura.attr('disabled', 'disabled');
 			ws.close();
-		}	
+		}
 	}
-	
-	
+
+
 	var onOpen = function() {
-		connected = true;
+		leyendo = true;
 		connectionStatus.text('Conectado');
 		ws.send('iniciarLectura');
-		iniciarLectura.hide();
-		detenerLectura.show();
+		iniciarLectura.attr("src" , "../images/stop.jpg");
 	};
-	
+
 	var onClose = function() {
 		ws = null;
-		iniciarLectura.show();
-		detenerLectura.hide();
 		connectionStatus.text('Cerrado');
-		connected = false;
-		detenerLectura.removeAttr('disabled');
+		leyendo = false;
+		iniciarLectura.attr("src" , "../images/play.jpg");
 
 	};
-	
+
 	var onMessage = function(event) {
 		var data = event.data;
 		if(data == "ingreseComando"){
 			connectionStatus.text('Lector listo...');
 		}else if(data == "leyendoTags"){
-					connectionStatus.text('Leyendo... Acerque los Tags a la antena');
+					connectionStatus.text('Leyendo...');
 					$(".progress-bar-striped").toggleClass("active");
 				}
 				else{
@@ -98,30 +93,22 @@ new function() {
 
 	WebSocketClient = {
 		init: function() {
-	
+
 			serverUrl = 'ws://192.168.0.123:5555';
 			connectionStatus = $('#connectionStatus');
-			
-			iniciarLectura = $('#iniciarLectura');
-			detenerLectura = $('#detenerLectura'); 
-			
-			detenerLectura.hide();
+
+			iniciarLectura = $('#inventarioetiquetas');
 
 			iniciarLectura.click(function(e) {
-				close();
-				open();
+				if(!leyendo){
+					close();
+					open();
+				}else{
+					ws.send('detenerLectura');
+					close();
+					$(".progress-bar-striped").toggleClass("active");
+				}
 			});
-		
-			detenerLectura.click(function(e) {
-				ws.send('detenerLectura');
-				close();
-				$(".progress-bar-striped").toggleClass("active");
-			});
-			
-
-			
-			
-			
 
 		}
 	};
@@ -129,4 +116,13 @@ new function() {
 
 $(function() {
 	WebSocketClient.init();
+});
+
+
+$(window).unload(function() {
+    if(!!ws){
+        ws.send('detenerLectura');
+        close();
+    }
+    return "Bye now!";
 });

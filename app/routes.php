@@ -20,7 +20,7 @@ Route::get('test',function(){
 	//return libro::find(1)->articulos->first()->items->count();
 
 	//$Articulo = Articulo::find(1);
-	//return $Articulo->movimientos;
+	//return $Articulo->ultimomovimiento;
 
 
 		// $usuarionuevo = new UsuarioBiblioteca;
@@ -58,10 +58,12 @@ Route::get('test',function(){
 	//return $Movimiento;
 
 	//return libro::find(1)->articulos->first()->items->first()->movimientos()->where('movimiento_type', '=', 'Prestamo')->first();
-	//return  libro::find(1)->articulos->first()->items;
+	//return  libro::find(1)->articulos->first()->items->first()->tag->epc;
+    return Tag::where('epc', '=', '9230-2010-0000-001A-0000-0705')->get()->first()->objeto->identificacion;
+    //return Articulo::find(2)->articulo;
 
 	
-	return libro::find(1)->enPrestamo();
+	//return libro::find(1)->enPrestamo();
 
 	
 
@@ -79,13 +81,14 @@ Route::get('logout', 'AuthController@logout');
 Route::resource('/home','HomeController');
 Route::resource('/users','UserController');
 Route::resource('/usuariosbiblioteca','UsuariosBibliotecaController');
+Route::resource('/usuariostag','UsuariosTagController');
 Route::resource('/roles','RolesController');
 
 Route::resource('/prestamos','PrestamosController');
 Route::resource('/devoluciones','DevolucionesController');
 
 Route::post('devoluciones/buscarArticulo',array('as' => 'devoluciones.buscarArticulo', 'uses' => 'DevolucionesController@buscarArticulo'));
-
+Route::get('inventario/tags',array('as' => 'inventario.tags', 'uses' => 'InventarioController@tags'));
 
 Route::post('prestamos/buscarArticulo',array('as' => 'prestamos.buscarArticulo', 'uses' => 'PrestamosController@buscarArticulo'));
 Route::post('prestamos/crearprestamo',array('as' => 'prestamos.crearprestamo', 'uses' => 'PrestamosController@crearprestamo'));
@@ -95,16 +98,9 @@ Route::post('prestamos/crearprestamo',array('as' => 'prestamos.crearprestamo', '
 Route::resource('/libros','LibrosController');
 
 Route::resource('/inventario','InventarioController');
-Route::get('/tags',array('as' => 'inventario.tags', 'uses' => 'InventarioController@tags'));
-
-
-
 Route::post('inventario/buscarXestado',array('as' => 'inventario.buscarXestado', 'uses' => 'InventarioController@buscarXestado'));
 
-Route::get('/', function()
-{
-	return View::make('login.login');
-});
+
 
 Route::resource('/articulos','ArticulosController');
 //Route::get('/libros/get/{id}',array('as' => 'libros.get', 'uses' => 'LibrosController@get'));

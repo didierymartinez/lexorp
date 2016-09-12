@@ -5,7 +5,7 @@
 @stop
 
 @section('head')
-@parent
+	@parent
 @stop
 
 @section('titulopagina')
