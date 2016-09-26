@@ -1,6 +1,142 @@
+var ws = null;
 
+var tagsLeidos = [];
+var xhr;
+var usuarioEncontrado;
+var inputTag;
+var connectionStatus;
+var imagenEstado;
+var guardarBtn;
+var btnActual;
+var id;
+var s;
+var tiempoleyendo;
+var tagLeido;
+
+var guardarTag = function(idLibro){
+    event.stopPropagation();
+    event.preventDefault();
+
+    $.ajax({
+        type: 'POST',
+        url:  '../tags',
+        dataType: 'json',
+        data: {id: idLibro, tag: $('#tag'+idLibro).val()},
+        success: function (data) {
+            $('#guardarTag'+idLibro).css('color','silver');
+            $('#connectionStatus' + idLibro).text(' Guardado');
+        },
+        error: function (xhr, ajaxOptions, thrownError) {
+            console.log(xhr);
+
+        }
+    });
+
+}
+
+var validaTag = function() {
+    if(!xhr){
+
+        xhr = $.ajax({
+            type: 'GET',
+            url:  '../tags/'+ tagLeido,
+            dataType: 'json',
+            success: function (data) {
+                 if(!data){
+                    inputTag.val(tagLeido);
+                    guardarBtn.css('color','#f0ad4e');
+                    tagLeido = null;
+                 }else{
+                    alert('Tag ya ha sido asignado');
+                 }
+
+                xhr = false;
+
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                alert(xhr.responseText);
+                xhr = false;
+            }
+        });
+    }
+};
+
+var Ant_onopen = function() {
+    btnActual.css({'pointer-events': 'auto', 'color':'#333'});
+    connectionStatus.text(' Conectado');
+    ws.send('leer1tag');
+    imagenEstado.attr("class" , "glyphicon glyphicon-stop");
+};
+
+var Ant_onClose = function() {
+    ws = null;
+    imagenEstado.attr("class" , "glyphicon glyphicon-play");
+    tiempoleyendo.css('display', 'none');
+    connectionStatus.text('');
+    $('.glyphicon-play').css({'pointer-events': 'auto', 'color':'#333'});
+    if(!!tagLeido){
+        validaTag();
+    }
+};
+
+var Ant_OnMensaje = function(event) {
+    var data = event.data;
+
+    switch (data){
+        case "ingreseComando":
+            connectionStatus.text(' Lector listo');
+            break;
+        case "leyendoTags":
+            connectionStatus.text(' Leyendo');
+            tiempoleyendo.css('display', 'block');
+            break;
+        default:
+            tagLeido = data;
+    }
+
+};
+
+var leerTags = function(btn, id){
+    event.stopPropagation();
+    event.preventDefault();
+    $('.glyphicon-play,.glyphicon-stop').css({'pointer-events': 'none', 'color':'silver'});
+
+    connectionStatus = $('#connectionStatus' + id);
+    imagenEstado = $('#imagenEstado' + id);
+    inputTag = $('#tag'+id);
+    guardarBtn = $('#guardarTag'+id);
+    btnActual = $(btn);
+    tiempoleyendo = $('#carga'+id);
+
+    id = id;
+    var iniciar = function(){
+        ws = new WebSocket('ws://192.168.0.123:5555');
+        connectionStatus.text('Abriendo...');
+
+        ws.onopen = Ant_onopen;
+        ws.onclose = Ant_onClose;
+        ws.onmessage = Ant_OnMensaje;
+        ws.onerror = function(event) {
+            alert("Error al intentar conectar el lector");
+        };
+    }
+
+
+    if(!!ws){
+        connectionStatus.text('Deteniendo..');
+        ws.send('detenerLectura');
+        ws.close();
+
+    }else{
+        iniciar();
+    }
+
+    return false;
+}
 
 $(document).ready(function () {
+
+
 
     var options = {
         keyboard: false,
@@ -106,6 +242,8 @@ $(document).ready(function () {
 		 	.on("valueChanged", function (e) {
 		 	    $table.bootstrapTable('getData')[$(this).attr('idEjemplar') - 1].tomo = e.value;
 		 	});
+
+
             return true;
         }
 
@@ -178,7 +316,9 @@ function columnas(estado) {
     cols.push({ field: 'id', title: 'ID', sortable: true });
     cols.push({ field: 'placa', title: 'Placa', sortable: true });
     cols.push({ field: 'tomo', title: 'Tomo', sortable: true });
-    cols.push({ field: 'observaciones', title: 'Observaciones', sortable: true });
+    //cols.push({ field: 'observaciones', title: 'Observaciones', sortable: true });
+    cols.push({ field: 'tag', title: 'Tag - EPC', sortable: true, formatter: tagFormatter });
+    cols.push({ field: 'leertag', title: 'Actualizar', sortable: false, formatter: leerTagFormatter});
     if (estado == "total") {
         cols.push({ field: 'estado', title: 'Disponible', sortable: true, formatter: estadoFormatter });
     }
@@ -216,6 +356,18 @@ function tomoFormatter(value, row, index) {
 function observacionesFormatter(value, row, index) {
 
     return '<input type="text" id="observaciones' + row.id + '" name="observaciones' + row.id + '" idEjemplarObs="' + row.id + '" class="form-control"  data-serialize="1">';
+}
+
+function tagFormatter(value, row, index) {
+
+    return '<input type="text" id="tag' + row.id + '" name="tag' + row.id + ' idEjemplarObs="' + row.id + '" class="form-control epc" value="'+ row.epc +'"  data-serialize="1">';
+}
+
+function leerTagFormatter(value, row, index) {
+        return '<span title="Leer desde Antena" style="padding-right: 10px;cursor:pointer;" class="glyphicon glyphicon-play" onclick="leerTags(this, '+ row.id + ')" id="imagenEstado'+  row.id +'"  aria-hidden="true"></span><span class="glyphicon glyphicon-floppy-save" title="Guardar" style="cursor:pointer;color: silver" onclick="guardarTag('+ row.id + ')" id="guardarTag'+  row.id +'"  aria-hidden="true"></span><span style="font-size: 12px" id="connectionStatus'+  row.id+'" > </span><div style="display: none;" id="carga'+ row.id +'" class="carga"></div>'
+
+
+    //return '<input type="text" id="observaciones' + row.id + '" name="observaciones' + row.id + '" idEjemplarObs="' + row.id + '" class="form-control"  data-serialize="1">';
 }
 
 function estadoFormatter(value, row, index) {

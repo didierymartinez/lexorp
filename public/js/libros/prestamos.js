@@ -50,14 +50,14 @@ $(document).ready(function(){
         data: {id: $("#codigo").val()},
         success: function (data) {
 
-            if(data.exito == 0){
+            if(data.exito === 0){
               wizard.mensajes.show('danger',data.mensaje);
             }else{
                 CantidadPrestamo = jQuery.grep(articulosPrestamo, function(value) {
                     return value == data.Item.id;
                 });
 
-                if (CantidadPrestamo.length == 0){                  
+                if (CantidadPrestamo.length === 0){                  
                     var articulo = [data.Item.id, data.Libro.fechadevolucion]                    
                     articulosPrestamo.push(articulo);
 
@@ -69,7 +69,7 @@ $(document).ready(function(){
                         '<td><a class="elimPrestamo" id="'+ data.Item.id +'"><span class="glyphicon glyphicon-trash"></span></a></td>'+
                         '</tr>');
 
-                    wizard.mensajes.show('success','Libro agregado: ' + data.Libro.titulo);
+                     wizard.mensajes.show('success','Libro agregado: ' + data.Libro.titulo);
                      wizard.cards.seleccion.validate();
                 }else{
 
@@ -148,7 +148,6 @@ var leerTags = function(){
     var serverUrl;
     var iniciarLectura;
     var imagenEstado;
-    var tagsLeidos = new Array();
     var xhr;
     var usuarioEncontrado;
 
@@ -188,7 +187,7 @@ var leerTags = function(){
     var onOpen = function() {
         leyendo = true;
         connectionStatus.text('Conectado');
-        ws.send('iniciarLectura');
+        ws.send('leer1tag');
         imagenEstado.attr("class" , "glyphicon glyphicon-stop");
     };
 
@@ -198,28 +197,26 @@ var leerTags = function(){
 
     var onMessage = function(event) {
         var data = event.data;
-        if(data == "ingreseComando"){
-            connectionStatus.text('Lector listo...');
-        }else if(data == "leyendoTags"){
-            connectionStatus.text('Acerque el Tag al lector...');
-            $(".progress-bar-striped").toggleClass("active");
+
+        switch (data){
+            case "ingreseComando":
+                connectionStatus.text('Lector listo...');
+                break;
+            case "leyendoTags":
+                connectionStatus.text('Acerque el Tag al lector...');
+                $(".progress-bar-striped").toggleClass("active");
+                break;
+            default:
+                lecturaTag(data);
         }
-        else{
-            if(!tagsLeidos.find(function(tag){ return tag.epc == data})){
-                tagsLeidos.push({epc : data});
-                if(ws.readyState == 1){
-                    ws.send('detenerLectura');
-                    lecturaTag(data);
-                }
-            }
-        }
+
     };
 
     var onError = function(event) {
         alert("Error al intentar conectar el lector");
     }
 
-    var lecturaTag = function(data, type) {
+    var lecturaTag = function(data) {
 
         if(!xhr){
 
@@ -228,10 +225,8 @@ var leerTags = function(){
                 url:  '../tags/'+ data,
                 dataType: 'json',
                 success: function (data) {
-                    close();
                     if(!!data.placa){
                         usuarioEncontrado = data;
-                        ws = null;
                         connectionStatus.text('Leer Tag');
                         leyendo = false;
                         imagenEstado.attr("class" , "glyphicon glyphicon-play");
@@ -239,10 +234,9 @@ var leerTags = function(){
                         $('#adicionararticulo').click();
 
                     }else{
-                        alert('Libro no encontrado');
+                        alert('Articulo no encontrado');
                     }
                     xhr = false;
-                    tagsLeidos = [];
 
                 },
                 error: function (xhr, ajaxOptions, thrownError) {

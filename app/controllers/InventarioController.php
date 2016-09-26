@@ -91,15 +91,24 @@ class InventarioController extends \BaseController {
 			switch (Input::get('idEstado')) {
 				case 'enprestamo':
 					$Libros = libro::find(Input::get('idLibro'))->enPrestamo();
+                    foreach($Libros as $libro){
+                        $libro->epc = ($libro->tag_id != null) ? $libro->Tag->epc : '';
+                    }
 					break;
 				
 				case 'disponibles':
 					$Libros = libro::find(Input::get('idLibro'))->disponibles();
+                    foreach($Libros as $libro){
+                        $libro->epc = ($libro->tag_id != null) ? $libro->Tag->epc : '';
+                    }
 					break;
 
 				case 'total':
 					$Libros = libro::find(Input::get('idLibro'))->total();
-					break;	
+                    foreach($Libros as $libro){
+                        $libro->epc = ($libro->tag_id != null) ? $libro->Tag->epc : '';
+                    }
+					break;
 			}
 
 	        

@@ -54,12 +54,19 @@ Route::get('test',function(){
 
       //return   $Item->prestamos;
 
-	//$Movimiento = Movimiento::find(1)->movimiento;
-	//return $Movimiento;
 
-	//return libro::find(1)->articulos->first()->items->first()->movimientos()->where('movimiento_type', '=', 'Prestamo')->first();
+    //return libro::find(1)->articulos->first()->items->first()->movimientos()->where('movimiento_type', '=', 'Prestamo')->first();
 	//return  libro::find(1)->articulos->first()->items->first()->tag->epc;
-    return Tag::where('epc', '=', '9230-2010-0000-001A-0000-0705')->get()->first()->objeto->identificacion;
+    //return Tag::where('epc', '=', '9230-2010-0000-001A-0000-0705')->get()->first()->objeto->identificacion;
+
+    $Movimiento = libro::find(1)->disponibles();
+
+    foreach($Movimiento as $libro){
+        $libro->epc = ($libro->tag_id != null) ? $libro->Tag->epc : null;
+    }
+
+    return $Movimiento;
+
     //return Articulo::find(2)->articulo;
 
 	

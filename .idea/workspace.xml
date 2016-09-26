@@ -22,46 +22,7 @@
     <favorites_list name="lexorp" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="prestamos.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public/js/libros/prestamos.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="40" selection-start="806" selection-end="806" vertical-scroll-proportion="0.45535713" vertical-offset="204" max-vertical-offset="4658">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="devoluciones.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/js/libros/devoluciones.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="23" selection-start="796" selection-end="796" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4522">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="home.blade.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/devoluciones/home.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="56" column="49" selection-start="2323" selection-end="2340" vertical-scroll-proportion="-15.038462" vertical-offset="561" max-vertical-offset="2244">
-              <folding>
-                <element signature="n#style#0;n#span#0;n#div#3;n#div#1;n#div#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="create.blade.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/prestamos/create.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="160" column="14" selection-start="6325" selection-end="6704" vertical-scroll-proportion="-15.307693" vertical-offset="2322" max-vertical-offset="3876">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -80,7 +41,6 @@
         <option value="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" />
         <option value="$PROJECT_DIR$/vendor/composer/autoload_static.php" />
         <option value="$PROJECT_DIR$/app/database/migrations/2015_02_16_010630_Inventario.php" />
-        <option value="$PROJECT_DIR$/app/models/Libro.php" />
         <option value="$PROJECT_DIR$/app/models/Tag.php" />
         <option value="$PROJECT_DIR$/app/models/Item.php" />
         <option value="$PROJECT_DIR$/app/models/UsuarioBiblioteca.php" />
@@ -98,11 +58,16 @@
         <option value="$PROJECT_DIR$/public/js/libros/tags.js" />
         <option value="$PROJECT_DIR$/app/views/libros/tags.blade.php" />
         <option value="$PROJECT_DIR$/public/css/lectorRFID.css" />
-        <option value="$PROJECT_DIR$/public/js/libros/leerTagUsuario.js" />
-        <option value="$PROJECT_DIR$/app/routes.php" />
-        <option value="$PROJECT_DIR$/app/controllers/TagsController.php" />
         <option value="$PROJECT_DIR$/app/views/devoluciones/home.blade.php" />
         <option value="$PROJECT_DIR$/public/js/libros/devoluciones.js" />
+        <option value="$PROJECT_DIR$/public/js/libros/leerTagUsuario.js" />
+        <option value="$PROJECT_DIR$/app/views/prestamos/home.blade.php" />
+        <option value="$PROJECT_DIR$/app/models/Libro.php" />
+        <option value="$PROJECT_DIR$/app/routes.php" />
+        <option value="$PROJECT_DIR$/app/controllers/InventarioController.php" />
+        <option value="$PROJECT_DIR$/app/views/libros/inventario.blade.php" />
+        <option value="$PROJECT_DIR$/app/controllers/TagsController.php" />
+        <option value="$PROJECT_DIR$/public/js/libros/inventario.js" />
         <option value="$PROJECT_DIR$/public/js/libros/prestamos.js" />
       </list>
     </option>
@@ -140,6 +105,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -222,24 +188,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lexorp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lexorp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -258,7 +206,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
+              <option name="myItemId" value="models" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -276,11 +224,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="prestamos" />
+              <option name="myItemId" value="database" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -298,11 +242,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
+              <option name="myItemId" value="database" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="devoluciones" />
+              <option name="myItemId" value="seeds" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -326,7 +270,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -386,10 +329,9 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.11860718" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14761905" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
@@ -398,9 +340,11 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.11860718" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3297062" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -420,23 +364,160 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/models/Autor.php">
+    <entry file="file://$PROJECT_DIR$/vendor/composer/autoload_static.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="762">
+        <state line="239" column="90" selection-start="9701" selection-end="9701" vertical-scroll-proportion="0.38113207" vertical-offset="3861" max-vertical-offset="37621" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/composer/autoload_classmap.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="55" column="33" selection-start="4469" selection-end="4469" vertical-scroll-proportion="0.81306714" vertical-offset="487" max-vertical-offset="34034" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/TipoTag.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="1" selection-start="148" selection-end="148" vertical-scroll-proportion="0.28176796" vertical-offset="0" max-vertical-offset="543" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/TipoIdentificacion.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="762" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="741" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/TiposArticulosController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1717" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/Articulo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="35" selection-start="145" selection-end="145" vertical-scroll-proportion="0.24113475" vertical-offset="0" max-vertical-offset="564" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/UsuarioBiblioteca.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="54" column="48" selection-start="1359" selection-end="1359" vertical-scroll-proportion="0.6648936" vertical-offset="543" max-vertical-offset="1581" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/ArticulosController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="5" selection-start="410" selection-end="410" vertical-scroll-proportion="0.27659574" vertical-offset="422" max-vertical-offset="1649" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_01_31_220253_Articulos.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="59" selection-start="455" selection-end="498" vertical-scroll-proportion="-0.61538464" vertical-offset="341" max-vertical-offset="884" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_02_16_010630_Inventario.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="0" selection-start="739" selection-end="865" vertical-scroll-proportion="-12.423077" vertical-offset="204" max-vertical-offset="2244" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_04_02_235806_add_table_usuariosbiblioteca.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="46" selection-start="755" selection-end="773" vertical-scroll-proportion="2.6153846" vertical-offset="510" max-vertical-offset="1054" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_07_19_215911_add_table_adquisiciones.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="5.269231" vertical-offset="137" max-vertical-offset="680" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_10_12_145910_Users.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="32" selection-start="374" selection-end="374" vertical-scroll-proportion="-10.461538" vertical-offset="0" max-vertical-offset="850" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_10_12_150706_entrust_setup_tables.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="0" selection-start="756" selection-end="877" vertical-scroll-proportion="13.076923" vertical-offset="765" max-vertical-offset="1343" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_01_31_215821_Libros.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="1326" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2016_09_11_184339_tags.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="62" selection-start="1132" selection-end="1132" vertical-scroll-proportion="1.0248227" vertical-offset="51" max-vertical-offset="1190" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/seeds/UserSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="0" selection-start="68" selection-end="68" vertical-scroll-proportion="-2.6153846" vertical-offset="0" max-vertical-offset="986" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/seeds/EliminardatosSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="29" selection-start="13" selection-end="32" vertical-scroll-proportion="-0.65384614" vertical-offset="0" max-vertical-offset="1156" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/seeds/PermissionsSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="0" selection-start="81" selection-end="81" vertical-scroll-proportion="-1.3076923" vertical-offset="51" max-vertical-offset="901" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/seeds/DatabaseSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="43" selection-start="197" selection-end="197" vertical-scroll-proportion="-7.8461537" vertical-offset="0" max-vertical-offset="510" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/seeds/UsuariosSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="29" selection-start="877" selection-end="877" vertical-scroll-proportion="-7.1538463" vertical-offset="290" max-vertical-offset="833" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/seeds/RolesSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="0" selection-start="76" selection-end="76" vertical-scroll-proportion="0.15070923" vertical-offset="0" max-vertical-offset="564" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/lectorRFID.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="20" selection-start="427" selection-end="427" vertical-scroll-proportion="0.43367347" vertical-offset="136" max-vertical-offset="1802" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/libros/tags.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="42" selection-start="298" selection-end="298" vertical-scroll-proportion="0.22416107" vertical-offset="207" max-vertical-offset="952" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/libros/tags.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="91" column="5" selection-start="1810" selection-end="1810" vertical-scroll-proportion="1.192602" vertical-offset="612" max-vertical-offset="2244" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/devoluciones/home.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="56" column="49" selection-start="2323" selection-end="2340" vertical-scroll-proportion="0.4509804" vertical-offset="561" max-vertical-offset="2244">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/Adquisicion.php">
+    <entry file="file://$PROJECT_DIR$/app/views/prestamos/home.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="762">
+        <state line="32" column="8" selection-start="934" selection-end="934" vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="918">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/Entrada.php">
+    <entry file="file://$PROJECT_DIR$/app/views/prestamos/create.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="893">
+        <state line="157" column="22" selection-start="6669" selection-end="6669" vertical-scroll-proportion="0.0" vertical-offset="1914" max-vertical-offset="3876">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/libros/leerTagUsuario.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="0" selection-start="597" selection-end="625" vertical-scroll-proportion="0.0" vertical-offset="379" max-vertical-offset="2499">
           <folding />
         </state>
       </provider>
@@ -450,353 +531,150 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/Permission.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="762">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="170">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/Prestamo.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="762">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="697">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/Role.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="741">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="170">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/RolesPermission.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="762">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/TipoArticulos.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="893">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/composer/autoload_static.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="239" column="90" selection-start="9701" selection-end="9701" vertical-scroll-proportion="0.38113207" vertical-offset="3861" max-vertical-offset="37621">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/composer/autoload_classmap.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="33" selection-start="4469" selection-end="4469" vertical-scroll-proportion="0.81306714" vertical-offset="487" max-vertical-offset="34034">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/TipoTag.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="1" selection-start="148" selection-end="148" vertical-scroll-proportion="0.28176796" vertical-offset="0" max-vertical-offset="543">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/TipoIdentificacion.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="762">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="741">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/TiposArticulosController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1717">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="255">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/Libro.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="18" selection-start="104" selection-end="104" vertical-scroll-proportion="0.18085106" vertical-offset="0" max-vertical-offset="1989">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/Articulo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="35" selection-start="145" selection-end="145" vertical-scroll-proportion="0.24113475" vertical-offset="0" max-vertical-offset="564">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/UsuarioBiblioteca.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="48" selection-start="1359" selection-end="1359" vertical-scroll-proportion="0.6648936" vertical-offset="543" max-vertical-offset="1581">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/Item.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="0" selection-start="820" selection-end="820" vertical-scroll-proportion="0.66312057" vertical-offset="340" max-vertical-offset="1156">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/ArticulosController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="5" selection-start="410" selection-end="410" vertical-scroll-proportion="0.27659574" vertical-offset="422" max-vertical-offset="1649">
+        <state line="28" column="5" selection-start="564" selection-end="564" vertical-scroll-proportion="-13.730769" vertical-offset="119" max-vertical-offset="1989">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/Tag.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="21" selection-start="227" selection-end="227" vertical-scroll-proportion="-8.5" vertical-offset="0" max-vertical-offset="561">
+        <state line="11" column="12" selection-start="179" selection-end="182" vertical-scroll-proportion="-7.1923075" vertical-offset="0" max-vertical-offset="561">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/Item.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="0" selection-start="820" selection-end="820" vertical-scroll-proportion="-19.307692" vertical-offset="212" max-vertical-offset="1156">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/InventarioController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="102" column="13" selection-start="2513" selection-end="2513" vertical-scroll-proportion="-15.692307" vertical-offset="1326" max-vertical-offset="2669">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/LibrosController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="2907">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_01_31_220253_Articulos.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="59" selection-start="455" selection-end="498" vertical-scroll-proportion="-0.61538464" vertical-offset="341" max-vertical-offset="884">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_02_16_010630_Inventario.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="0" selection-start="739" selection-end="865" vertical-scroll-proportion="-12.423077" vertical-offset="204" max-vertical-offset="2244">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_04_02_235806_add_table_usuariosbiblioteca.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="46" selection-start="755" selection-end="773" vertical-scroll-proportion="2.6153846" vertical-offset="510" max-vertical-offset="1054">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_07_19_215911_add_table_adquisiciones.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="5.269231" vertical-offset="137" max-vertical-offset="680">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_10_12_145910_Users.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="32" selection-start="374" selection-end="374" vertical-scroll-proportion="-10.461538" vertical-offset="0" max-vertical-offset="850">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_10_12_150706_entrust_setup_tables.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="0" selection-start="756" selection-end="877" vertical-scroll-proportion="13.076923" vertical-offset="765" max-vertical-offset="1343">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_01_31_215821_Libros.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="1326">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/migrations/2016_09_11_184339_tags.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="62" selection-start="1132" selection-end="1132" vertical-scroll-proportion="1.0248227" vertical-offset="51" max-vertical-offset="1190">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/seeds/UserSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="68" selection-end="68" vertical-scroll-proportion="-2.6153846" vertical-offset="0" max-vertical-offset="986">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/seeds/EliminardatosSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="29" selection-start="13" selection-end="32" vertical-scroll-proportion="-0.65384614" vertical-offset="0" max-vertical-offset="1156">
-          <folding>
-            <marker date="1473644958656" expanded="true" signature="-1:-1" placeholder="ALTER TABLE tipos_tags..." />
-            <marker date="1473644958656" expanded="true" signature="-1:-1" placeholder="ALTER TABLE tags..." />
-            <marker date="1473644958656" expanded="true" signature="-1:-1" placeholder="ALTER TABLE tipos_identificacion..." />
-            <marker date="1473644958656" expanded="true" signature="-1:-1" placeholder="ALTER TABLE usuariosbiblioteca..." />
-            <marker date="1473644958656" expanded="true" signature="-1:-1" placeholder="ALTER TABLE tipos_estado_inventario..." />
-            <marker date="1473644958656" expanded="true" signature="-1:-1" placeholder="ALTER TABLE tipos_movimientos..." />
-            <marker date="1473644958656" expanded="true" signature="-1:-1" placeholder="ALTER TABLE usuariosbiblioteca..." />
-            <marker date="1473644958656" expanded="true" signature="-1:-1" placeholder="ALTER TABLE users..." />
-            <marker date="1473644958656" expanded="true" signature="-1:-1" placeholder="ALTER TABLE roles..." />
-            <marker date="1473644958656" expanded="true" signature="-1:-1" placeholder="ALTER TABLE libros..." />
-            <marker date="1473644958656" expanded="true" signature="-1:-1" placeholder="ALTER TABLE autores..." />
-            <marker date="1473644958656" expanded="true" signature="-1:-1" placeholder="ALTER TABLE articulos..." />
-            <marker date="1473644958656" expanded="true" signature="-1:-1" placeholder="ALTER TABLE inventario..." />
-            <marker date="1473644958656" expanded="true" signature="-1:-1" placeholder="ALTER TABLE movimientos..." />
-            <marker date="1473644958656" expanded="true" signature="-1:-1" placeholder="ALTER TABLE entradas..." />
-            <marker date="1473644958656" expanded="true" signature="-1:-1" placeholder="ALTER TABLE prestamos..." />
-            <marker date="1473644958656" expanded="true" signature="-1:-1" placeholder="ALTER TABLE devoluciones..." />
-            <marker date="1473644958656" expanded="true" signature="-1:-1" placeholder="ALTER TABLE tipos_articulos..." />
-            <marker date="1473644958656" expanded="true" signature="-1:-1" placeholder="ALTER TABLE assigned_roles..." />
-            <marker date="1473644958656" expanded="true" signature="-1:-1" placeholder="ALTER TABLE permission_role..." />
-            <marker date="1473644958656" expanded="true" signature="-1:-1" placeholder="ALTER TABLE permissions..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/seeds/PermissionsSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="0" selection-start="81" selection-end="81" vertical-scroll-proportion="-1.3076923" vertical-offset="51" max-vertical-offset="901">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/seeds/DatabaseSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="43" selection-start="197" selection-end="197" vertical-scroll-proportion="-7.8461537" vertical-offset="0" max-vertical-offset="510">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/seeds/UsuariosSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="29" selection-start="877" selection-end="877" vertical-scroll-proportion="-7.1538463" vertical-offset="290" max-vertical-offset="833">
+        <state line="101" column="65" selection-start="2676" selection-end="2676" vertical-scroll-proportion="-66.03846" vertical-offset="0" max-vertical-offset="2822">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/database/seeds/ArticulosSeeder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="0" selection-start="80" selection-end="80" vertical-scroll-proportion="-3.2692308" vertical-offset="0" max-vertical-offset="306">
+        <state line="5" column="0" selection-start="80" selection-end="80" vertical-scroll-proportion="0.09803922" vertical-offset="0" max-vertical-offset="867">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/libros/inventario.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="194" column="20" selection-start="8902" selection-end="8902" vertical-scroll-proportion="-126.84615" vertical-offset="0" max-vertical-offset="3910">
+          <folding>
+            <element signature="n#style#0;n#select#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#span#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#3;n#div#2;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/seeds/LibrosSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.9019608" vertical-offset="782" max-vertical-offset="1649">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/database/seeds/InventarioSeeder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="0" selection-start="368" selection-end="368" vertical-scroll-proportion="-9.153846" vertical-offset="0" max-vertical-offset="884">
+        <state line="38" column="36" selection-start="1057" selection-end="1057" vertical-scroll-proportion="0.6862745" vertical-offset="51" max-vertical-offset="1105">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/seeds/LibrosSeeder.php">
+    <entry file="file://$PROJECT_DIR$/app/filters.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="1649">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2584">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/seeds/RolesSeeder.php">
+    <entry file="file://$PROJECT_DIR$/app/controllers/LibrosController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="0" selection-start="76" selection-end="76" vertical-scroll-proportion="0.15070923" vertical-offset="0" max-vertical-offset="564">
+        <state line="111" column="0" selection-start="2681" selection-end="3080" vertical-scroll-proportion="0.47058824" vertical-offset="1479" max-vertical-offset="2907">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/lectorRFID.css">
+    <entry file="file://$PROJECT_DIR$/public/js/libros/crud.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="20" selection-start="427" selection-end="427" vertical-scroll-proportion="0.43367347" vertical-offset="136" max-vertical-offset="1802">
+        <state line="33" column="48" selection-start="722" selection-end="745" vertical-scroll-proportion="0.51399773" vertical-offset="102" max-vertical-offset="2975">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/libros/tags.blade.php">
+    <entry file="file://$PROJECT_DIR$/public/js/libros/devoluciones.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="42" selection-start="298" selection-end="298" vertical-scroll-proportion="0.22416107" vertical-offset="207" max-vertical-offset="952">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/libros/tags.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="91" column="5" selection-start="1810" selection-end="1810" vertical-scroll-proportion="1.192602" vertical-offset="612" max-vertical-offset="2244">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/prestamos/home.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="0" selection-start="706" selection-end="918" vertical-scroll-proportion="0.37203166" vertical-offset="160" max-vertical-offset="918">
+        <state line="45" column="8" selection-start="1027" selection-end="1058" vertical-scroll-proportion="0.22844344" vertical-offset="561" max-vertical-offset="4522">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="84" column="44" selection-start="2776" selection-end="2776" vertical-scroll-proportion="0.19398907" vertical-offset="1133" max-vertical-offset="1887">
+        <state line="64" column="60" selection-start="2283" selection-end="2288" vertical-scroll-proportion="-21.26923" vertical-offset="382" max-vertical-offset="2006">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/TagsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="5" selection-start="157" selection-end="157" vertical-scroll-proportion="0.24670185" vertical-offset="0" max-vertical-offset="1955">
+        <state line="58" column="31" selection-start="1300" selection-end="1300" vertical-scroll-proportion="-22.884615" vertical-offset="391" max-vertical-offset="2312">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/libros/leerTagUsuario.js">
+    <entry file="file://$PROJECT_DIR$/public/js/libros/inventario.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="82" column="43" selection-start="1706" selection-end="1706" vertical-scroll-proportion="0.3469388" vertical-offset="1122" max-vertical-offset="2618">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/prestamos/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="160" column="14" selection-start="6325" selection-end="6704" vertical-scroll-proportion="-15.307693" vertical-offset="2322" max-vertical-offset="3876">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/devoluciones/home.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="49" selection-start="2323" selection-end="2340" vertical-scroll-proportion="-15.038462" vertical-offset="561" max-vertical-offset="2244">
+        <state line="290" column="57" selection-start="7279" selection-end="7279" vertical-scroll-proportion="0.0" vertical-offset="4084" max-vertical-offset="6953">
           <folding>
-            <element signature="n#style#0;n#span#0;n#div#3;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <marker date="1474857498614" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1474857498614" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1474857498614" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1474857498614" expanded="false" signature="-1:-1" placeholder="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/libros/devoluciones.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="23" selection-start="796" selection-end="796" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4522">
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/libros/prestamos.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="40" selection-start="806" selection-end="806" vertical-scroll-proportion="0.45535713" vertical-offset="204" max-vertical-offset="4658">
+        <state line="215" column="54" selection-start="5940" selection-end="5940" vertical-scroll-proportion="0.2094065" vertical-offset="3468" max-vertical-offset="4556">
           <folding />
         </state>
       </provider>

@@ -48,7 +48,28 @@ class TagsController extends \BaseController {
 	 */
 	public function store()
 	{
+        if(Request::ajax()){
 
+            $Item = Item::find(Input::get('id'));
+
+            if($Item->tag_id)
+            {
+                $tag = $Item->Tag;
+            }else{
+                $tag = new Tag;
+            }
+
+            $tag->epc = Input::get('tag');
+            $tag->objeto_id = Input::get('id');
+            $tag->objeto_type = 'Item';
+            $tag->save();
+
+
+            $Item->tag_id = $tag->id;
+            $Item->save();
+
+            return Response::json($Item);
+        }
 	}
 
 

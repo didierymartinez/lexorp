@@ -7,7 +7,7 @@ new function() {
 	
 	var iniciarLectura;
 	var imagenEstado;
-	var tagsLeidos = new Array();
+	var tagsLeidos = [];
 	var xhr;
 	var usuarioEncontrado;
 		
@@ -27,8 +27,7 @@ new function() {
 
 		connectionStatus.text('Abriendo...');
 
-
-	}
+	};
 	
 	var close = function() {
 		if (!!ws) {
@@ -37,7 +36,7 @@ new function() {
             imagenEstado.attr("class" , "glyphicon glyphicon-play");
 			ws.close();
 		}	
-	}
+	};
 	
 	
 	var onOpen = function() {
@@ -60,7 +59,7 @@ new function() {
 					$(".progress-bar-striped").toggleClass("active");
 				}
 				else{					
-					if(!tagsLeidos.find(function(tag){ return tag.epc == data})){
+					if(!tagsLeidos.find(function(tag){ return tag.epc == data; })){
 						tagsLeidos.push({epc : data});						
 						if(ws.readyState == 1){
 							ws.send('detenerLectura');
@@ -72,12 +71,11 @@ new function() {
 	
 	var onError = function(event) {
 		alert("Error al intentar conectar el lector");
-	}
+	};
 		
 	var lecturaTag = function(data, type) {
 			
-			if(!xhr){			
-			
+			if(!xhr){
 				xhr = $.ajax({
 					type: 'GET',
 					url:  '../tags/'+ data,
@@ -107,12 +105,7 @@ new function() {
 					}
 				});		
 			}
-		
-		
-		
-		
-		
-	}
+	};
 
 	WebSocketClient = {
 		init: function() {

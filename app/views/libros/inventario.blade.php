@@ -6,6 +6,35 @@
 
 @section('head')
 	@parent
+    <style>
+        .epc{
+            height : 20px;
+            padding: 0px 5px;
+        }
+        .carga {
+            height: 4px;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            background-color: #ddd;
+        }
+
+        .carga:before{
+            display: block;
+            position: absolute;
+            content: "";
+            left: -138px;
+            width: 127px;
+            height: 4px;
+            background-color: #2980b9;
+            animation: loading 7s linear infinite;
+        }
+
+        @keyframes loading {
+            from {left: 0; }
+
+        }
+    </style>
 @stop
 
 @section('titulopagina')
